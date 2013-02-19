@@ -8,28 +8,28 @@ Assignment 8: Usage of Git, a Braching Model and GitHub
 Group 2
 --------
 
-* Insu Mun
+### Insu Mun
 
 Email: [i_mun@fanshaweonline.ca]
 
 Bio: [student]
 
 
-* Joshua Parsons
+### Joshua Parsons
 
 Email: [to be filled in]
 
 Bio: [to be filled in]
 
 
-* Peyton Lawrence
+### Peyton Lawrence
 
 Email: [to be filled in]
 
 Bio: [to be filled in]
 
 
-* Hiteshkumar Darji
+### Hiteshkumar Darji
 
 Email: [to be filled in]
 
