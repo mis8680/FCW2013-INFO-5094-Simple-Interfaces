@@ -1,4 +1,5 @@
 This README file will not be touched before all codes is done.
+--------------------------------------------------------------
 
 Assignment 8: Usage of Git, a Braching Model and GitHub
 =======================================================
