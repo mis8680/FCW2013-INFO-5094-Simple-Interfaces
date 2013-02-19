@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a12" title="">
+  <file path="IIterator.php" hash="7c7a60655221bff64c70dd2941c41278" package="Default">
+    <docblock line="2">
+      <description>This file is part of the Data package.</description>
+      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
+file that was distributed with this source code.&lt;/p&gt;</long-description>
+    </docblock>
+    <interface namespace="Data" line="28" package="Data">
+      <name>IIterator</name>
+      <full_name>\Data\IIterator</full_name>
+      <extends>\Iterator</extends>
+      <docblock line="10">
+        <description>The IIterator interface is the base external iterator interface.</description>
+        <long-description>&lt;p&gt;All external iterators within the Data package implement the IIterator
+interface to ensure that the container can be traversed in a variety of ways. These
+are known as "modes" and the IteratorMode class specifies these.&lt;/p&gt;
+
+&lt;p&gt;The IteratorMode::FIFO and IteratorMode::LIFO constants are used to define
+the direction of the iteration to occur, whether this is forward or reverse.
+Additionally, the IteratorMode also defines KEEP and DELETE options that allow for
+the iterator to remove items or keep items as the container is traversed over.&lt;/p&gt;
+
+&lt;p&gt;Multiple options can be specified at once using BITWISE operators.&lt;/p&gt;</long-description>
+        <tag line="10" name="author" description="Aaron McGowan &lt;a_mcgowan43905@fanshawec.ca&gt;"/>
+        <tag line="10" name="package" description="Data"/>
+        <tag line="10" name="version" description="1.0.0"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="36" package="Data">
+        <name>setMode</name>
+        <full_name>setMode</full_name>
+        <docblock line="30">
+          <description>Sets the iterator mode type.</description>
+          <long-description></long-description>
+          <tag line="30" name="access" description="public"/>
+          <tag line="30" name="param" description="Contains an IteratorMode const value." type="int" variable="$mode">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="36">
+          <name>$mode</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="44" package="Data">
+        <name>getMode</name>
+        <full_name>getMode</full_name>
+        <docblock line="38">
+          <description>Returns the iterator mode type.</description>
+          <long-description></long-description>
+          <tag line="38" name="access" description="public"/>
+          <tag line="38" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+    </interface>
+  </file>
+  <file path="IteratorMode.php" hash="19ac62f7c322281d4d00797370a02b96" package="Default">
+    <docblock line="2">
+      <description>This file is part of the Data package.</description>
+      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
+file that was distributed with this source code.&lt;/p&gt;</long-description>
+    </docblock>
+    <class final="false" abstract="false" namespace="Data" line="18" package="McGowanCorp\Data">
+      <extends/>
+      <name>IteratorMode</name>
+      <full_name>\Data\IteratorMode</full_name>
+      <docblock line="10">
+        <description>The IteratorMode class is used to operate as an ENUM data
+type allow for the mode options to be specified.</description>
+        <long-description></long-description>
+        <tag line="10" name="author" description="Aaron McGowan &lt;a_mcgowan43905@fanshawec.ca&gt;"/>
+        <tag line="10" name="package" description="McGowanCorp\Data"/>
+        <tag line="10" name="version" description="1.0.0"/>
+      </docblock>
+      <constant namespace="Data" line="20" package="McGowanCorp\Data">
+        <name>KEEP</name>
+        <full_name>KEEP</full_name>
+        <value>1</value>
+      </constant>
+      <constant namespace="Data" line="21" package="McGowanCorp\Data">
+        <name>DELETE</name>
+        <full_name>DELETE</full_name>
+        <value>2</value>
+      </constant>
+      <constant namespace="Data" line="22" package="McGowanCorp\Data">
+        <name>FIFO</name>
+        <full_name>FIFO</full_name>
+        <value>4</value>
+      </constant>
+      <constant namespace="Data" line="23" package="McGowanCorp\Data">
+        <name>LIFO</name>
+        <full_name>LIFO</full_name>
+        <value>8</value>
+      </constant>
+    </class>
+  </file>
+  <file path="ILinkedNode.php" hash="b55d10666a2768d9a5ebeffc41b7ba35" package="Default">
+    <docblock line="2">
+      <description>This file is part of the Data package.</description>
+      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
+file that was distributed with this source code.&lt;/p&gt;</long-description>
+    </docblock>
+    <interface namespace="Data" line="17" package="McGowanCorp\Data">
+      <name>ILinkedNode</name>
+      <full_name>\Data\ILinkedNode</full_name>
+      <extends>\Data\INode</extends>
+      <docblock line="10">
+        <description>The ILinkedNode interface is implemented by all nodes that are to be linked.</description>
+        <long-description></long-description>
+        <tag line="10" name="author" description="Aaron McGowan &lt;a_mcgowan43905@fanshawec.ca&gt;"/>
+        <tag line="10" name="package" description="McGowanCorp\Data"/>
+        <tag line="10" name="version" description="1.0.0"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="25" package="McGowanCorp\Data">
+        <name>getNext</name>
+        <full_name>getNext</full_name>
+        <docblock line="19">
+          <description>Returns the next ILinkedNode.</description>
+          <long-description></long-description>
+          <tag line="19" name="access" description="public"/>
+          <tag line="19" name="return" description="Returns the next ILinkedNode instance if it exists, otherwise returns NULL." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="36" package="McGowanCorp\Data">
+        <name>setNext</name>
+        <full_name>setNext</full_name>
+        <docblock line="27">
+          <description>Sets the next ILinkedNode instance.</description>
+          <long-description>&lt;p&gt;The &lt;code&gt;next&lt;/code&gt; ILinkedNode should be the ILinkedNode instance that comes after
+this instance within a List.&lt;/p&gt;</long-description>
+          <tag line="27" name="access" description="public"/>
+          <tag line="27" name="param" description="The ILinkedNode instance that is next." type="\Data\ILinkedNode" variable="$next">
+            <type by_reference="false">\Data\ILinkedNode</type>
+          </tag>
+        </docblock>
+        <argument line="36">
+          <name>$next</name>
+          <default></default>
+          <type>\Data\ILinkedNode</type>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="IDoublyLinkedNode.php" hash="0facb1736dc771d1216a0f81dc1d92cd" package="Default">
+    <docblock line="2">
+      <description>This file is part of the Data package.</description>
+      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
+file that was distributed with this source code.&lt;/p&gt;</long-description>
+    </docblock>
+    <interface namespace="Data" line="21" package="Data">
+      <name>IDoublyLinkedNode</name>
+      <full_name>\Data\IDoublyLinkedNode</full_name>
+      <extends>\Data\ILinkedNode</extends>
+      <docblock line="10">
+        <description>The IDoublyLinkedNode interface is implemented by doubly linked nodes.</description>
+        <long-description>&lt;p&gt;IDoublyLinkedNodes have knowledge of both the next and previous nodes within
+a specific sequence or list. The ILinkedNode interface only knows
+of the next node in the sequence.&lt;/p&gt;</long-description>
+        <tag line="10" name="author" description="Aaron McGowan &lt;a_mcgowan43905@fanshawec.ca&gt;"/>
+        <tag line="10" name="package" description="Data"/>
+        <tag line="10" name="version" description="1.0.0"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="30" package="Data">
+        <name>getPrevious</name>
+        <full_name>getPrevious</full_name>
+        <docblock line="23">
+          <description>Returns the previously linked node.</description>
+          <long-description></long-description>
+          <tag line="23" name="access" description="public"/>
+          <tag line="23" name="return" description="Returns the previously linked node. Will return null&#10;  if no previous node exists." type="\Data\IDoublyLinkedNode|null">
+            <type by_reference="false">\Data\IDoublyLinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="38" package="Data">
+        <name>setPrevious</name>
+        <full_name>setPrevious</full_name>
+        <docblock line="32">
+          <description>Sets the previous node.</description>
+          <long-description></long-description>
+          <tag line="32" name="access" description="public"/>
+          <tag line="32" name="param" description="The previously linked node." type="\Data\IDoublyLinkedNode" variable="$previous">
+            <type by_reference="false">\Data\IDoublyLinkedNode</type>
+          </tag>
+        </docblock>
+        <argument line="38">
+          <name>$previous</name>
+          <default></default>
+          <type>\Data\IDoublyLinkedNode</type>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="LinkedLists/ILinkedList.php" hash="8f76680493e8184287a857c9c4dc8cba" package="Default"/>
+  <file path="LinkedLists/IDoublyLinkedList.php" hash="32c8bffa0c2441dd564b52684eed5bb3" package="Default">
+    <docblock line="2">
+      <description>This file is part of the Data package.</description>
+      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
+file that was distributed with this source code.&lt;/p&gt;</long-description>
+    </docblock>
+    <interface namespace="Data\LinkedLists" line="18" package="Data\LinkedList">
+      <name>IDoublyLinkedList</name>
+      <full_name>\Data\LinkedLists\IDoublyLinkedList</full_name>
+      <extends>\Data\LinkedLists\ILinkedList</extends>
+      <docblock line="10">
+        <description>ILinkedList is the interface implemented by the LinkedList class or
+any class that wishes to operate as a Linked List.</description>
+        <long-description></long-description>
+        <tag line="10" name="author" description="Aaron McGowan &lt;a_mcgowan43905@fanshawec.ca&gt;"/>
+        <tag line="10" name="package" description="Data\LinkedList"/>
+        <tag line="10" name="version" description="1.0.0"/>
+      </docblock>
+    </interface>
+  </file>
+  <file path="INode.php" hash="123f6468eb1d564684225a214f536bde" package="Default">
+    <docblock line="2">
+      <description>This file is part of the Data package.</description>
+      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
+file that was distributed with this source code.&lt;/p&gt;</long-description>
+    </docblock>
+    <interface namespace="Data" line="17" package="Data">
+      <name>INode</name>
+      <full_name>\Data\INode</full_name>
+      <docblock line="10">
+        <description>The base node interface that defines the basic interface methods.</description>
+        <long-description></long-description>
+        <tag line="10" name="author" description="Aaron McGowan &lt;a_mcgowan43905@fanshawec.ca&gt;"/>
+        <tag line="10" name="package" description="Data"/>
+        <tag line="10" name="version" description="1.0.0"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="25" package="Data">
+        <name>getKey</name>
+        <full_name>getKey</full_name>
+        <docblock line="19">
+          <description>Returns the key value for this node.</description>
+          <long-description></long-description>
+          <tag line="19" name="access" description="public"/>
+          <tag line="19" name="return" description="Returns the key value." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="33" package="Data">
+        <name>setKey</name>
+        <full_name>setKey</full_name>
+        <docblock line="27">
+          <description>Sets the key value for this node.</description>
+          <long-description></long-description>
+          <tag line="27" name="access" description="public"/>
+          <tag line="27" name="param" description="The key value." type="mixed" variable="$key">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="33">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="41" package="Data">
+        <name>getValue</name>
+        <full_name>getValue</full_name>
+        <docblock line="35">
+          <description>Returns the value of this node (the real value assigned).</description>
+          <long-description></long-description>
+          <tag line="35" name="access" description="public"/>
+          <tag line="35" name="return" description="The value." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="49" package="Data">
+        <name>setValue</name>
+        <full_name>setValue</full_name>
+        <docblock line="43">
+          <description>Sets the value for this node.</description>
+          <long-description></long-description>
+          <tag line="43" name="access" description="public"/>
+          <tag line="43" name="param" description="The value." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="49">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <package name="Data" full_name="Data">
+    <package name="LinkedList" full_name="Data\LinkedList"/>
+  </package>
+  <package name="Default" full_name="Default"/>
+  <package name="McGowanCorp" full_name="McGowanCorp">
+    <package name="Data" full_name="McGowanCorp\Data"/>
+  </package>
+  <namespace name="Data" full_name="Data">
+    <namespace name="LinkedLists" full_name="Data\LinkedLists"/>
+  </namespace>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
