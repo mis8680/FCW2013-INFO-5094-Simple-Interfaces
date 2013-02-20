@@ -7,7 +7,10 @@
  */
 namespace Data\LinkedLists;
 
-require_once __DIR__ . '../SingleLinkedNode.php';
+/**
+ * @ignore
+ */
+require_once __DIR__ . '/../SingleLinkedNode.php';
 
 /**
  * The Single Linked List.
@@ -18,12 +21,16 @@ require_once __DIR__ . '../SingleLinkedNode.php';
  */
 class SingleLinkedList implements \Data\LinkedLists\ILinkedList
 {
-  
+   
+    
     /**
      * construct method
+     *
+     * @access public
+     * @param SingleLinkedNode
      * 
      */
-    public function __construct(ILinkedNode $data = null)
+    public function __construct(SingleLinkedNode $data = null)
     {
         
     }
@@ -401,7 +408,8 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
      * value that will be used for comparison.
      *
      * @access public
-     * @param callable The specified callback.
+     * @param $predicate
+     * 
      */
     public function sortBy(callable $predicate)
     {

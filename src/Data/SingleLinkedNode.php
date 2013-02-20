@@ -17,27 +17,42 @@ namespace Data;
 class SingleLinkedNode implements \Data\ILinkedNode
 {
     /**
+     * key variable
      *
+     * @access private
+     * @var
+     * 
      */
     private $key;
     
     /**
+     * value variable
      *
+     * @access private
+     * @var
+     * 
      */
     private $value;
     
     /**
+     *  next variable
      *
+     *  @access private
+     *  @var
+     *  
      */
     private $next;
     
     /**
+     * construct
      *
+     * @access public
+     * @param ILinkedNode 
      */
     public function __construct(ILinkedNode $value)
     {
-        if(!isset($value)) {
-           throw new \InvalidArgumentException(sprintf('The value should be set.'));
+        if (!isset($value)) {
+            throw new \InvalidArgumentException(sprintf('The value should be set.'));
         }
         $this->value = $value;
     }
@@ -61,8 +76,8 @@ class SingleLinkedNode implements \Data\ILinkedNode
      */
     public function setKey($key)
     {
-        if(!isset($key)) {
-           throw new \InvalidArgumentException(sprintf('The key should be set.'));
+        if (!isset($key)) {
+            throw new \InvalidArgumentException(sprintf('The key should be set.'));
         }
         $this->key = $key;
     }
@@ -86,8 +101,8 @@ class SingleLinkedNode implements \Data\ILinkedNode
      */
     public function setValue($value)
     {
-        if(!isset($value)) {
-           throw new \InvalidArgumentException(sprintf('The value should be set.'));
+        if (!isset($value)) {
+            throw new \InvalidArgumentException(sprintf('The value should be set.'));
         }
         $this->value = $value;
     }
@@ -100,7 +115,7 @@ class SingleLinkedNode implements \Data\ILinkedNode
      */
     public function getNext()
     {
-        if(isset($this->next)) {
+        if (isset($this->next)) {
             return $this->next;
         }
         return false;

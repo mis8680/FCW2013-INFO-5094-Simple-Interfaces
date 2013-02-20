@@ -16,33 +16,51 @@ namespace Data;
  */
 class DoubleLinkedNode implements \Data\IDoublyLinkedNode
 {
-    /**
+     /**
+     * key variable
      *
+     * @access private
+     * @var
+     * 
      */
     private $key;
     
     /**
+     * value variable
      *
+     * @access private
+     * @var
+     * 
      */
     private $value;
     
     /**
+     *  next variable
      *
+     *  @access private
+     *  @var
+     *  
      */
     private $next;
     
     /**
+     * previous variable
      *
+     * @access private
+     * @var 
      */
     private $previous;
     
     /**
+     * construct
      *
+     * @access public
+     * @IDoublyLinkedNode
      */
     public function __construct(IDoublyLinkedNode $value)
     {
-        if(!isset($value)) {
-           throw new \InvalidArgumentException(sprintf('The value should be set.'));
+        if (!isset($value)) {
+            throw new \InvalidArgumentException(sprintf('The value should be set.'));
         }
         $this->value = $value;
     }
@@ -66,8 +84,8 @@ class DoubleLinkedNode implements \Data\IDoublyLinkedNode
      */
     public function setKey($key)
     {
-        if(!isset($key)) {
-           throw new \InvalidArgumentException(sprintf('The key should be set.'));
+        if (!isset($key)) {
+            throw new \InvalidArgumentException(sprintf('The key should be set.'));
         }
         $this->key = $key;
     }
@@ -91,8 +109,8 @@ class DoubleLinkedNode implements \Data\IDoublyLinkedNode
      */
     public function setValue($value)
     {
-        if(!isset($value)) {
-           throw new \InvalidArgumentException(sprintf('The value should be set.'));
+        if (!isset($value)) {
+            throw new \InvalidArgumentException(sprintf('The value should be set.'));
         }
         $this->value = $value;
     }
@@ -105,7 +123,7 @@ class DoubleLinkedNode implements \Data\IDoublyLinkedNode
      */
     public function getNext()
     {
-        if(isset($this->next)) {
+        if (isset($this->next)) {
             return $this->next;
         }
         return false;
@@ -134,7 +152,7 @@ class DoubleLinkedNode implements \Data\IDoublyLinkedNode
      */
     public function getPrevious()
     {
-        if(isset($this->previous)) {
+        if (isset($this->previous)) {
             return $this->previous;
         }
         return false;
