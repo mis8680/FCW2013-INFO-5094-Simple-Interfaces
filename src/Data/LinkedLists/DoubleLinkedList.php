@@ -7,3 +7,24 @@
  */
 namespace Data\LinkedLists;
 
+require_once __DIR__ . '../IDoublyLinkedNode.php';
+
+/**
+ * The Double Linked List.
+ *
+ * @author Insu Mun <i_mun@fanshaweonline.ca>
+ * @package Data
+ * @version 1.0.0
+ */
+class DoubleLinkedList implements \Data\IDoublyLinkedNode
+{
+    
+}
+
+
+
+
+
+
+
+
