@@ -34,6 +34,6 @@ Bio: [to be filled in]
 
 ### Hiteshkumar Darji
 
-Email: [to be filled in]
+Email: [h_darji@fanshaweonline.ca]
 
-Bio: [to be filled in]
+Bio: [student]
