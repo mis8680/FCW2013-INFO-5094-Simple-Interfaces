@@ -15,18 +15,11 @@ Email: [i_mun@fanshaweonline.ca]
 Bio: [student]
 
 
-### Joshua Parsons
-
-Email: [to be filled in]
-
-Bio: [to be filled in]
-
-
 ### Peyton Lawrence
 
-Email: [to be filled in]
+Email: [p_lawrence7@fanshaweonline.ca]
 
-Bio: [to be filled in]
+Bio: [student]
 
 
 ### Hiteshkumar Darji
