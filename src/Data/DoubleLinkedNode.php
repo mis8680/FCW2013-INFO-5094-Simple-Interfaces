@@ -7,6 +7,7 @@
  */
 namespace Data;
 
+
 /**
  * The DoubleLinkedNode interface is implemented by all nodes that are to be linked.
  *
