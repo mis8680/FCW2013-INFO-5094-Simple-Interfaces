@@ -14,26 +14,8 @@ namespace Data;
  * @package \Data
  * @version 1.0.0
  */
-class DoubleLinkedNode implements \Data\IDoublyLinkedNode
+class DoublyLinkedNode extends \Data\LinkedNode implements \Data\IDoublyLinkedNode
 {
-     /**
-     * key variable
-     *
-     * @access private
-     * @var
-     * 
-     */
-    private $key;
-    
-    /**
-     * value variable
-     *
-     * @access private
-     * @var
-     * 
-     */
-    private $value;
-    
     /**
      *  next variable
      *
@@ -55,7 +37,7 @@ class DoubleLinkedNode implements \Data\IDoublyLinkedNode
      * construct
      *
      * @access public
-     * @IDoublyLinkedNode
+     * @param IDoublyLinkedNode
      */
     public function __construct(IDoublyLinkedNode $value)
     {
@@ -65,55 +47,6 @@ class DoubleLinkedNode implements \Data\IDoublyLinkedNode
         $this->value = $value;
     }
     
-    /**
-     * Returns the key value for this node.
-     *
-     * @access public
-     * @return mixed Returns the key value.
-     */
-    public function getKey()
-    {
-        return $this->key;
-    }
-    
-    /**
-     * Sets the key value for this node.
-     *
-     * @access public
-     * @param mixed The key value.
-     */
-    public function setKey($key)
-    {
-        if (!isset($key)) {
-            throw new \InvalidArgumentException(sprintf('The key should be set.'));
-        }
-        $this->key = $key;
-    }
-    
-    /**
-     * Returns the value of this node (the real value assigned).
-     *
-     * @access public
-     * @return mixed The value.
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
-    
-    /**
-     * Sets the value for this node.
-     *
-     * @access public
-     * @param mixed The value.
-     */
-    public function setValue($value)
-    {
-        if (!isset($value)) {
-            throw new \InvalidArgumentException(sprintf('The value should be set.'));
-        }
-        $this->value = $value;
-    }
     
     /**
      * Returns the next ILinkedNode.
