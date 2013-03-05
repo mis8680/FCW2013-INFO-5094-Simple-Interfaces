@@ -1,9 +1,14 @@
-Assignment 8: Usage of Git, a Braching Model and GitHub
+Project 1
 =======================================================
-* To [once again] introduce you to the power of Source Code Management (SCM), Git and Git Hub.
-* To introduce a proven branching model and re-enforce its usage.
-* To provide you with the practical skills and knowledge for joining and working effectively within teams (or groups) on software development projects.
-* To get you started on Project 1 requirements, so that they are not left to the last minute and you have a head start.
+* Library Package Implementation:
+* Data\Node implements Inode 
+* Data\LinkedNode implements ILinkedNode 
+* Data\DoublyLinkedNode implements IDoublyLinkedNode 
+* Data\LinkedLists\LinkedList implements ILinkedList 
+* Data\LinkedLists\DoublyLinkedList implements IDoublyLinkedList 
+* Data\LinkedLists\Iterator implements Iterator
+
+Usage of the provided interfaces and classes is required to receive any marks within this category.
 
 Group 2
 --------
