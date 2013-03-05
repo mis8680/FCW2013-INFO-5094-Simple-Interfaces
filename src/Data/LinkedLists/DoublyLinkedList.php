@@ -7,38 +7,58 @@
  */
 namespace Data\LinkedLists;
 
-use Data\ILinkedNode;
+/**
+ * @ignore
+ */
+require_once __DIR__ . '/../DoubleLinkedNode.php';
 
 /**
- * ILinkedList is the interface implemented by the LinkedList class or
- * any class that wishes to operate as a Linked List.
- * 
- * @author Aaron McGowan <a_mcgowan43905@fanshawec.ca>
- * @package Data\LinkedLists
+ * The Double Linked List.
+ *
+ * @author Insu Mun <i_mun@fanshaweonline.ca>
+ * @package Data
  * @version 1.0.0
  */
-interface ILinkedList extends \Countable, \IteratorAggregate
+class DoubleLinkedList implements \Data\LinkedLists\IDoublyLinkedList
 {
+    
+    /**
+     * Construct DoublyLinkedList class
+     *
+     * @access public
+     * @param DoubleLinkedNode 
+     */
+    public function __construct(DoubleLinkedNode $data = null)
+    {
+        
+    }
+    
     /**
      * Returns the first element in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the first ILinkedNode in the list, otherwise returns NULL.
+     * @return IDoublyLinkedNode|null Returns the first IDoublyLinkedNode in the list, otherwise returns NULL.
      */
-    public function getFirst();
+    public function getFirst()
+    {
+        
+    }
     
     /**
      * Returns the last element in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the last ILinkedNode in the list, otherwise returns NULL.
+     * @return IDoublyLinkedNode|null Returns the last IDoublyLinkedNode in the list, otherwise returns NULL.
      */
-    public function getLast();
+    public function getLast()
+    {
+        
+    }
     
     /**
      * Adds a value onto the end of the list.
      *
-     * This method will create a new ILinkedNode instance assigning a
+     * This method will create a new IDoublyLinkedNode instance assigning a
      * numeric key value to the node and the value is assigned to the
      * node's value property.
      *
@@ -46,19 +66,25 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      * @param mixed $value The value to add.
      * @return int The key value of the node that was created and added.
      */
-    public function add($value);
+    public function add($value)
+    {
+        
+    }
     
     /**
-     * Adds an ILinkedNode instance onto the end of the list.
+     * Adds an IDoublyLinkedNode instance onto the end of the list.
      *
      * The node that is to be added to the list should have its key reset so that
      * it is the next key in the list's key sequence.
      *
      * @access public
-     * @param ILinkedNode $node The ILinkedNode to add.
+     * @param IDoublyLinkedNode $node The IDoublyLinkedNode to add.
      * @return mixed The key value of the node that was added.
-     *
-    public function addNode(ILinkedNode $node);
+     */
+    public function addNode(IDoublyLinkedNode $node)
+    {
+        
+    }
     
     /**
      * Returns the list as an associative array.
@@ -69,7 +95,10 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      * @access public
      * @return array An associative array of key and value pairs for all nodes.
      */
-    public function asArray();
+    public function asArray()
+    {
+        
+    }
     
     /**
      * Checks if the list contains a node with the specified key value.
@@ -78,7 +107,10 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      * @param mixed $key Contains the key value to search for.
      * @return bool Returns true if the $key was found, otherwise returns false.
      */
-    public function containsKey($key);
+    public function containsKey($key)
+    {
+        
+    }
     
     /**
      * Checks if the list contains a node with the specified value.
@@ -87,84 +119,110 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      * @param mixed $value Contains the value to search for.
      * @return bool Returns true if the $value was found, otherwise returns false.
      */
-    public function contains($value);
+    public function contains($value)
+    {
+        
+    }
     
     /**
-     * Returns the ILinkedNode object by the specified value.
+     * Returns the IDoublyLinkedNode object by the specified value.
      * 
      * @access public
      * @param mixed $value Contains the value to find.
-     * @return ILinkedNode|null Returns the first ILinkedNode that contains the value, otherwise null.
+     * @return IDoublyLinkedNode|null Returns the first IDoublyLinkedNode that contains the value, otherwise null.
      */
-    public function find($value);
+    public function find($value)
+    {
+        
+    }
     
     /**
-     * Returns an array of all ILinkedNodes found by the specified value.
+     * Returns an array of all IDoublyLinkedNodes found by the specified value.
      *
      * @access public
      * @param mixed $value Contains the value to find.
-     * @return array|null Returns an array with all the ILinkedNode instances whose value is equal to $value, otherwise returns null.
+     * @return array|null Returns an array with all the
+     * IDoublyLinkedNode instances whose value is equal to $value, otherwise returns null.
      */
-    public function findAll($value);
+    public function findAll($value)
+    {
+        
+    }
     
     /**
-     * Returns the first ILinkedNode instance found by with the specified value.
+     * Returns the first IDoublyLinkedNode instance found by with the specified value.
      * 
      * @access public
      * @param mixed $value
      */
-    public function findFirst($value);
+    public function findFirst($value)
+    {
+        
+    }
     
     /**
-     * Returns the last ILinkedNode instance found by the specified value.
+     * Returns the last IDoublyLinkedNode instance found by the specified value.
      *
      * The searching operations for this method are in reverse, therefore starting at the
      * bottom of the list. This is done so on purpose to reduce unneeded overhead.
      *
      * @access public
      * @param mixed $value Contains the value to find.
-     * @return ILinkedNode|null Returns the last ILinkedNode that contains the value, otherwise null if none found.
+     * @return IDoublyLinkedNode|null Returns the last
+     * IDoublyLinkedNode that contains the value, otherwise null if none found.
      */
-    public function findLast($value);
+    public function findLast($value)
+    {
+        
+    }
     
     /**
-     * Returns the ILinkedNode at the specified $key.
+     * Returns the IDoublyLinkedNode at the specified $key.
      *
      * @access public
-     * @param mixed Contains the key of the ILinkedNode to get.
-     * @return mixed Returns the ILinkedNode at $key if found, otherwise null.
+     * @param mixed Contains the key of the IDoublyLinkedNode to get.
+     * @return mixed Returns the IDoublyLinkedNode at $key if found, otherwise null.
      */
-    public function get($key);
+    public function get($key)
+    {
+        
+    }
     
     /**
-     * Inserts a new ILinkedNode at before the specified key.
+     * Inserts a new IDoublyLinkedNode at before the specified key.
      *
-     * The ILinkedNode instance is created within this method. When inserting, all nodes should
+     * The IDoublyLinkedNode instance is created within this method. When inserting, all nodes should
      * be shifted and key values shifted as well for all nodes that follow this newly inserted.
-     * Additionally, when inserting a new ILinkedNode, the key will be automatically generated as the
+     * Additionally, when inserting a new IDoublyLinkedNode, the key will be automatically generated as the
      * next numeric value in the sequence of nodes.
      *
      * @access public
-     * @param int $before Contains the key value to insert a new ILinkedNode before.
-     * @param mixed $value Contains the value used to create a new ILinkedNode with and inserted before $before.
-     * @return int Returns the newly create ILinkedNode's key.
+     * @param int $before Contains the key value to insert a new IDoublyLinkedNode before.
+     * @param mixed $value Contains the value used to create a new IDoublyLinkedNode with and inserted before $before.
+     * @return int Returns the newly create IDoublyLinkedNode's key.
      */
-    public function insertBefore($before, $value);
+    public function insertBefore($before, $value)
+    {
+        
+    }
     
     /**
-     * Inserts a new ILinkedNode after the specified key.
+     * Inserts a new IDoublyLinkedNode after the specified key.
      *
-     * The ILinkedNode instance is created within this method. When inserting, all nodes that are
+     * The IDoublyLinkedNode instance is created within this method. When inserting, all nodes that are
      * to follow (come after) this node should be shifted and key values shifted as well.
-     * Additionally, when inserting a new ILinkedNode, the key will be automatically generated
+     * Additionally, when inserting a new IDoublyLinkedNode, the key will be automatically generated
      * the next numeric value in the sequence of nodes.
      *
      * @access public
-     * @param int $after Contains the key value to insert a new ILinkedNode after.
-     * @param mixed $value Contains the value used to create a new ILinkedNode with and inserted before $after.
-     * @return int Returns the newly create ILinkedNode's key.
+     * @param int $after Contains the key value to insert a new IDoublyLinkedNode after.
+     * @param mixed $value Contains the value used to create a new IDoublyLinkedNode with and inserted before $after.
+     * @return int Returns the newly create IDoublyLinkedNode's key.
      */
-    public function insertAfter($after, $value);
+    public function insertAfter($after, $value)
+    {
+        
+    }
     
     /**
      * Returns a boolean to represent whether or not this list is empty.
@@ -172,55 +230,76 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      * @access public
      * @return bool Returns true if the list is empty, otherwise returns false.
      */
-    public function isEmpty();
+    public function isEmpty()
+    {
+        
+    }
     
     /**
      * Returns, but does not remove, the first node in the list. 
      *
      * @access public
-     * @return ILinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
+     * @return IDoublyLinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
      */
-    public function peek();
+    public function peek()
+    {
+        
+    }
     
     /**
      * Returns, but does not remove, the first node in the list. 
      *
      * @access public
-     * @return ILinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
+     * @return IDoublyLinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
      */
-    public function peekFirst();
+    public function peekFirst()
+    {
+        
+    }
     
     /**
      * Returns, but does not remove, the last node in the list. 
      *
      * @access public
-     * @return ILinkedNode|null Returns the last node in the list. Will returns NULL if the list empty.
+     * @return IDoublyLinkedNode|null Returns the last node in the list. Will returns NULL if the list empty.
      */
-    public function peekLast();
+    public function peekLast()
+    {
+        
+    }
     
     /**
      * Returns and removes the first node in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
+     * @return IDoublyLinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
      */
-    public function poll();
+    public function poll()
+    {
+        
+    }
     
     /**
      * Returns and removes the first node in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
+     * @return IDoublyLinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
      */
-    public function pollFirst();
+    public function pollFirst()
+    {
+        
+    }
     
     /**
      * Returns and removes the last node in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the last node in the list. Will return NULL if the list is empty.
+     * @return IDoublyLinkedNode|null Returns the last node in the list. Will return NULL if the list is empty.
      */
-    public function pollLast();
+    public function pollLast()
+    {
+        
+    }
     
     /**
      * Returns the last node's value and removes the last node in the list.
@@ -228,18 +307,24 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      * @access public
      * @return mixed Returns the last node value in the list. Will return NULL if the list empty.
      */
-    public function pop();
+    public function pop()
+    {
+        
+    }
     
     /**
      * Adds a new value onto the end of the list.
      *
-     * A new ILinkedNode instance will be created and the value assigned to the specified. A numeric
+     * A new IDoublyLinkedNode instance will be created and the value assigned to the specified. A numeric
      * key will be created based on the sequence (last numeric key + 1) and assigned to this node.
      *
      * @access public
      * @param mixed Contains the value to push onto the list.
      */
-    public function push($value);
+    public function push($value)
+    {
+        
+    }
     
     /**
      * Removes all nodes whose value is equal to that specified.
@@ -250,7 +335,10 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      * @access public
      * @param mixed Contains the value to remove.
      */
-    public function remove($value);
+    public function remove($value)
+    {
+        
+    }
     
      /**
      * Removes the node that lives at the specified key.
@@ -261,21 +349,30 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      * @access public
      * @param mixed Contains the value to remove.
      */
-    public function removeAt($key);
+    public function removeAt($key)
+    {
+        
+    }
     
     /**
      * Removes the first node from the list.
      *
      * @access public
      */
-    public function removeFirst();
+    public function removeFirst()
+    {
+        
+    }
     
     /**
      * Removes the last node from the list.
      * 
      * @access public
      */
-    public function removeLast();
+    public function removeLast()
+    {
+        
+    }
     
     /**
      * Removes the specified node from the list.
@@ -284,9 +381,12 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      * will be adjusted.
      *
      * @access public
-     * @param ILinkedNode $node The node to remove from the list.
-     
-    public function removeNode(ILinkedNode $node);
+     * @param IDoublyLinkedNode $node The node to remove from the list.
+     */
+    public function removeNode(IDoublyLinkedNode $node)
+    {
+        
+    }
     
     /**
      * Sorts the list by the node values.
@@ -296,16 +396,22 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      *
      * @access public
      */
-    public function sort();
+    public function sort()
+    {
+        
+    }
     
     /**
      * Sorts the list by using a callback to specify the value to compare on.
      *
-     * The callback should take one parameter of type ILinkedNode and return a single
+     * The callback should take one parameter of type IDoublyLinkedNode and return a single
      * value that will be used for comparison.
      *
      * @access public
-     * @param callable The specified callback.
+     * @param $predicate
      */
-    public function sortBy(callable $predicate);
+    public function sortBy(callable $predicate)
+    {
+        
+    }
 }
