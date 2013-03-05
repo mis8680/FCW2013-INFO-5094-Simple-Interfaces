@@ -10,7 +10,7 @@ namespace Data;
 /**
  *
  */
-require_once __DIR__ . '/bootstrap.php';
+//require_once __DIR__ . '/bootstrap.php';
 
 /**
  * The SingleLinkedNode interface is implemented by all nodes that are to be linked.

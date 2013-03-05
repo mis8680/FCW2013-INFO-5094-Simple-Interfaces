@@ -7,7 +7,7 @@
  */
 namespace Data;
 
-require_once __DIR__ . '/INode.php';
+//require_once __DIR__ . '/INode.php';
 
 /**
  * Node class implemented by INode
