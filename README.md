@@ -19,8 +19,6 @@ Email: [i_mun@fanshaweonline.ca]
 Bio: [student]
 
 
-<<<<<<< HEAD
-=======
 ### Michael Cameron
 
 Email: [to be filled in]
@@ -28,7 +26,6 @@ Email: [to be filled in]
 Bio: [to be filled in]
 
 
->>>>>>> upstream/develop
 ### Peyton Lawrence
 
 Email: [p_lawrence7@fanshaweonline.ca]
