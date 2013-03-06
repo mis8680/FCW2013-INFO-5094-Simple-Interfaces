@@ -20,7 +20,7 @@ require_once __DIR__ . '/../../../../src/Data/LinkedNode.php';
 require_once __DIR__ . '/../../../../src/Data/LinkedLists/LinkedList.php';
 
 /**
-* Double LinkedList Test class
+* LinkedList Test class
 *
 * @author Peyton Lawrence
 * @package Data\LinkedLists\Tests
