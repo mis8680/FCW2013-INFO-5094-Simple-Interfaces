@@ -17,7 +17,7 @@ use Data\ILinkedNode;
  * @package Data\LinkedLists
  * @version 1.0.0
  */
-interface ILinkedList extends \Countable, \IteratorAggregate, 
+interface ILinkedList extends \Countable, \IteratorAggregate
 {
     /**
      * Returns the first element in the list.
@@ -57,7 +57,7 @@ interface ILinkedList extends \Countable, \IteratorAggregate,
      * @access public
      * @param ILinkedNode $node The ILinkedNode to add.
      * @return mixed The key value of the node that was added.
-     */
+     *
     public function addNode(ILinkedNode $node);
     
     /**
@@ -285,7 +285,7 @@ interface ILinkedList extends \Countable, \IteratorAggregate,
      *
      * @access public
      * @param ILinkedNode $node The node to remove from the list.
-     */
+     
     public function removeNode(ILinkedNode $node);
     
     /**

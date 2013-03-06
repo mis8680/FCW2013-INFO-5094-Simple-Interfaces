@@ -219,7 +219,7 @@ any class that wishes to operate as a Linked List.</description>
       </docblock>
     </interface>
   </file>
-  <file path="LinkedLists/SingleLinkedList.php" hash="669409ec36bdf236e8bf9f114ed8ad85" package="Default">
+  <file path="LinkedLists/SingleLinkedList.php" hash="472eb8aa0f5f295692ca41a8e9a49ac7" package="Default">
     <docblock line="2">
       <description>This file is part of the Data package.</description>
       <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
@@ -757,7 +757,7 @@ remains (n - 1) + 1 for all nodes.&lt;/p&gt;</long-description>
           <long-description>&lt;p&gt;The callback should take one parameter of type ILinkedNode and return a single
 value that will be used for comparison.&lt;/p&gt;</long-description>
           <tag line="404" name="access" description="public"/>
-          <tag line="404" name="param" description="" type="\Data\LinkedLists\" variable="$predicate"/>
+          <tag line="404" name="param" description="callable" type="\Data\LinkedLists\" variable="$predicate"/>
         </docblock>
         <argument line="414">
           <name>$predicate</name>
@@ -1321,7 +1321,7 @@ value that will be used for comparison.&lt;/p&gt;</long-description>
       <error line="404" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $predicate in sortBy()</error>
     </parse_markers>
   </file>
-  <file path="DoubleLinkedNode.php" hash="64fe22d256b4c36d63b978c8d3640156" package="Default">
+  <file path="DoubleLinkedNode.php" hash="b8a464b047175e7270d2b916ae484c81" package="Default">
     <docblock line="2">
       <description>This file is part of the Data package.</description>
       <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
@@ -1385,7 +1385,9 @@ file that was distributed with this source code.&lt;/p&gt;</long-description>
           <description>construct</description>
           <long-description/>
           <tag line="54" name="access" description="public"/>
-          <tag line="54" name="IDoublyLinkedNode" description=""/>
+          <tag line="54" name="param" description="" type="\Data\IDoublyLinkedNode" variable="$value">
+            <type by_reference="false">\Data\IDoublyLinkedNode</type>
+          </tag>
         </docblock>
         <argument line="60">
           <name>$value</name>
@@ -1513,9 +1515,6 @@ this instance within a List.&lt;/p&gt;</long-description>
         </argument>
       </method>
     </class>
-    <parse_markers>
-      <error line="54" code="50015">Argument $value is missing from the Docblock of __construct()</error>
-    </parse_markers>
   </file>
   <file path="SingleLinkedNode.php" hash="6b58307919e885700aa879576e257aa8" package="Default">
     <docblock line="2">

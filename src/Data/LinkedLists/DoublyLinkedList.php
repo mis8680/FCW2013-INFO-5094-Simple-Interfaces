@@ -7,30 +7,24 @@
  */
 namespace Data\LinkedLists;
 
-/**
- * @ignore
- */
-require_once __DIR__ . '/../SingleLinkedNode.php';
 
 /**
- * The Single Linked List.
+ * The Double Linked List.
  *
  * @author Insu Mun <i_mun@fanshaweonline.ca>
  * @package Data
  * @version 1.0.0
  */
-class SingleLinkedList implements \Data\LinkedLists\ILinkedList
+class DoubleLinkedList implements \Data\LinkedLists\IDoublyLinkedList
 {
-   
     
     /**
-     * construct method
+     * Construct DoublyLinkedList class
      *
      * @access public
-     * @param SingleLinkedNode
-     * 
+     * @param DoubleLinkedNode 
      */
-    public function __construct(SingleLinkedNode $data = null)
+    public function __construct(DoubleLinkedNode $data = null)
     {
         
     }
@@ -39,7 +33,7 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
      * Returns the first element in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the first ILinkedNode in the list, otherwise returns NULL.
+     * @return IDoublyLinkedNode|null Returns the first IDoublyLinkedNode in the list, otherwise returns NULL.
      */
     public function getFirst()
     {
@@ -50,7 +44,7 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
      * Returns the last element in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the last ILinkedNode in the list, otherwise returns NULL.
+     * @return IDoublyLinkedNode|null Returns the last IDoublyLinkedNode in the list, otherwise returns NULL.
      */
     public function getLast()
     {
@@ -60,7 +54,7 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
     /**
      * Adds a value onto the end of the list.
      *
-     * This method will create a new ILinkedNode instance assigning a
+     * This method will create a new IDoublyLinkedNode instance assigning a
      * numeric key value to the node and the value is assigned to the
      * node's value property.
      *
@@ -74,16 +68,16 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
     }
     
     /**
-     * Adds an ILinkedNode instance onto the end of the list.
+     * Adds an IDoublyLinkedNode instance onto the end of the list.
      *
      * The node that is to be added to the list should have its key reset so that
      * it is the next key in the list's key sequence.
      *
      * @access public
-     * @param ILinkedNode $node The ILinkedNode to add.
+     * @param IDoublyLinkedNode $node The IDoublyLinkedNode to add.
      * @return mixed The key value of the node that was added.
      */
-    public function addNode(ILinkedNode $node)
+    public function addNode(IDoublyLinkedNode $node)
     {
         
     }
@@ -127,11 +121,11 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
     }
     
     /**
-     * Returns the ILinkedNode object by the specified value.
+     * Returns the IDoublyLinkedNode object by the specified value.
      * 
      * @access public
      * @param mixed $value Contains the value to find.
-     * @return ILinkedNode|null Returns the first ILinkedNode that contains the value, otherwise null.
+     * @return IDoublyLinkedNode|null Returns the first IDoublyLinkedNode that contains the value, otherwise null.
      */
     public function find($value)
     {
@@ -139,11 +133,12 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
     }
     
     /**
-     * Returns an array of all ILinkedNodes found by the specified value.
+     * Returns an array of all IDoublyLinkedNodes found by the specified value.
      *
      * @access public
      * @param mixed $value Contains the value to find.
-     * @return array|null Returns an array with all the ILinkedNode instances whose value is equal to $value, otherwise returns null.
+     * @return array|null Returns an array with all the
+     * IDoublyLinkedNode instances whose value is equal to $value, otherwise returns null.
      */
     public function findAll($value)
     {
@@ -151,7 +146,7 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
     }
     
     /**
-     * Returns the first ILinkedNode instance found by with the specified value.
+     * Returns the first IDoublyLinkedNode instance found by with the specified value.
      * 
      * @access public
      * @param mixed $value
@@ -162,14 +157,15 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
     }
     
     /**
-     * Returns the last ILinkedNode instance found by the specified value.
+     * Returns the last IDoublyLinkedNode instance found by the specified value.
      *
      * The searching operations for this method are in reverse, therefore starting at the
      * bottom of the list. This is done so on purpose to reduce unneeded overhead.
      *
      * @access public
      * @param mixed $value Contains the value to find.
-     * @return ILinkedNode|null Returns the last ILinkedNode that contains the value, otherwise null if none found.
+     * @return IDoublyLinkedNode|null Returns the last
+     * IDoublyLinkedNode that contains the value, otherwise null if none found.
      */
     public function findLast($value)
     {
@@ -177,11 +173,11 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
     }
     
     /**
-     * Returns the ILinkedNode at the specified $key.
+     * Returns the IDoublyLinkedNode at the specified $key.
      *
      * @access public
-     * @param mixed Contains the key of the ILinkedNode to get.
-     * @return mixed Returns the ILinkedNode at $key if found, otherwise null.
+     * @param mixed Contains the key of the IDoublyLinkedNode to get.
+     * @return mixed Returns the IDoublyLinkedNode at $key if found, otherwise null.
      */
     public function get($key)
     {
@@ -189,17 +185,17 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
     }
     
     /**
-     * Inserts a new ILinkedNode at before the specified key.
+     * Inserts a new IDoublyLinkedNode at before the specified key.
      *
-     * The ILinkedNode instance is created within this method. When inserting, all nodes should
+     * The IDoublyLinkedNode instance is created within this method. When inserting, all nodes should
      * be shifted and key values shifted as well for all nodes that follow this newly inserted.
-     * Additionally, when inserting a new ILinkedNode, the key will be automatically generated as the
+     * Additionally, when inserting a new IDoublyLinkedNode, the key will be automatically generated as the
      * next numeric value in the sequence of nodes.
      *
      * @access public
-     * @param int $before Contains the key value to insert a new ILinkedNode before.
-     * @param mixed $value Contains the value used to create a new ILinkedNode with and inserted before $before.
-     * @return int Returns the newly create ILinkedNode's key.
+     * @param int $before Contains the key value to insert a new IDoublyLinkedNode before.
+     * @param mixed $value Contains the value used to create a new IDoublyLinkedNode with and inserted before $before.
+     * @return int Returns the newly create IDoublyLinkedNode's key.
      */
     public function insertBefore($before, $value)
     {
@@ -207,17 +203,17 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
     }
     
     /**
-     * Inserts a new ILinkedNode after the specified key.
+     * Inserts a new IDoublyLinkedNode after the specified key.
      *
-     * The ILinkedNode instance is created within this method. When inserting, all nodes that are
+     * The IDoublyLinkedNode instance is created within this method. When inserting, all nodes that are
      * to follow (come after) this node should be shifted and key values shifted as well.
-     * Additionally, when inserting a new ILinkedNode, the key will be automatically generated
+     * Additionally, when inserting a new IDoublyLinkedNode, the key will be automatically generated
      * the next numeric value in the sequence of nodes.
      *
      * @access public
-     * @param int $after Contains the key value to insert a new ILinkedNode after.
-     * @param mixed $value Contains the value used to create a new ILinkedNode with and inserted before $after.
-     * @return int Returns the newly create ILinkedNode's key.
+     * @param int $after Contains the key value to insert a new IDoublyLinkedNode after.
+     * @param mixed $value Contains the value used to create a new IDoublyLinkedNode with and inserted before $after.
+     * @return int Returns the newly create IDoublyLinkedNode's key.
      */
     public function insertAfter($after, $value)
     {
@@ -232,14 +228,14 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function isEmpty()
     {
-    
+        
     }
     
     /**
      * Returns, but does not remove, the first node in the list. 
      *
      * @access public
-     * @return ILinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
+     * @return IDoublyLinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
      */
     public function peek()
     {
@@ -250,7 +246,7 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
      * Returns, but does not remove, the first node in the list. 
      *
      * @access public
-     * @return ILinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
+     * @return IDoublyLinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
      */
     public function peekFirst()
     {
@@ -261,18 +257,18 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
      * Returns, but does not remove, the last node in the list. 
      *
      * @access public
-     * @return ILinkedNode|null Returns the last node in the list. Will returns NULL if the list empty.
+     * @return IDoublyLinkedNode|null Returns the last node in the list. Will returns NULL if the list empty.
      */
     public function peekLast()
     {
-    
+        
     }
     
     /**
      * Returns and removes the first node in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
+     * @return IDoublyLinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
      */
     public function poll()
     {
@@ -283,7 +279,7 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
      * Returns and removes the first node in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
+     * @return IDoublyLinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
      */
     public function pollFirst()
     {
@@ -294,7 +290,7 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
      * Returns and removes the last node in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the last node in the list. Will return NULL if the list is empty.
+     * @return IDoublyLinkedNode|null Returns the last node in the list. Will return NULL if the list is empty.
      */
     public function pollLast()
     {
@@ -315,7 +311,7 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
     /**
      * Adds a new value onto the end of the list.
      *
-     * A new ILinkedNode instance will be created and the value assigned to the specified. A numeric
+     * A new IDoublyLinkedNode instance will be created and the value assigned to the specified. A numeric
      * key will be created based on the sequence (last numeric key + 1) and assigned to this node.
      *
      * @access public
@@ -381,9 +377,9 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
      * will be adjusted.
      *
      * @access public
-     * @param ILinkedNode $node The node to remove from the list.
+     * @param IDoublyLinkedNode $node The node to remove from the list.
      */
-    public function removeNode(ILinkedNode $node)
+    public function removeNode(IDoublyLinkedNode $node)
     {
         
     }
@@ -404,12 +400,11 @@ class SingleLinkedList implements \Data\LinkedLists\ILinkedList
     /**
      * Sorts the list by using a callback to specify the value to compare on.
      *
-     * The callback should take one parameter of type ILinkedNode and return a single
+     * The callback should take one parameter of type IDoublyLinkedNode and return a single
      * value that will be used for comparison.
      *
      * @access public
      * @param $predicate
-     * 
      */
     public function sortBy(callable $predicate)
     {
