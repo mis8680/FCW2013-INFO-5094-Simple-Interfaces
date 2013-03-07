@@ -76,7 +76,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function getIterator()
     {
-        
+        return new \Data\LinkedLists\Iterator($this);
     }
     
     /**
@@ -820,6 +820,28 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     public function sort()
     {
         
+        if($this->isEmpty()) {
+            return null;
+        } 
+        
+        $current = $this->firstNode;
+
+        for($i = 0 ; $i < $this->count() ; ++$i) {
+            while($current->getNext() != NULL) {
+                if($current->getValue() > $current->getNext()->getValue()) {
+                    $temp = $current->getValue();
+                    $current->setValue($current->getNext()->getValue());
+                    $current->getNext()->setValue($temp);
+                    
+                    $current = $current->getNext();
+                } else {
+                    $current = $current->getNext();
+                }
+            }
+            $current = $this->firstNode;
+           
+        }
+    
     }
     
     /**
@@ -834,9 +856,64 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function sortBy(callable $predicate)
     {
+         
+            if($this->isEmpty()) {
+                return null;
+            } 
         
+            $current = $this->firstNode;
+            
+            for($i = 0 ; $i < $this->count() ; ++$i) {
+                while($current->getNext() != NULL) {
+                    $comparison = $predicate($current, $current->getNext());
+                    
+                    if($comparison == 1) {
+                        $temp = $current->getValue();
+                        $current->setValue($current->getNext()->getValue());
+                        $current->getNext()->setValue($temp);
+                        
+                        $current = $current->getNext();
+                    } else {
+                        $current = $current->getNext();
+                    }
+                }
+                
+                $current = $this->firstNode;
+               
+            }
+        
+        
+              
     }
     
+    /**
+     * callback function
+     *
+     * @access public
+     * @param ILinkedNode
+     * @return mixed value
+     *
+     *   so ... sort by take a callback (a name of a function) that performs the sort
+     *   this function takes 2 parameters - the lhs and rhs, both of LinkedNodes
+     *   and returns an int. if lhs < rhs, -1 is returned. if ==, then 0, else +1
+     *   and this function is called when comparing 2 linkednode objects
+     *   and the returned value of the function is hwat is used for determining the operation needed to be performed, if any, by linkedlist
+     *
+     */
+    public static function my_callback(\Data\ILinkedNode $current, \Data\ILinkedNode $next)
+    {
+        if($current->getNext() != NULL){
+            if($current->getValue() < $next->getValue()) {
+                return -1;
+            } elseif ($current->getValue() == $next->getValue()) {
+                return 0;
+            } else {
+                return 1;
+            }
+        }
+        
+    }
+
 }
 
 
@@ -846,14 +923,14 @@ print 'count of list: '.$test->count() . '<br />';
 print 'first key: '.$test->add('test0'). '<br />';
 
 print 'count of list: '.$test->count() . '<br />';
-print 'second key: ' . $test->add('test1'). '<br />';
+print 'second key: ' . $test->add('test2'). '<br />';
 
 print 'count of list: '.$test->count() . '<br />';
-print 'third key: ' . $test->add('test2'). '<br />';
+print 'third key: ' . $test->add('test1'). '<br />';
 
 print 'count of list: '.$test->count() . '<br />';
 
-$node1 = new \Data\Node('test3');
+$node1 = new \Data\Node('test5');
 print 'fourth key: ' . $test->addNode(new \Data\LinkedNode($node1)) . '<br />';
 
 print_r($test->asArray());
@@ -870,7 +947,7 @@ print_r($testArray);
 
 print '<br />';
 print $test->add('test4'). '<br />';
-print $test->add('test5'). '<br />';
+print $test->add('test3'). '<br />';
 $test->insertBefore(0, 'testInsert before index 0');
 print_r($test->asArray());
 
@@ -896,9 +973,11 @@ print_r($test->asArray());
 
 print '<br />';
 print '<br />';
-//$test->remove('testInsert after index 0');
 print_r($test->asArray());
-
+$test->sortBy(array($test, 'my_callback'));
+print '<br />';
+print_r($test->asArray());
+/*
 print '<br />';
 $test->remove('test2');
 print_r($test->asArray());
@@ -910,6 +989,8 @@ print_r($test->asArray());
 print '<br />';
 $test->removeFirst();
 print_r($test->asArray());
+
 print '<br />';
 $test->removeLast();
 print_r($test->asArray());
+*/

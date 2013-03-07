@@ -19,7 +19,7 @@ namespace Data;
  * @package \Data
  * @version 1.0.0
  */
-class LinkedNode implements \Data\ILinkedNode
+class LinkedNode implements ILinkedNode
 {
     /**
      * key variable
@@ -142,7 +142,7 @@ class LinkedNode implements \Data\ILinkedNode
      */
     public function getValue()
     {
-        return isset($this->value)? $this->value : null;
+        return isset($this->value) ? $this->value : null;
     }
     
     /**
@@ -157,6 +157,7 @@ class LinkedNode implements \Data\ILinkedNode
         if (!isset($value)) {
             throw new \InvalidArgumentException(sprintf('The value should be set.'));
             }
+            
         $this->value = $value;
         
     }

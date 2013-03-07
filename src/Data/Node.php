@@ -16,7 +16,7 @@ namespace Data;
  * @package Data
  * @version 1.0.0
  */
-class Node implements \Data\INode
+class Node implements INode
 {
     /**
      * key variable
