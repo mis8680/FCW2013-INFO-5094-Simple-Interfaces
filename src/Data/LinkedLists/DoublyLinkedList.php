@@ -7,10 +7,13 @@
  */
 namespace Data\LinkedLists;
 
+<<<<<<< HEAD
 /**
  * @ignore
  */
 require_once __DIR__ . '/../DoubleLinkedNode.php';
+=======
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
 
 /**
  * The Double Linked List.

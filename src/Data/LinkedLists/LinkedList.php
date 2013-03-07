@@ -8,12 +8,26 @@
  */
 namespace Data\LinkedLists;
 
+<<<<<<< HEAD
 
 ini_set('display_errors','on');
 error_reporting(E_ALL | E_STRICT);
 
 /**
  * required file
+=======
+/**
+ * @ignore
+ * 
+ * ini_set('display_errors','on');
+ * error_reporting(E_ALL | E_STRICT);
+ */
+
+/**
+ * required file
+ * 
+ * I could not find why the autoload does not work in my system...
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
  */
 require_once __DIR__ . '/../bootstrap.php';
 
@@ -43,7 +57,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     private $count;
     
     /**
+<<<<<<< HEAD
      * construct method
+=======
+     * __construct method
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
      *
      * @access public
      * 
@@ -76,14 +94,22 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function getIterator()
     {
+<<<<<<< HEAD
         
+=======
+        return new \Data\LinkedLists\Iterator($this);
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     }
     
     /**
      * Returns the first element in the list.
      *
      * @access public
+<<<<<<< HEAD
      * @return ILinkedNode|null Returns the first ILinkedNode in the list, otherwise returns NULL.
+=======
+     * @return ILinkedNode|null Returns the first ILinkedNode in the list, otherwise returns null.
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
      */
     public function getFirst()
     {
@@ -94,7 +120,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      * Returns the last element in the list.
      *
      * @access public
+<<<<<<< HEAD
      * @return ILinkedNode|null Returns the last ILinkedNode in the list, otherwise returns NULL.
+=======
+     * @return ILinkedNode|null Returns the last ILinkedNode in the list, otherwise returns null.
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
      */
     public function getLast()
     {
@@ -104,9 +134,15 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                 $current = $current->getNext();
                 if ($current->getNext() == null) {
                     return $current;
+<<<<<<< HEAD
                 }             
             }
             return NULL;
+=======
+                }
+            }
+            return null;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             
         }
         
@@ -128,20 +164,33 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         
         $current = $this->firstNode;
         
+<<<<<<< HEAD
         if($this->isEmpty() || $this->count == 0) {
+=======
+        if ($this->isEmpty() || $this->count == 0) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             $this->firstNode = new \Data\LinkedNode(new \Data\Node($value), null);
             $current = $this->firstNode;
             $current->setKey(0);
         } else {
+<<<<<<< HEAD
             for($i = 0 ; $i < $this->count() - 1 ; ++$i) {
                 $current = $current->getNext();               
+=======
+            for ($i = 0; $i < $this->count() - 1; ++$i) {
+                $current = $current->getNext();
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             }
             $newNode = new \Data\LinkedNode(new \Data\Node($value, $this->count()), null);
             $current->setNext($newNode);
             $current = $current->getNext();
         }
         
+<<<<<<< HEAD
         ++$this->count;     
+=======
+        ++$this->count;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
         $key = $current->getKey();
         
         return $key;
@@ -162,7 +211,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     {
         $current = $this->firstNode;
         
+<<<<<<< HEAD
         if($this->isEmpty() || $this->count == 0) {
+=======
+        if ($this->isEmpty() || $this->count == 0) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             $this->firstNode = $node;
             $current = $this->firstNode;
             $current->setKey(0);
@@ -195,8 +248,12 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         
         $current = $this->firstNode;
  
+<<<<<<< HEAD
         while($current != NULL)
         {
+=======
+        while ($current != null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             $listArray[$current->getKey()] = $current->getValue();
             $current = $current->getNext();
         }
@@ -215,8 +272,13 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     {
         $current = $this->firstNode;
         
+<<<<<<< HEAD
         while($current != NULL) {
             if($current->getKey() == $key) {
+=======
+        while ($current != null) {
+            if ($current->getKey() == $key) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                 return true;
             }
             $current = $current->getNext();
@@ -235,8 +297,13 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     {
         $current = $this->firstNode;
         
+<<<<<<< HEAD
         while($current != NULL) {
             if($current->getValue() == $value) {
+=======
+        while ($current != null) {
+            if ($current->getValue() == $value) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                 return true;
             }
             $current = $current->getNext();
@@ -255,8 +322,13 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     {
         $current = $this->firstNode;
         
+<<<<<<< HEAD
         while($current != NULL) {
             if($current->getValue() == $value) {
+=======
+        while ($current != null) {
+            if ($current->getValue() == $value) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                 return $current;
             }
             $current = $current->getNext();
@@ -276,8 +348,13 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         $listArray = array();
         $current = $this->firstNode;
         
+<<<<<<< HEAD
         while($current != NULL) {
             if($current->getValue() == $value) {
+=======
+        while ($current != null) {
+            if ($current->getValue() == $value) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                 $listArray[$current->getKey()] = $current->getValue();
             }
             $current = $current->getNext();
@@ -296,8 +373,13 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     {
         $current = $this->firstNode;
         
+<<<<<<< HEAD
         while($current != NULL) {
             if($current->getValue() == $value) {
+=======
+        while ($current != null) {
+            if ($current->getValue() == $value) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                 return $current;
             }
             $current = $current->getNext();
@@ -320,8 +402,13 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         $current = $this->firstNode;
         $lastNode;
         
+<<<<<<< HEAD
         while($current != NULL) {
             if($current->getValue() == $value) {
+=======
+        while ($current != null) {
+            if ($current->getValue() == $value) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                 $lastNode = $current;
             }
             $current = $current->getNext();
@@ -340,8 +427,13 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     {
         $current = $this->firstNode;
         
+<<<<<<< HEAD
         while($current != NULL) {
             if($current->getKey() == $key) {
+=======
+        while ($current != null) {
+            if ($current->getKey() == $key) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                 return $current;
             }
             $current = $current->getNext();
@@ -368,12 +460,17 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         
         $newNode = new \Data\LinkedNode(new \Data\Node($value));
         
+<<<<<<< HEAD
         if($before == 0) {
+=======
+        if ($before == 0) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             $this->firstNode = $newNode;
             $newNode->setKey(0);
             $newNode->setNext($current);
 
             $afterNewNode = $newNode->getNext();
+<<<<<<< HEAD
             while($afterNewNode != NULL) {
                         $afterNewNode->setKey($afterNewNode->getKey() + 1);
                         $afterNewNode = $afterNewNode->getNext();
@@ -383,6 +480,17 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
             while($current != NULL) {
                       
                 if($current->getKey() + 1 == $before) {
+=======
+            while ($afterNewNode != null) {
+                        $afterNewNode->setKey($afterNewNode->getKey() + 1);
+                        $afterNewNode = $afterNewNode->getNext();
+            }
+            
+        } else {
+            while ($current != null) {
+                      
+                if ($current->getKey() + 1 == $before) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                                    
                     $newNode->setNext($current->getNext());
                     $newNode->setKey($current->getKey() + 1);
@@ -391,7 +499,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                     
                     $afterNewNode = $newNode->getNext();
                     
+<<<<<<< HEAD
                     while($afterNewNode != NULL) {
+=======
+                    while ($afterNewNode != null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                         $afterNewNode->setKey($afterNewNode->getKey() + 1);
                         $afterNewNode = $afterNewNode->getNext();
                     }
@@ -400,12 +512,20 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                     
                 }
             
+<<<<<<< HEAD
             $current = $current->getNext();
+=======
+                $current = $current->getNext();
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                     
             }
         }
     
+<<<<<<< HEAD
         ++$this->count;     
+=======
+        ++$this->count;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
         $key = $newNode->getKey();
         
         return $key;
@@ -431,6 +551,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         $newNode = new \Data\LinkedNode(new \Data\Node($value));
         
         
+<<<<<<< HEAD
         while($current != NULL) {
                       
             if($current->getKey() == $after) {
@@ -438,11 +559,24 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                 $newNode->setNext($current->getNext());
                 $newNode->setKey($current->getKey() + 1);
                 $current->setNext($newNode); 
+=======
+        while ($current != null) {
+                      
+            if ($current->getKey() == $after) {
+                                  
+                $newNode->setNext($current->getNext());
+                $newNode->setKey($current->getKey() + 1);
+                $current->setNext($newNode);
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                     
                     
                 $afterNewNode = $newNode->getNext();
                     
+<<<<<<< HEAD
                 while($afterNewNode != NULL) {
+=======
+                while ($afterNewNode != null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                     $afterNewNode->setKey($afterNewNode->getKey() + 1);
                     $afterNewNode = $afterNewNode->getNext();
                 }
@@ -454,7 +588,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
             
         }
     
+<<<<<<< HEAD
         ++$this->count;     
+=======
+        ++$this->count;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
         $key = $newNode->getKey();
         
         return $key;
@@ -475,104 +613,175 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      * Returns, but does not remove, the first node in the list. 
      *
      * @access public
+<<<<<<< HEAD
      * @return ILinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
      */
     public function peek()
     {
         return isset($this->firstNode) ? $this->getFirst() : NULL;
+=======
+     * @return ILinkedNode|null Returns the first node in the list. Will returns null if the list empty.
+     */
+    public function peek()
+    {
+        return isset($this->firstNode) ? $this->getFirst() : null;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     }
     
     /**
      * Returns, but does not remove, the first node in the list. 
      *
      * @access public
+<<<<<<< HEAD
      * @return ILinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
      */
     public function peekFirst()
     {
         return isset($this->firstNode) ? $this->getFirst() : NULL;
+=======
+     * @return ILinkedNode|null Returns the first node in the list. Will returns null if the list empty.
+     */
+    public function peekFirst()
+    {
+        return isset($this->firstNode) ? $this->getFirst() : null;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     }
     
     /**
      * Returns, but does not remove, the last node in the list. 
      *
      * @access public
+<<<<<<< HEAD
      * @return ILinkedNode|null Returns the last node in the list. Will returns NULL if the list empty.
+=======
+     * @return ILinkedNode|null Returns the last node in the list. Will returns null if the list empty.
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
      */
     public function peekLast()
     {
         $current = $this->firstNode;
         $lastNode;
         
+<<<<<<< HEAD
         while($current != NULL) {
             if($current->getNext() == NULL) {
+=======
+        while ($current != null) {
+            if ($current->getNext() == null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                 return $current;
             }
             $current = $current->getNext();
         }
+<<<<<<< HEAD
         return NULL;
+=======
+        return null;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     }
     
     /**
      * Returns and removes the first node in the list.
      *
      * @access public
+<<<<<<< HEAD
      * @return ILinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
      */
     public function poll()
     {
         if(isset($this->firstNode)) {
+=======
+     * @return ILinkedNode|null Returns the first node in the list. Will return null if the list is empty.
+     */
+    public function poll()
+    {
+        if (isset($this->firstNode)) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             $pollFirstNode = $this->firstNode;
             $this->firstNode = $pollFirstNode->getNext();
             
             $current = $this->firstNode;
+<<<<<<< HEAD
             while($current != NULL) {
+=======
+            while ($current != null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                 $current->setKey($current->getKey() - 1);
                 $current = $current->getNext();
             }
             --$this->count;
             return $pollFirstNode;
         }
+<<<<<<< HEAD
         return NULL;
+=======
+        return null;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     }
     
     /**
      * Returns and removes the first node in the list.
      *
      * @access public
+<<<<<<< HEAD
      * @return ILinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
      */
     public function pollFirst()
     {
         if(isset($this->firstNode)) {
+=======
+     * @return ILinkedNode|null Returns the first node in the list. Will return null if the list is empty.
+     */
+    public function pollFirst()
+    {
+        if (isset($this->firstNode)) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             $pollFirstNode = $this->firstNode;
             $this->firstNode = $pollFirstNode->getNext();
             
             $current = $this->firstNode;
+<<<<<<< HEAD
             while($current != NULL) {
+=======
+            while ($current != null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                 $current->setKey($current->getKey() - 1);
                 $current = $current->getNext();
             }
             --$this->count;
             return $pollFirstNode;
         }
+<<<<<<< HEAD
         return NULL;
+=======
+        return null;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     }
     
     /**
      * Returns and removes the last node in the list.
      *
      * @access public
+<<<<<<< HEAD
      * @return ILinkedNode|null Returns the last node in the list. Will return NULL if the list is empty.
+=======
+     * @return ILinkedNode|null Returns the last node in the list. Will return null if the list is empty.
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
      */
     public function pollLast()
     {
         $pollLastNode;
         $current = $this->firstNode;
         
+<<<<<<< HEAD
         if(isset($current)){
             while($current != NULL) {
                 if($current->getNext()->getNext() == NULL) {
+=======
+        if (isset($current)) {
+            while ($current != null) {
+                if ($current->getNext()->getNext() == null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                     $pollLastNode = $current->getNext();
                     $current->setNext();
                     --$this->count;
@@ -581,23 +790,37 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                 $current = $current->getNext();
             }
         }
+<<<<<<< HEAD
         return NULL;
+=======
+        return null;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     }
     
     /**
      * Returns the last node's value and removes the last node in the list.
      *
      * @access public
+<<<<<<< HEAD
      * @return mixed Returns the last node value in the list. Will return NULL if the list empty.
+=======
+     * @return mixed Returns the last node value in the list. Will return null if the list empty.
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
      */
     public function pop()
     {
         $popNode;
         $current = $this->firstNode;
         
+<<<<<<< HEAD
         if(isset($current)){
             while($current != NULL) {
                 if($current->getNext()->getNext() == NULL) {
+=======
+        if (isset($current)) {
+            while ($current != null) {
+                if ($current->getNext()->getNext() == null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                     $popNode = $current->getNext();
                     $current->setNext();
                     return $popNode->getValue();
@@ -605,7 +828,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                 $current = $current->getNext();
             }
         }
+<<<<<<< HEAD
         return NULL;
+=======
+        return null;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     }
     
     /**
@@ -626,9 +853,14 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         $lastNode->setNext($newNode);
         $newNode->setKey($lastNode->getKey() + 1);
         
+<<<<<<< HEAD
         ++$this->count;     
     }
     
+=======
+        ++$this->count;
+    }
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     /**
      * Removes all nodes whose value is equal to that specified.
      *
@@ -640,17 +872,28 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function remove($value)
     {
+<<<<<<< HEAD
         if($this->isEmpty()) {
+=======
+        if ($this->isEmpty()) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             return null;
         }
         
         $previous = $this->firstNode;
         $current = $this->firstNode;
             
+<<<<<<< HEAD
         while($current != NULL) {
             
             if($current->getValue() == $value) {
                 if($current->getKey() == 0){
+=======
+        while ($current != null) {
+            
+            if ($current->getValue() == $value) {
+                if ($current->getKey() == 0) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                     $this->firstNode = $current->getNext();
                     $current->setNext();
                     $current = $this->firstNode;
@@ -658,7 +901,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                     --$this->count;
                                       
                     $afterRemove = $current->getNext();
+<<<<<<< HEAD
                     while($afterRemove != NULL) {
+=======
+                    while ($afterRemove != null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                         $afterRemove->setKey($afterRemove->getKey() - 1);
                         $afterRemove = $afterRemove->getNext();
                     }
@@ -672,7 +919,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                     --$this->count;
                     
                     $afterRemove = $current;
+<<<<<<< HEAD
                     while($afterRemove != NULL) {
+=======
+                    while ($afterRemove != null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                         $afterRemove->setKey($afterRemove->getKey() - 1);
                         $afterRemove = $afterRemove->getNext();
                     }
@@ -695,17 +946,28 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function removeAt($key)
     {
+<<<<<<< HEAD
         if($this->isEmpty()) {
+=======
+        if ($this->isEmpty()) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             return null;
         }
         
         $previous = $this->firstNode;
         $current = $this->firstNode;
             
+<<<<<<< HEAD
         while($current != NULL) {
             
             if($current->getKey() == $key) {
                 if($current->getKey() == 0){
+=======
+        while ($current != null) {
+            
+            if ($current->getKey() == $key) {
+                if ($current->getKey() == 0) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                     $this->firstNode = $current->getNext();
                     $current->setNext();
                     $current = $this->firstNode;
@@ -713,7 +975,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                     --$this->count;
                                       
                     $afterRemove = $current->getNext();
+<<<<<<< HEAD
                     while($afterRemove != NULL) {
+=======
+                    while ($afterRemove != null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                         $afterRemove->setKey($afterRemove->getKey() - 1);
                         $afterRemove = $afterRemove->getNext();
                     }
@@ -727,7 +993,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                     --$this->count;
                     
                     $afterRemove = $current;
+<<<<<<< HEAD
                     while($afterRemove != NULL) {
+=======
+                    while ($afterRemove != null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                         $afterRemove->setKey($afterRemove->getKey() - 1);
                         $afterRemove = $afterRemove->getNext();
                     }
@@ -746,7 +1016,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function removeFirst()
     {
+<<<<<<< HEAD
         if($this->isEmpty()) {
+=======
+        if ($this->isEmpty()) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             return null;
         }
         
@@ -760,7 +1034,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         --$this->count;
                                       
         $afterRemove = $current->getNext();
+<<<<<<< HEAD
         while($afterRemove != NULL) {
+=======
+        while ($afterRemove != null) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             $afterRemove->setKey($afterRemove->getKey() - 1);
             $afterRemove = $afterRemove->getNext();
         }
@@ -774,15 +1052,26 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function removeLast()
     {
+<<<<<<< HEAD
         if($this->isEmpty()) {
+=======
+        if ($this->isEmpty()) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             return null;
         }
         
         $current = $this->firstNode;
+<<<<<<< HEAD
         $lastNode = $this->getLast(); 
         
         while($current != NULL) {
             if($current->getNext() === $lastNode) {
+=======
+        $lastNode = $this->getLast();
+        
+        while ($current != null) {
+            if ($current->getNext() === $lastNode) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
                 $current->setNext();
                 --$this->count;
             }
@@ -802,7 +1091,11 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function removeNode(\Data\ILinkedNode $node)
     {
+<<<<<<< HEAD
         if($this->isEmpty()) {
+=======
+        if ($this->isEmpty()) {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             return null;
         }
         
@@ -820,6 +1113,31 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     public function sort()
     {
         
+<<<<<<< HEAD
+=======
+        if ($this->isEmpty()) {
+            return null;
+        }
+        
+        $current = $this->firstNode;
+
+        for ($i = 0; $i < $this->count(); ++$i) {
+            while ($current->getNext() != null) {
+                if ($current->getValue() > $current->getNext()->getValue()) {
+                    $temp = $current->getValue();
+                    $current->setValue($current->getNext()->getValue());
+                    $current->getNext()->setValue($temp);
+                    
+                    $current = $current->getNext();
+                } else {
+                    $current = $current->getNext();
+                }
+            }
+            $current = $this->firstNode;
+           
+        }
+    
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     }
     
     /**
@@ -834,6 +1152,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function sortBy(callable $predicate)
     {
+<<<<<<< HEAD
         
     }
     
@@ -913,3 +1232,125 @@ print_r($test->asArray());
 print '<br />';
 $test->removeLast();
 print_r($test->asArray());
+=======
+         
+        if ($this->isEmpty()) {
+            return null;
+        }
+        
+        $current = $this->firstNode;
+            
+        for ($i = 0; $i < $this->count(); ++$i) {
+            while ($current->getNext() != null) {
+                $comparison = $predicate($current, $current->getNext());
+                    
+                if ($comparison == 1) {
+                    $temp = $current->getValue();
+                    $current->setValue($current->getNext()->getValue());
+                    $current->getNext()->setValue($temp);
+                        
+                    $current = $current->getNext();
+                } else {
+                    $current = $current->getNext();
+                }
+            }
+                
+            $current = $this->firstNode;
+               
+        }
+        
+        
+              
+    }
+    
+    /**
+     * callback function
+     *
+     * @access public
+     * @param ILinkedNode
+     * @return mixed value
+     *
+     *   so ... sort by take a callback (a name of a function) that performs the sort
+     *   this function takes 2 parameters - the lhs and rhs, both of LinkedNodes
+     *   and returns an int. if lhs < rhs, -1 is returned. if ==, then 0, else +1
+     *   and this function is called when comparing 2 linkednode objects
+     *   and the returned value of the function is hwat is used for determining the operation needed to be performed, if any, by linkedlist
+     *
+     */
+    public static function myCallback(\Data\ILinkedNode $current, \Data\ILinkedNode $next)
+    {
+        if ($current->getNext() != null) {
+            if ($current->getValue() < $next->getValue()) {
+                return -1;
+            } elseif ($current->getValue() == $next->getValue()) {
+                return 0;
+            } else {
+                return 1;
+            }
+        }
+        
+    }
+}
+
+
+/**
+ *  @ignore
+ *  
+ * $test = new \Data\LinkedLists\LinkedList();
+ * print 'count of list: '.$test->count() . '<br />';
+ * print 'first key: '.$test->add('test0'). '<br />';
+ * print 'count of list: '.$test->count() . '<br />';
+ * print 'second key: ' . $test->add('test2'). '<br />';
+ * print 'count of list: '.$test->count() . '<br />';
+ * print 'third key: ' . $test->add('test1'). '<br />';
+ * print 'count of list: '.$test->count() . '<br />';
+ * $node1 = new \Data\Node('test5');
+ * print 'fourth key: ' . $test->addNode(new \Data\LinkedNode($node1)) . '<br />';
+ * print_r($test->asArray());
+ * print '<br />';
+ * print $test->containsKey(5) ? 'true' : 'false';
+ * print '<br />';
+ * print $test->find('test2');
+ * print '<br />';
+ * $testArray = $test->findAll('test2');
+ * print_r($testArray);
+ * print '<br />';
+ * print $test->add('test4'). '<br />';
+ * print $test->add('test3'). '<br />';
+ * $test->insertBefore(0, 'testInsert before index 0');
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->insertAfter(0, 'testInsert after index 0');
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->poll();
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->pollLast();
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->pop();
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->push('push test');
+ * print_r($test->asArray());
+ * print '<br />';
+ * print '<br />';
+ * print_r($test->asArray());
+ * $test->sortBy(array($test, 'myCallback'));
+ * print '<br />';
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->remove('test2');
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->removeAt(1);
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->removeFirst();
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->removeLast();
+ * print_r($test->asArray());
+ */
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387

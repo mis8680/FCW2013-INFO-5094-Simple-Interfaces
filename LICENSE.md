@@ -1,5 +1,10 @@
 Open Source Licenses
 =======================
+<<<<<<< HEAD
+=======
+### http://www.apache.org/licenses/
+
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
 About Open Source Licenses
 Open source licenses are licenses that comply with the Open Source Definition — in brief, they allow software to be freely used, modified, and shared. To be approved by the Open Source Initiative (also known as the OSI), a license must be go through the Open Source Initiative's license review process.
 

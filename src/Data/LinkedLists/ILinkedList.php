@@ -57,10 +57,17 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      * @access public
      * @param ILinkedNode $node The ILinkedNode to add.
      * @return mixed The key value of the node that was added.
+<<<<<<< HEAD
      *
     public function addNode(ILinkedNode $node);
     
     /**
+=======
+     */
+    public function addNode(ILinkedNode $node);
+    
+    /**    
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
      * Returns the list as an associative array.
      *
      * The return array will be formatted so that each node within the list
@@ -285,7 +292,11 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      *
      * @access public
      * @param ILinkedNode $node The node to remove from the list.
+<<<<<<< HEAD
      
+=======
+     */
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     public function removeNode(ILinkedNode $node);
     
     /**
@@ -308,4 +319,8 @@ interface ILinkedList extends \Countable, \IteratorAggregate
      * @param callable The specified callback.
      */
     public function sortBy(callable $predicate);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387

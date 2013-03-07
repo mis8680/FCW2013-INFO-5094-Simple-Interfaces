@@ -47,4 +47,8 @@ interface INode
      * @param mixed The value.
      */
     public function setValue($value);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387

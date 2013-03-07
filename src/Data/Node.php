@@ -70,11 +70,19 @@ class Node implements \Data\INode
      */
     public function setKey($key)
     {
+<<<<<<< HEAD
         if($key) {
             if (!isset($key)) {
             throw new \InvalidArgumentException(sprintf('The key should be set.'));
             }
         $this->key = $key;
+=======
+        if ($key) {
+            if (!isset($key)) {
+                throw new \InvalidArgumentException(sprintf('The key should be set.'));
+            }
+            $this->key = $key;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
         }
         
     }
@@ -98,11 +106,19 @@ class Node implements \Data\INode
      */
     public function setValue($value)
     {
+<<<<<<< HEAD
         if($value) {
             if (!isset($value)) {
             throw new \InvalidArgumentException(sprintf('The value should be set.'));
             }
         $this->value = $value;
+=======
+        if ($value) {
+            if (!isset($value)) {
+                throw new \InvalidArgumentException(sprintf('The value should be set.'));
+            }
+            $this->value = $value;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
         }
         
     }

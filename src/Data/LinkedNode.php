@@ -84,8 +84,12 @@ class LinkedNode implements \Data\ILinkedNode
     {
         if (isset($this->next)) {
             return $this->next;
+<<<<<<< HEAD
         }
         else {
+=======
+        } else {
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
             return null;
         }
         
@@ -100,7 +104,11 @@ class LinkedNode implements \Data\ILinkedNode
      * @access public
      * @param ILinkedNode The ILinkedNode instance that is next.
      */
+<<<<<<< HEAD
     public function setNext(\Data\ILinkedNode $next = NULL)
+=======
+    public function setNext(\Data\ILinkedNode $next = null)
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     {
 
         $this->next = $next;
@@ -142,7 +150,11 @@ class LinkedNode implements \Data\ILinkedNode
      */
     public function getValue()
     {
+<<<<<<< HEAD
         return isset($this->value)? $this->value : null;
+=======
+        return isset($this->value) ? $this->value : null;
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
     }
     
     /**
@@ -156,7 +168,12 @@ class LinkedNode implements \Data\ILinkedNode
      
         if (!isset($value)) {
             throw new \InvalidArgumentException(sprintf('The value should be set.'));
+<<<<<<< HEAD
             }
+=======
+        }
+            
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
         $this->value = $value;
         
     }
@@ -171,6 +188,9 @@ class LinkedNode implements \Data\ILinkedNode
     {
         return $this->getValue();
     }
+<<<<<<< HEAD
     
     
+=======
+>>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
 }
