@@ -1,17 +1,5 @@
 Project 1
 =======================================================
-<<<<<<< HEAD
-* Library Package Implementation:
-* Data\Node implements Inode 
-* Data\LinkedNode implements ILinkedNode 
-* Data\DoublyLinkedNode implements IDoublyLinkedNode 
-* Data\LinkedLists\LinkedList implements ILinkedList 
-* Data\LinkedLists\DoublyLinkedList implements IDoublyLinkedList 
-* Data\LinkedLists\Iterator implements Iterator
-
-
-Group 2
-=======
 ------------------------------------------------------
 ### - The overview of the library
 	* Library Package Implementation:
@@ -29,8 +17,7 @@ Group 2
 
 
 
-Group 2 Members
->>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
+Group 2
 --------
 
 ### Insu Mun
@@ -49,15 +36,9 @@ Bio: [to be filled in]
 
 ### Peyton Lawrence
 
-<<<<<<< HEAD
-Email: [to be filled in]
-
-Bio: [to be filled in]
-=======
 Email: [p_lawrence7@fanshaweonline.ca]
 
 Bio: [student]
->>>>>>> 343a24d8e7bed74dec432f50ae15e82f92de6387
 
 
 ### Hiteshkumar Darji
