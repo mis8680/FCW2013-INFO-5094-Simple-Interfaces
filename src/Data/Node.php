@@ -7,7 +7,7 @@
  */
 namespace Data;
 
-//require_once __DIR__ . '/INode.php';
+require_once __DIR__ . '/INode.php';
 
 /**
  * Node class implemented by INode
@@ -16,7 +16,7 @@ namespace Data;
  * @package Data
  * @version 1.0.0
  */
-class Node implements INode
+class Node implements \Data\INode
 {
     /**
      * key variable
@@ -70,11 +70,11 @@ class Node implements INode
      */
     public function setKey($key)
     {
-        if($key) {
+        if ($key) {
             if (!isset($key)) {
-            throw new \InvalidArgumentException(sprintf('The key should be set.'));
+                throw new \InvalidArgumentException(sprintf('The key should be set.'));
             }
-        $this->key = $key;
+            $this->key = $key;
         }
         
     }
@@ -98,11 +98,11 @@ class Node implements INode
      */
     public function setValue($value)
     {
-        if($value) {
+        if ($value) {
             if (!isset($value)) {
-            throw new \InvalidArgumentException(sprintf('The value should be set.'));
+                throw new \InvalidArgumentException(sprintf('The value should be set.'));
             }
-        $this->value = $value;
+            $this->value = $value;
         }
         
     }

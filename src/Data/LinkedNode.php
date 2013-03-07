@@ -10,7 +10,7 @@ namespace Data;
 /**
  *
  */
-//require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/bootstrap.php';
 
 /**
  * The SingleLinkedNode interface is implemented by all nodes that are to be linked.
@@ -19,7 +19,7 @@ namespace Data;
  * @package \Data
  * @version 1.0.0
  */
-class LinkedNode implements ILinkedNode
+class LinkedNode implements \Data\ILinkedNode
 {
     /**
      * key variable
@@ -84,8 +84,7 @@ class LinkedNode implements ILinkedNode
     {
         if (isset($this->next)) {
             return $this->next;
-        }
-        else {
+        } else {
             return null;
         }
         
@@ -100,7 +99,7 @@ class LinkedNode implements ILinkedNode
      * @access public
      * @param ILinkedNode The ILinkedNode instance that is next.
      */
-    public function setNext(\Data\ILinkedNode $next = NULL)
+    public function setNext(\Data\ILinkedNode $next = null)
     {
 
         $this->next = $next;
@@ -156,7 +155,7 @@ class LinkedNode implements ILinkedNode
      
         if (!isset($value)) {
             throw new \InvalidArgumentException(sprintf('The value should be set.'));
-            }
+        }
             
         $this->value = $value;
         
@@ -172,6 +171,4 @@ class LinkedNode implements ILinkedNode
     {
         return $this->getValue();
     }
-    
-    
 }

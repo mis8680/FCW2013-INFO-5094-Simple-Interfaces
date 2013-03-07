@@ -13,8 +13,8 @@ error_reporting(E_ALL | E_STRICT);
 
 
 /**
-* @ignore
-*/
+ *  Autoload does not working in my system..so alternatively   
+ */
 require_once __DIR__ . '/../../../../src/Data/Node.php';
 require_once __DIR__ . '/../../../../src/Data/LinkedNode.php';
 require_once __DIR__ . '/../../../../src/Data/LinkedLists/LinkedList.php';
@@ -27,7 +27,7 @@ require_once __DIR__ . '/../../../../src/Data/LinkedLists/LinkedList.php';
 * @copyright Copyright (c) 2013, Peyton Lawrence
 * @version 1.0.0
 */
-class SingleLinkedListTest extends \PHPUnit_Framework_TestCase
+class LinkedListTest extends \PHPUnit_Framework_TestCase
 {
    
     /**

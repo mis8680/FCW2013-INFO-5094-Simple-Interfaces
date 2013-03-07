@@ -48,7 +48,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     private $count;
     
     /**
-     * construct method
+     * __construct method
      *
      * @access public
      * 
@@ -88,7 +88,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      * Returns the first element in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the first ILinkedNode in the list, otherwise returns NULL.
+     * @return ILinkedNode|null Returns the first ILinkedNode in the list, otherwise returns null.
      */
     public function getFirst()
     {
@@ -99,7 +99,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      * Returns the last element in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the last ILinkedNode in the list, otherwise returns NULL.
+     * @return ILinkedNode|null Returns the last ILinkedNode in the list, otherwise returns null.
      */
     public function getLast()
     {
@@ -109,9 +109,9 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                 $current = $current->getNext();
                 if ($current->getNext() == null) {
                     return $current;
-                }             
+                }
             }
-            return NULL;
+            return null;
             
         }
         
@@ -133,20 +133,20 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         
         $current = $this->firstNode;
         
-        if($this->isEmpty() || $this->count == 0) {
+        if ($this->isEmpty() || $this->count == 0) {
             $this->firstNode = new \Data\LinkedNode(new \Data\Node($value), null);
             $current = $this->firstNode;
             $current->setKey(0);
         } else {
-            for($i = 0 ; $i < $this->count() - 1 ; ++$i) {
-                $current = $current->getNext();               
+            for ($i = 0; $i < $this->count() - 1; ++$i) {
+                $current = $current->getNext();
             }
             $newNode = new \Data\LinkedNode(new \Data\Node($value, $this->count()), null);
             $current->setNext($newNode);
             $current = $current->getNext();
         }
         
-        ++$this->count;     
+        ++$this->count;
         $key = $current->getKey();
         
         return $key;
@@ -167,7 +167,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     {
         $current = $this->firstNode;
         
-        if($this->isEmpty() || $this->count == 0) {
+        if ($this->isEmpty() || $this->count == 0) {
             $this->firstNode = $node;
             $current = $this->firstNode;
             $current->setKey(0);
@@ -200,8 +200,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         
         $current = $this->firstNode;
  
-        while($current != NULL)
-        {
+        while ($current != null) {
             $listArray[$current->getKey()] = $current->getValue();
             $current = $current->getNext();
         }
@@ -220,8 +219,8 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     {
         $current = $this->firstNode;
         
-        while($current != NULL) {
-            if($current->getKey() == $key) {
+        while ($current != null) {
+            if ($current->getKey() == $key) {
                 return true;
             }
             $current = $current->getNext();
@@ -240,8 +239,8 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     {
         $current = $this->firstNode;
         
-        while($current != NULL) {
-            if($current->getValue() == $value) {
+        while ($current != null) {
+            if ($current->getValue() == $value) {
                 return true;
             }
             $current = $current->getNext();
@@ -260,8 +259,8 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     {
         $current = $this->firstNode;
         
-        while($current != NULL) {
-            if($current->getValue() == $value) {
+        while ($current != null) {
+            if ($current->getValue() == $value) {
                 return $current;
             }
             $current = $current->getNext();
@@ -281,8 +280,8 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         $listArray = array();
         $current = $this->firstNode;
         
-        while($current != NULL) {
-            if($current->getValue() == $value) {
+        while ($current != null) {
+            if ($current->getValue() == $value) {
                 $listArray[$current->getKey()] = $current->getValue();
             }
             $current = $current->getNext();
@@ -301,8 +300,8 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     {
         $current = $this->firstNode;
         
-        while($current != NULL) {
-            if($current->getValue() == $value) {
+        while ($current != null) {
+            if ($current->getValue() == $value) {
                 return $current;
             }
             $current = $current->getNext();
@@ -325,8 +324,8 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         $current = $this->firstNode;
         $lastNode;
         
-        while($current != NULL) {
-            if($current->getValue() == $value) {
+        while ($current != null) {
+            if ($current->getValue() == $value) {
                 $lastNode = $current;
             }
             $current = $current->getNext();
@@ -345,8 +344,8 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     {
         $current = $this->firstNode;
         
-        while($current != NULL) {
-            if($current->getKey() == $key) {
+        while ($current != null) {
+            if ($current->getKey() == $key) {
                 return $current;
             }
             $current = $current->getNext();
@@ -373,21 +372,21 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         
         $newNode = new \Data\LinkedNode(new \Data\Node($value));
         
-        if($before == 0) {
+        if ($before == 0) {
             $this->firstNode = $newNode;
             $newNode->setKey(0);
             $newNode->setNext($current);
 
             $afterNewNode = $newNode->getNext();
-            while($afterNewNode != NULL) {
+            while ($afterNewNode != null) {
                         $afterNewNode->setKey($afterNewNode->getKey() + 1);
                         $afterNewNode = $afterNewNode->getNext();
-                    }
+            }
             
         } else {
-            while($current != NULL) {
+            while ($current != null) {
                       
-                if($current->getKey() + 1 == $before) {
+                if ($current->getKey() + 1 == $before) {
                                    
                     $newNode->setNext($current->getNext());
                     $newNode->setKey($current->getKey() + 1);
@@ -396,7 +395,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                     
                     $afterNewNode = $newNode->getNext();
                     
-                    while($afterNewNode != NULL) {
+                    while ($afterNewNode != null) {
                         $afterNewNode->setKey($afterNewNode->getKey() + 1);
                         $afterNewNode = $afterNewNode->getNext();
                     }
@@ -405,12 +404,12 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                     
                 }
             
-            $current = $current->getNext();
+                $current = $current->getNext();
                     
             }
         }
     
-        ++$this->count;     
+        ++$this->count;
         $key = $newNode->getKey();
         
         return $key;
@@ -436,18 +435,18 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         $newNode = new \Data\LinkedNode(new \Data\Node($value));
         
         
-        while($current != NULL) {
+        while ($current != null) {
                       
-            if($current->getKey() == $after) {
+            if ($current->getKey() == $after) {
                                   
                 $newNode->setNext($current->getNext());
                 $newNode->setKey($current->getKey() + 1);
-                $current->setNext($newNode); 
+                $current->setNext($newNode);
                     
                     
                 $afterNewNode = $newNode->getNext();
                     
-                while($afterNewNode != NULL) {
+                while ($afterNewNode != null) {
                     $afterNewNode->setKey($afterNewNode->getKey() + 1);
                     $afterNewNode = $afterNewNode->getNext();
                 }
@@ -459,7 +458,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
             
         }
     
-        ++$this->count;     
+        ++$this->count;
         $key = $newNode->getKey();
         
         return $key;
@@ -480,104 +479,104 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      * Returns, but does not remove, the first node in the list. 
      *
      * @access public
-     * @return ILinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
+     * @return ILinkedNode|null Returns the first node in the list. Will returns null if the list empty.
      */
     public function peek()
     {
-        return isset($this->firstNode) ? $this->getFirst() : NULL;
+        return isset($this->firstNode) ? $this->getFirst() : null;
     }
     
     /**
      * Returns, but does not remove, the first node in the list. 
      *
      * @access public
-     * @return ILinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
+     * @return ILinkedNode|null Returns the first node in the list. Will returns null if the list empty.
      */
     public function peekFirst()
     {
-        return isset($this->firstNode) ? $this->getFirst() : NULL;
+        return isset($this->firstNode) ? $this->getFirst() : null;
     }
     
     /**
      * Returns, but does not remove, the last node in the list. 
      *
      * @access public
-     * @return ILinkedNode|null Returns the last node in the list. Will returns NULL if the list empty.
+     * @return ILinkedNode|null Returns the last node in the list. Will returns null if the list empty.
      */
     public function peekLast()
     {
         $current = $this->firstNode;
         $lastNode;
         
-        while($current != NULL) {
-            if($current->getNext() == NULL) {
+        while ($current != null) {
+            if ($current->getNext() == null) {
                 return $current;
             }
             $current = $current->getNext();
         }
-        return NULL;
+        return null;
     }
     
     /**
      * Returns and removes the first node in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
+     * @return ILinkedNode|null Returns the first node in the list. Will return null if the list is empty.
      */
     public function poll()
     {
-        if(isset($this->firstNode)) {
+        if (isset($this->firstNode)) {
             $pollFirstNode = $this->firstNode;
             $this->firstNode = $pollFirstNode->getNext();
             
             $current = $this->firstNode;
-            while($current != NULL) {
+            while ($current != null) {
                 $current->setKey($current->getKey() - 1);
                 $current = $current->getNext();
             }
             --$this->count;
             return $pollFirstNode;
         }
-        return NULL;
+        return null;
     }
     
     /**
      * Returns and removes the first node in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
+     * @return ILinkedNode|null Returns the first node in the list. Will return null if the list is empty.
      */
     public function pollFirst()
     {
-        if(isset($this->firstNode)) {
+        if (isset($this->firstNode)) {
             $pollFirstNode = $this->firstNode;
             $this->firstNode = $pollFirstNode->getNext();
             
             $current = $this->firstNode;
-            while($current != NULL) {
+            while ($current != null) {
                 $current->setKey($current->getKey() - 1);
                 $current = $current->getNext();
             }
             --$this->count;
             return $pollFirstNode;
         }
-        return NULL;
+        return null;
     }
     
     /**
      * Returns and removes the last node in the list.
      *
      * @access public
-     * @return ILinkedNode|null Returns the last node in the list. Will return NULL if the list is empty.
+     * @return ILinkedNode|null Returns the last node in the list. Will return null if the list is empty.
      */
     public function pollLast()
     {
         $pollLastNode;
         $current = $this->firstNode;
         
-        if(isset($current)){
-            while($current != NULL) {
-                if($current->getNext()->getNext() == NULL) {
+        if (isset($current)) {
+            while ($current != null) {
+                if ($current->getNext()->getNext() == null) {
                     $pollLastNode = $current->getNext();
                     $current->setNext();
                     --$this->count;
@@ -586,23 +585,23 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                 $current = $current->getNext();
             }
         }
-        return NULL;
+        return null;
     }
     
     /**
      * Returns the last node's value and removes the last node in the list.
      *
      * @access public
-     * @return mixed Returns the last node value in the list. Will return NULL if the list empty.
+     * @return mixed Returns the last node value in the list. Will return null if the list empty.
      */
     public function pop()
     {
         $popNode;
         $current = $this->firstNode;
         
-        if(isset($current)){
-            while($current != NULL) {
-                if($current->getNext()->getNext() == NULL) {
+        if (isset($current)) {
+            while ($current != null) {
+                if ($current->getNext()->getNext() == null) {
                     $popNode = $current->getNext();
                     $current->setNext();
                     return $popNode->getValue();
@@ -610,7 +609,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                 $current = $current->getNext();
             }
         }
-        return NULL;
+        return null;
     }
     
     /**
@@ -631,9 +630,8 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         $lastNode->setNext($newNode);
         $newNode->setKey($lastNode->getKey() + 1);
         
-        ++$this->count;     
+        ++$this->count;
     }
-    
     /**
      * Removes all nodes whose value is equal to that specified.
      *
@@ -645,17 +643,17 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function remove($value)
     {
-        if($this->isEmpty()) {
+        if ($this->isEmpty()) {
             return null;
         }
         
         $previous = $this->firstNode;
         $current = $this->firstNode;
             
-        while($current != NULL) {
+        while ($current != null) {
             
-            if($current->getValue() == $value) {
-                if($current->getKey() == 0){
+            if ($current->getValue() == $value) {
+                if ($current->getKey() == 0) {
                     $this->firstNode = $current->getNext();
                     $current->setNext();
                     $current = $this->firstNode;
@@ -663,7 +661,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                     --$this->count;
                                       
                     $afterRemove = $current->getNext();
-                    while($afterRemove != NULL) {
+                    while ($afterRemove != null) {
                         $afterRemove->setKey($afterRemove->getKey() - 1);
                         $afterRemove = $afterRemove->getNext();
                     }
@@ -677,7 +675,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                     --$this->count;
                     
                     $afterRemove = $current;
-                    while($afterRemove != NULL) {
+                    while ($afterRemove != null) {
                         $afterRemove->setKey($afterRemove->getKey() - 1);
                         $afterRemove = $afterRemove->getNext();
                     }
@@ -700,17 +698,17 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function removeAt($key)
     {
-        if($this->isEmpty()) {
+        if ($this->isEmpty()) {
             return null;
         }
         
         $previous = $this->firstNode;
         $current = $this->firstNode;
             
-        while($current != NULL) {
+        while ($current != null) {
             
-            if($current->getKey() == $key) {
-                if($current->getKey() == 0){
+            if ($current->getKey() == $key) {
+                if ($current->getKey() == 0) {
                     $this->firstNode = $current->getNext();
                     $current->setNext();
                     $current = $this->firstNode;
@@ -718,7 +716,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                     --$this->count;
                                       
                     $afterRemove = $current->getNext();
-                    while($afterRemove != NULL) {
+                    while ($afterRemove != null) {
                         $afterRemove->setKey($afterRemove->getKey() - 1);
                         $afterRemove = $afterRemove->getNext();
                     }
@@ -732,7 +730,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
                     --$this->count;
                     
                     $afterRemove = $current;
-                    while($afterRemove != NULL) {
+                    while ($afterRemove != null) {
                         $afterRemove->setKey($afterRemove->getKey() - 1);
                         $afterRemove = $afterRemove->getNext();
                     }
@@ -751,7 +749,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function removeFirst()
     {
-        if($this->isEmpty()) {
+        if ($this->isEmpty()) {
             return null;
         }
         
@@ -765,7 +763,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         --$this->count;
                                       
         $afterRemove = $current->getNext();
-        while($afterRemove != NULL) {
+        while ($afterRemove != null) {
             $afterRemove->setKey($afterRemove->getKey() - 1);
             $afterRemove = $afterRemove->getNext();
         }
@@ -779,15 +777,15 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function removeLast()
     {
-        if($this->isEmpty()) {
+        if ($this->isEmpty()) {
             return null;
         }
         
         $current = $this->firstNode;
-        $lastNode = $this->getLast(); 
+        $lastNode = $this->getLast();
         
-        while($current != NULL) {
-            if($current->getNext() === $lastNode) {
+        while ($current != null) {
+            if ($current->getNext() === $lastNode) {
                 $current->setNext();
                 --$this->count;
             }
@@ -807,7 +805,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      */
     public function removeNode(\Data\ILinkedNode $node)
     {
-        if($this->isEmpty()) {
+        if ($this->isEmpty()) {
             return null;
         }
         
@@ -825,15 +823,15 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     public function sort()
     {
         
-        if($this->isEmpty()) {
+        if ($this->isEmpty()) {
             return null;
-        } 
+        }
         
         $current = $this->firstNode;
 
-        for($i = 0 ; $i < $this->count() ; ++$i) {
-            while($current->getNext() != NULL) {
-                if($current->getValue() > $current->getNext()->getValue()) {
+        for ($i = 0; $i < $this->count(); ++$i) {
+            while ($current->getNext() != null) {
+                if ($current->getValue() > $current->getNext()->getValue()) {
                     $temp = $current->getValue();
                     $current->setValue($current->getNext()->getValue());
                     $current->getNext()->setValue($temp);
@@ -862,30 +860,30 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
     public function sortBy(callable $predicate)
     {
          
-            if($this->isEmpty()) {
-                return null;
-            } 
+        if ($this->isEmpty()) {
+            return null;
+        }
         
-            $current = $this->firstNode;
+        $current = $this->firstNode;
             
-            for($i = 0 ; $i < $this->count() ; ++$i) {
-                while($current->getNext() != NULL) {
-                    $comparison = $predicate($current, $current->getNext());
+        for ($i = 0; $i < $this->count(); ++$i) {
+            while ($current->getNext() != null) {
+                $comparison = $predicate($current, $current->getNext());
                     
-                    if($comparison == 1) {
-                        $temp = $current->getValue();
-                        $current->setValue($current->getNext()->getValue());
-                        $current->getNext()->setValue($temp);
+                if ($comparison == 1) {
+                    $temp = $current->getValue();
+                    $current->setValue($current->getNext()->getValue());
+                    $current->getNext()->setValue($temp);
                         
-                        $current = $current->getNext();
-                    } else {
-                        $current = $current->getNext();
-                    }
+                    $current = $current->getNext();
+                } else {
+                    $current = $current->getNext();
                 }
-                
-                $current = $this->firstNode;
-               
             }
+                
+            $current = $this->firstNode;
+               
+        }
         
         
               
@@ -905,10 +903,10 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
      *   and the returned value of the function is hwat is used for determining the operation needed to be performed, if any, by linkedlist
      *
      */
-    public static function my_callback(\Data\ILinkedNode $current, \Data\ILinkedNode $next)
+    public static function myCallback(\Data\ILinkedNode $current, \Data\ILinkedNode $next)
     {
-        if($current->getNext() != NULL){
-            if($current->getValue() < $next->getValue()) {
+        if ($current->getNext() != null) {
+            if ($current->getValue() < $next->getValue()) {
                 return -1;
             } elseif ($current->getValue() == $next->getValue()) {
                 return 0;
@@ -918,8 +916,8 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
         }
         
     }
-
 }
+
 
 /**
  *  @ignore
@@ -965,7 +963,7 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
  * print '<br />';
  * print '<br />';
  * print_r($test->asArray());
- * $test->sortBy(array($test, 'my_callback'));
+ * $test->sortBy(array($test, 'myCallback'));
  * print '<br />';
  * print_r($test->asArray());
  * print '<br />';
