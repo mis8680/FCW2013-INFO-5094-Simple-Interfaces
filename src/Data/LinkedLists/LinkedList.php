@@ -8,12 +8,17 @@
  */
 namespace Data\LinkedLists;
 
-
-ini_set('display_errors','on');
-error_reporting(E_ALL | E_STRICT);
+/**
+ * @ignore
+ * 
+ * ini_set('display_errors','on');
+ * error_reporting(E_ALL | E_STRICT);
+ */
 
 /**
- * required file 
+ * required file
+ * 
+ * I could not find why the autoload does not work in my system...
  */
 require_once __DIR__ . '/../bootstrap.php';
 
@@ -916,81 +921,63 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
 
 }
 
-
-
-$test = new \Data\LinkedLists\LinkedList();
-print 'count of list: '.$test->count() . '<br />';
-print 'first key: '.$test->add('test0'). '<br />';
-
-print 'count of list: '.$test->count() . '<br />';
-print 'second key: ' . $test->add('test2'). '<br />';
-
-print 'count of list: '.$test->count() . '<br />';
-print 'third key: ' . $test->add('test1'). '<br />';
-
-print 'count of list: '.$test->count() . '<br />';
-
-$node1 = new \Data\Node('test5');
-print 'fourth key: ' . $test->addNode(new \Data\LinkedNode($node1)) . '<br />';
-
-print_r($test->asArray());
-
-print '<br />';
-print $test->containsKey(5) ? 'true' : 'false';
-
-print '<br />';
-print $test->find('test2');
-
-print '<br />';
-$testArray = $test->findAll('test2');
-print_r($testArray);
-
-print '<br />';
-print $test->add('test4'). '<br />';
-print $test->add('test3'). '<br />';
-$test->insertBefore(0, 'testInsert before index 0');
-print_r($test->asArray());
-
-print '<br />';
-$test->insertAfter(0, 'testInsert after index 0');
-print_r($test->asArray());
-
-print '<br />';
-$test->poll();
-print_r($test->asArray());
-
-print '<br />';
-$test->pollLast();
-print_r($test->asArray());
-
-print '<br />';
-$test->pop();
-print_r($test->asArray());
-
-print '<br />';
-$test->push('push test');
-print_r($test->asArray());
-
-print '<br />';
-print '<br />';
-print_r($test->asArray());
-$test->sortBy(array($test, 'my_callback'));
-print '<br />';
-print_r($test->asArray());
-/*
-print '<br />';
-$test->remove('test2');
-print_r($test->asArray());
-
-print '<br />';
-$test->removeAt(1);
-print_r($test->asArray());
-
-print '<br />';
-$test->removeFirst();
-print_r($test->asArray());
-
-print '<br />';
-$test->removeLast();
-print_r($test->asArray());
-*/
+/**
+ *  @ignore
+ *  
+ * $test = new \Data\LinkedLists\LinkedList();
+ * print 'count of list: '.$test->count() . '<br />';
+ * print 'first key: '.$test->add('test0'). '<br />';
+ * print 'count of list: '.$test->count() . '<br />';
+ * print 'second key: ' . $test->add('test2'). '<br />';
+ * print 'count of list: '.$test->count() . '<br />';
+ * print 'third key: ' . $test->add('test1'). '<br />';
+ * print 'count of list: '.$test->count() . '<br />';
+ * $node1 = new \Data\Node('test5');
+ * print 'fourth key: ' . $test->addNode(new \Data\LinkedNode($node1)) . '<br />';
+ * print_r($test->asArray());
+ * print '<br />';
+ * print $test->containsKey(5) ? 'true' : 'false';
+ * print '<br />';
+ * print $test->find('test2');
+ * print '<br />';
+ * $testArray = $test->findAll('test2');
+ * print_r($testArray);
+ * print '<br />';
+ * print $test->add('test4'). '<br />';
+ * print $test->add('test3'). '<br />';
+ * $test->insertBefore(0, 'testInsert before index 0');
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->insertAfter(0, 'testInsert after index 0');
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->poll();
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->pollLast();
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->pop();
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->push('push test');
+ * print_r($test->asArray());
+ * print '<br />';
+ * print '<br />';
+ * print_r($test->asArray());
+ * $test->sortBy(array($test, 'my_callback'));
+ * print '<br />';
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->remove('test2');
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->removeAt(1);
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->removeFirst();
+ * print_r($test->asArray());
+ * print '<br />';
+ * $test->removeLast();
+ * print_r($test->asArray());
+ */

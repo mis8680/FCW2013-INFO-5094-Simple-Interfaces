@@ -1,12 +1,19 @@
 Project 1
 =======================================================
-* Library Package Implementation:
-* Data\Node implements Inode 
-* Data\LinkedNode implements ILinkedNode 
-* Data\DoublyLinkedNode implements IDoublyLinkedNode 
-* Data\LinkedLists\LinkedList implements ILinkedList 
-* Data\LinkedLists\DoublyLinkedList implements IDoublyLinkedList 
-* Data\LinkedLists\Iterator implements Iterator
+ - The overview of the library
+	* Library Package Implementation:
+	* Data\Node implements Inode
+	* Data\LinkedNode implements ILinkedNode
+	* Data\DoublyLinkedNode implements IDoublyLinkedNode
+	* Data\LinkedLists\LinkedList implements ILinkedList
+	* Data\LinkedLists\DoublyLinkedList implements IDoublyLinkedList
+	* Data\LinkedLists\Iterator implements Iterator
+ - The contributors
+	* Group B
+ - The license in which this library is distributed under
+	* Apache License 2.0
+ - An installation and how to get started section
+
 
 
 Group 2
