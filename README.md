@@ -17,7 +17,7 @@ Project 1
 
 
 
-Group 2
+Group 2 Members
 --------
 
 ### Insu Mun
