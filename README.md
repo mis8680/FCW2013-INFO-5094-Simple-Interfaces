@@ -1,7 +1,7 @@
 Project 1
 =======================================================
 ------------------------------------------------------
- - ### The overview of the library
+### - The overview of the library
 	* Library Package Implementation:
 	* Data\Node implements Inode
 	* Data\LinkedNode implements ILinkedNode
@@ -9,11 +9,11 @@ Project 1
 	* Data\LinkedLists\LinkedList implements ILinkedList
 	* Data\LinkedLists\DoublyLinkedList implements IDoublyLinkedList
 	* Data\LinkedLists\Iterator implements Iterator
- - ### The contributors
+###  - The contributors
 	* Group B
- - ### The license in which this library is distributed under
+###  - The license in which this library is distributed under
 	* Apache License 2.0
- - ### An installation and how to get started section
+###  - An installation and how to get started section
 
 
 
