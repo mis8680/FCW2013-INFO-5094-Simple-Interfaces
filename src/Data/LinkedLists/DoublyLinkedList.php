@@ -7,407 +7,171 @@
  */
 namespace Data\LinkedLists;
 
-
 /**
- * The Double Linked List.
- *
- * @author Insu Mun <i_mun@fanshaweonline.ca>
- * @package Data
+ * DoublyLinkedList class implements the IDoublyLinkedList interface
+ * 
+ * @author Michael Cameron <m_cameron4132@fanshaweonline.ca>
+ * @package Data\LinkedList
  * @version 1.0.0
  */
-class DoubleLinkedList implements \Data\LinkedLists\IDoublyLinkedList
+class DoublyLinkedList extends IDoublyLinkedList
 {
     
-    /**
-     * Construct DoublyLinkedList class
-     *
-     * @access public
-     * @param DoubleLinkedNode 
-     */
-    public function __construct(DoubleLinkedNode $data = null)
-    {
-        
+    private $first;
+    private $last;
+    private $count;
+ 
+    function __construct() {
+        $this->_first = NULL;
+        $this->_last = NULL;
+        $this->_count = 0;
     }
     
-    /**
-     * Returns the first element in the list.
-     *
-     * @access public
-     * @return IDoublyLinkedNode|null Returns the first IDoublyLinkedNode in the list, otherwise returns NULL.
-     */
-    public function getFirst()
-    {
-        
+    public function isEmpty() {
+        return ($this->_first == NULL);
     }
-    
-    /**
-     * Returns the last element in the list.
-     *
-     * @access public
-     * @return IDoublyLinkedNode|null Returns the last IDoublyLinkedNode in the list, otherwise returns NULL.
-     */
-    public function getLast()
-    {
-        
+ 
+    public function insertFirst($data) {
+        $newLink = new ListNode($data);
+ 
+        if($this->isEmpty()) {
+            $this->_last = $newLink;
+        } else {
+            $this->_first->previous = $newLink;
+        }
+ 
+        $newLink->next = $this->_first;
+        $this->_first = $newLink;
+        $this->_count++;
     }
-    
-    /**
-     * Adds a value onto the end of the list.
-     *
-     * This method will create a new IDoublyLinkedNode instance assigning a
-     * numeric key value to the node and the value is assigned to the
-     * node's value property.
-     *
-     * @access public
-     * @param mixed $value The value to add.
-     * @return int The key value of the node that was created and added.
-     */
-    public function add($value)
-    {
-        
+ 
+ 
+    public function insertLast($data) {
+        $newLink = new ListNode($data);
+ 
+        if($this->isEmpty()) {
+            $this->_first = $newLink;
+        } else {
+            $this->_last->next = $newLink;
+        }
+ 
+        $newLink->previous = $this->_last;
+        $this->_last = $newLink;
+        $this->_count++;
     }
-    
-    /**
-     * Adds an IDoublyLinkedNode instance onto the end of the list.
-     *
-     * The node that is to be added to the list should have its key reset so that
-     * it is the next key in the list's key sequence.
-     *
-     * @access public
-     * @param IDoublyLinkedNode $node The IDoublyLinkedNode to add.
-     * @return mixed The key value of the node that was added.
-     */
-    public function addNode(IDoublyLinkedNode $node)
-    {
-        
+ 
+ 
+    public function insertAfter($key, $data) {
+        $current = $this->_first;
+ 
+        while($current->data != $key) {
+            $current = $current->next;
+ 
+            if($current == NULL)
+                return false;
+        }
+ 
+        $newLink = new ListNode($data);
+ 
+        if($current == $this->_last) {
+            $newLink->next = NULL;
+            $this->_last = $newLink;
+        } else {
+            $newLink->next = $current->next;
+            $current->next->previous = $newLink;
+        }
+ 
+        $newLink->previous = $current;
+        $current->next = $newLink;
+        $this->_count++;
+ 
+        return true;
     }
-    
-    /**
-     * Returns the list as an associative array.
-     *
-     * The return array will be formatted so that each node within the list
-     * will be returned as a key => value representation. 
-     *
-     * @access public
-     * @return array An associative array of key and value pairs for all nodes.
-     */
-    public function asArray()
-    {
-        
+ 
+ 
+    public function deleteFirst() {
+ 
+        $temp = $this->_first;
+ 
+        if($this->_first->next == NULL) {
+            $this->_last = NULL;
+        } else {
+            $this->_first->next->previous = NULL;
+        }
+ 
+        $this->_first = $this->_first->next;
+        $this->_count--;
+        return $temp;
     }
-    
-    /**
-     * Checks if the list contains a node with the specified key value.
-     *
-     * @access public
-     * @param mixed $key Contains the key value to search for.
-     * @return bool Returns true if the $key was found, otherwise returns false.
-     */
-    public function containsKey($key)
-    {
-        
+ 
+ 
+    public function deleteLast() {
+ 
+        $temp = $this->_last;
+ 
+        if($this->_first->next == NULL) {
+            $this->firtNode = NULL;
+        } else {
+            $this->_last->previous->next = NULL;
+        }
+ 
+        $this->_last = $this->_last->previous;
+        $this->_count--;
+        return $temp;
     }
-    
-    /**
-     * Checks if the list contains a node with the specified value.
-     *
-     * @access public
-     * @param mixed $value Contains the value to search for.
-     * @return bool Returns true if the $value was found, otherwise returns false.
-     */
-    public function contains($value)
-    {
-        
+ 
+ 
+    public function delete($key) {
+ 
+        $current = $this->_first;
+ 
+        while($current->data != $key) {
+            $current = $current->next;
+            if($current == NULL)
+                return null;
+        }
+ 
+        if($current == $this->_first) {
+            $this->_first = $current->next;
+        } else {
+            $current->previous->next = $current->next;
+        }
+ 
+        if($current == $this->_last) {
+            $this->_last = $current->previous;
+        } else {
+            $current->next->previous = $current->previous;
+        }
+ 
+        $this->_count--;
+        return $current;
     }
-    
-    /**
-     * Returns the IDoublyLinkedNode object by the specified value.
-     * 
-     * @access public
-     * @param mixed $value Contains the value to find.
-     * @return IDoublyLinkedNode|null Returns the first IDoublyLinkedNode that contains the value, otherwise null.
-     */
-    public function find($value)
-    {
-        
+ 
+ 
+    public function displayForward() {
+ 
+        $current = $this->_first;
+ 
+        while($current != NULL) {
+            echo $current->readNode() . " ";
+            $current = $current->next;
+        }
     }
-    
-    /**
-     * Returns an array of all IDoublyLinkedNodes found by the specified value.
-     *
-     * @access public
-     * @param mixed $value Contains the value to find.
-     * @return array|null Returns an array with all the
-     * IDoublyLinkedNode instances whose value is equal to $value, otherwise returns null.
-     */
-    public function findAll($value)
-    {
-        
+ 
+ 
+    public function displayBackward() {
+ 
+        $current = $this->_last;
+ 
+        while($current != NULL) {
+            echo $current->readNode() . " ";
+            $current = $current->previous;
+        }
     }
-    
-    /**
-     * Returns the first IDoublyLinkedNode instance found by with the specified value.
-     * 
-     * @access public
-     * @param mixed $value
-     */
-    public function findFirst($value)
-    {
-        
+ 
+    public function totalcount() {
+        return $this->_count;
     }
-    
-    /**
-     * Returns the last IDoublyLinkedNode instance found by the specified value.
-     *
-     * The searching operations for this method are in reverse, therefore starting at the
-     * bottom of the list. This is done so on purpose to reduce unneeded overhead.
-     *
-     * @access public
-     * @param mixed $value Contains the value to find.
-     * @return IDoublyLinkedNode|null Returns the last
-     * IDoublyLinkedNode that contains the value, otherwise null if none found.
-     */
-    public function findLast($value)
-    {
-        
-    }
-    
-    /**
-     * Returns the IDoublyLinkedNode at the specified $key.
-     *
-     * @access public
-     * @param mixed Contains the key of the IDoublyLinkedNode to get.
-     * @return mixed Returns the IDoublyLinkedNode at $key if found, otherwise null.
-     */
-    public function get($key)
-    {
-        
-    }
-    
-    /**
-     * Inserts a new IDoublyLinkedNode at before the specified key.
-     *
-     * The IDoublyLinkedNode instance is created within this method. When inserting, all nodes should
-     * be shifted and key values shifted as well for all nodes that follow this newly inserted.
-     * Additionally, when inserting a new IDoublyLinkedNode, the key will be automatically generated as the
-     * next numeric value in the sequence of nodes.
-     *
-     * @access public
-     * @param int $before Contains the key value to insert a new IDoublyLinkedNode before.
-     * @param mixed $value Contains the value used to create a new IDoublyLinkedNode with and inserted before $before.
-     * @return int Returns the newly create IDoublyLinkedNode's key.
-     */
-    public function insertBefore($before, $value)
-    {
-        
-    }
-    
-    /**
-     * Inserts a new IDoublyLinkedNode after the specified key.
-     *
-     * The IDoublyLinkedNode instance is created within this method. When inserting, all nodes that are
-     * to follow (come after) this node should be shifted and key values shifted as well.
-     * Additionally, when inserting a new IDoublyLinkedNode, the key will be automatically generated
-     * the next numeric value in the sequence of nodes.
-     *
-     * @access public
-     * @param int $after Contains the key value to insert a new IDoublyLinkedNode after.
-     * @param mixed $value Contains the value used to create a new IDoublyLinkedNode with and inserted before $after.
-     * @return int Returns the newly create IDoublyLinkedNode's key.
-     */
-    public function insertAfter($after, $value)
-    {
-        
-    }
-    
-    /**
-     * Returns a boolean to represent whether or not this list is empty.
-     *
-     * @access public
-     * @return bool Returns true if the list is empty, otherwise returns false.
-     */
-    public function isEmpty()
-    {
-        
-    }
-    
-    /**
-     * Returns, but does not remove, the first node in the list. 
-     *
-     * @access public
-     * @return IDoublyLinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
-     */
-    public function peek()
-    {
-        
-    }
-    
-    /**
-     * Returns, but does not remove, the first node in the list. 
-     *
-     * @access public
-     * @return IDoublyLinkedNode|null Returns the first node in the list. Will returns NULL if the list empty.
-     */
-    public function peekFirst()
-    {
-        
-    }
-    
-    /**
-     * Returns, but does not remove, the last node in the list. 
-     *
-     * @access public
-     * @return IDoublyLinkedNode|null Returns the last node in the list. Will returns NULL if the list empty.
-     */
-    public function peekLast()
-    {
-        
-    }
-    
-    /**
-     * Returns and removes the first node in the list.
-     *
-     * @access public
-     * @return IDoublyLinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
-     */
-    public function poll()
-    {
-        
-    }
-    
-    /**
-     * Returns and removes the first node in the list.
-     *
-     * @access public
-     * @return IDoublyLinkedNode|null Returns the first node in the list. Will return NULL if the list is empty.
-     */
-    public function pollFirst()
-    {
-        
-    }
-    
-    /**
-     * Returns and removes the last node in the list.
-     *
-     * @access public
-     * @return IDoublyLinkedNode|null Returns the last node in the list. Will return NULL if the list is empty.
-     */
-    public function pollLast()
-    {
-        
-    }
-    
-    /**
-     * Returns the last node's value and removes the last node in the list.
-     *
-     * @access public
-     * @return mixed Returns the last node value in the list. Will return NULL if the list empty.
-     */
-    public function pop()
-    {
-        
-    }
-    
-    /**
-     * Adds a new value onto the end of the list.
-     *
-     * A new IDoublyLinkedNode instance will be created and the value assigned to the specified. A numeric
-     * key will be created based on the sequence (last numeric key + 1) and assigned to this node.
-     *
-     * @access public
-     * @param mixed Contains the value to push onto the list.
-     */
-    public function push($value)
-    {
-        
-    }
-    
-    /**
-     * Removes all nodes whose value is equal to that specified.
-     *
-     * Will remove all nodes within the list in addition to shifting and adjusting their
-     * keys, for those that are within a numeric sequence.
-     *
-     * @access public
-     * @param mixed Contains the value to remove.
-     */
-    public function remove($value)
-    {
-        
-    }
-    
-     /**
-     * Removes the node that lives at the specified key.
-     *
-     * Will remove the node at $key within the list in addition to shifting and adjusting the keys for
-     * remaining nodes that follow the removed.
-     *
-     * @access public
-     * @param mixed Contains the value to remove.
-     */
-    public function removeAt($key)
-    {
-        
-    }
-    
-    /**
-     * Removes the first node from the list.
-     *
-     * @access public
-     */
-    public function removeFirst()
-    {
-        
-    }
-    
-    /**
-     * Removes the last node from the list.
-     * 
-     * @access public
-     */
-    public function removeLast()
-    {
-        
-    }
-    
-    /**
-     * Removes the specified node from the list.
-     *
-     * If the node exists, it will be removed and all nodes that follow will be shifted and their keys
-     * will be adjusted.
-     *
-     * @access public
-     * @param IDoublyLinkedNode $node The node to remove from the list.
-     */
-    public function removeNode(IDoublyLinkedNode $node)
-    {
-        
-    }
-    
-    /**
-     * Sorts the list by the node values.
-     *
-     * The keys of all moved nodes will be adjusted so that the numeric key sequence
-     * remains (n - 1) + 1 for all nodes.
-     *
-     * @access public
-     */
-    public function sort()
-    {
-        
-    }
-    
-    /**
-     * Sorts the list by using a callback to specify the value to compare on.
-     *
-     * The callback should take one parameter of type IDoublyLinkedNode and return a single
-     * value that will be used for comparison.
-     *
-     * @access public
-     * @param $predicate
-     */
-    public function sortBy(callable $predicate)
-    {
-        
-    }
+ 
+}
 }
