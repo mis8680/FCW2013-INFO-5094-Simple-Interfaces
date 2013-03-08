@@ -889,33 +889,6 @@ class LinkedList implements \Data\LinkedLists\ILinkedList
               
     }
     
-    /**
-     * callback function
-     *
-     * @access public
-     * @param ILinkedNode
-     * @return mixed value
-     *
-     *   so ... sort by take a callback (a name of a function) that performs the sort
-     *   this function takes 2 parameters - the lhs and rhs, both of LinkedNodes
-     *   and returns an int. if lhs < rhs, -1 is returned. if ==, then 0, else +1
-     *   and this function is called when comparing 2 linkednode objects
-     *   and the returned value of the function is hwat is used for determining the operation needed to be performed, if any, by linkedlist
-     *
-     */
-    public static function myCallback(\Data\ILinkedNode $current, \Data\ILinkedNode $next)
-    {
-        if ($current->getNext() != null) {
-            if ($current->getValue() < $next->getValue()) {
-                return -1;
-            } elseif ($current->getValue() == $next->getValue()) {
-                return 0;
-            } else {
-                return 1;
-            }
-        }
-        
-    }
 }
 
 
