@@ -1,103 +1,139 @@
 <?php
-
 /**
  * This file is part of the Data package.
  *
  * For full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Data\LinkedList;
+namespace Data;
 
+require_once __DIR__ . '/IDoublyLinkedNode.php';
+require_once __DIR__ . '/LinkedNode.php';
 
 /**
- * DoublyLinkedNode class implements the IDoublyLinkedNode interface
- * 
- * @author Michael Cameron <m_cameron4132@fanshaweonline.ca>
- * @package Data\LinkedList
+ * The DoubleLinkedNode interface is implemented by all nodes that are to be linked.
+ *
+ * @author Insu Mun <i_mun@fanshaweonline.ca>
+ * @package \Data
  * @version 1.0.0
  */
-class DoublyLinkedNode  implements IDoublyLinkedNode 
+class DoublyLinkedNode implements \Data\IDoublyLinkedNode
 {
+     /**
+     * key variable
+     *
+     * @access private
+     * @var int
+     * 
+     */
+    protected $key;
     
-private $current;
-private $next;
-private $previous;
-private $key;
-
-public function __construct($current=null, $next=null, $previous=null){
+    /**
+     * value variable
+     *
+     * @access private
+     * @var mixed
+     * 
+     */
+    protected $value;
     
-    if(null !== $current) {
-        $this->setValue($current);
+    /**
+     *  next variable
+     *
+     *  @access private
+     *  @var
+     *  
+     */
+    private $next;
+    
+    /**
+     * previous variable
+     *
+     * @access private
+     * @var 
+     */
+    private $previous;
+    
+    /**
+     * construct
+     *
+     * @access public
+     * @param IDoublyLinkedNode
+     */
+    public function __construct(IDoublyLinkedNode $value)
+    {
+        if (!isset($value)) {
+            throw new \InvalidArgumentException(sprintf('The value should be set.'));
+        }
+        $this->value = $value;
     }
-    if(null !== $next) {
-        $this->setValue($next);
+    
+    
+    /**
+     * Returns the next ILinkedNode.
+     *
+     * @access public
+     * @return ILinkedNode|null Returns the next ILinkedNode instance if it exists, otherwise returns NULL.
+     */
+    public function getNext()
+    {
+        if (isset($this->next)) {
+            return $this->next;
+        }
+        return false;
     }
-    if(null !== $previous) {
-        $this->setValue($previous);
+    
+    /**
+     * Sets the next ILinkedNode instance.
+     *
+     * The `next` ILinkedNode should be the ILinkedNode instance that comes after
+     * this instance within a List.
+     *
+     * @access public
+     * @param ILinkedNode The ILinkedNode instance that is next.
+     */
+    public function setNext(ILinkedNode $next)
+    {
+        $this->next = $next;
     }
-   $this->key = isset($this->_previous)?$this->_previous->getKey()+1:0;
-}
-
-
-/**
- * Returns the previously linked node.
- *
- * @access public
- * @return IDoublyLinkedNode|null Returns the previously linked node. Will return null
- *   if no previous node exists.
- */
-public function getPrevious(){
     
-return $this->_previous;
+    /**
+     * Returns the previously linked node.
+     *
+     * @access public
+     * @return IDoublyLinkedNode|null Returns the previously linked node. Will return null
+     *   if no previous node exists.
+     */
+    public function getPrevious()
+    {
+        if (isset($this->previous)) {
+            return $this->previous;
+        }
+        return false;
+    }
     
-}
-
-/**
-* Sets the previous node.
-*
-* @access public
-* @param IDoublyLinkedNode The previously linked node.
-*/
-public function setPrevious(&$previous){
+    /**
+     * Sets the previous node.
+     *
+     * @access public
+     * @param IDoublyLinkedNode The previously linked node.
+     */
+    public function setPrevious(IDoublyLinkedNode &$previous)
+    {
+        $this->previous = $previous;
+    }
     
-    $this->_previous = $previous;
-    while($this->_previous !== null){
-        $previous->setKey(getKey()-1);
-    }   
-}
+   
 
-/**
-* Returns the next ILinkedNode.
-*
-* @access public
-* @return ILinkedNode|null Returns the next ILinkedNode instance if it exists, otherwise returns NULL.
-*/
-public function getNext(){
-    return $this->_next;
-}
-    
-/**
-* Sets the next ILinkedNode instance.
-*
-* The `next` ILinkedNode should be the ILinkedNode instance that comes after
-* this instance within a List.
-*
-* @access public
-* @param ILinkedNode The ILinkedNode instance that is next.
-*/
-public function setNext(&$next){
-  
-    $this->_next=$next;
-}
-
- /**
+    /**
      * Returns the key value for this node.
      *
      * @access public
-     * @return mixed Returns the key value.
+     * @return int Returns the key value.
      */
-    public function getKey(){
-        return $this->_key;
+    public function getKey()
+    {
+        return isset($this->key) ? $this->key : null;
     }
     
     /**
@@ -106,8 +142,15 @@ public function setNext(&$next){
      * @access public
      * @param mixed The key value.
      */
-    public function setKey($key){
+    public function setKey($key)
+    {
+        if($key) {
+            if (!isset($key)) {
+            throw new \InvalidArgumentException(sprintf('The key should be set.'));
+            }
         $this->key = $key;
+        }
+        
     }
     
     /**
@@ -116,8 +159,9 @@ public function setNext(&$next){
      * @access public
      * @return mixed The value.
      */
-    public function getValue(){
-        return $this->_current;
+    public function getValue()
+    {
+        return isset($this->value)? $this->value : null;
     }
     
     /**
@@ -126,7 +170,14 @@ public function setNext(&$next){
      * @access public
      * @param mixed The value.
      */
-    public function setValue($current){
-        $this->_current = $current;
+    public function setValue($value)
+    {
+        if($value) {
+            if (!isset($value)) {
+            throw new \InvalidArgumentException(sprintf('The value should be set.'));
+            }
+        $this->value = $value;
+        }
+        
     }
 }

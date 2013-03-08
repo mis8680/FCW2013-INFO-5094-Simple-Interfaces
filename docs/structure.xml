@@ -147,6 +147,207 @@ this instance within a List.&lt;/p&gt;</long-description>
       </method>
     </interface>
   </file>
+  <file path="LinkedNode.php" hash="de252ad429e2457b7bbaf8b2c6f568fd" package="Default">
+    <docblock line="2">
+      <description>This file is part of the Data package.</description>
+      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
+file that was distributed with this source code.&lt;/p&gt;</long-description>
+    </docblock>
+    <include line="13" type="Require Once" package="Default">
+      <name/>
+      <docblock line="10">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="Data" line="22" package="\Data">
+      <extends/>
+      <implements>\Data\ILinkedNode</implements>
+      <name>LinkedNode</name>
+      <full_name>\Data\LinkedNode</full_name>
+      <docblock line="15">
+        <description>The SingleLinkedNode interface is implemented by all nodes that are to be linked.</description>
+        <long-description></long-description>
+        <tag line="15" name="author" description="Insu Mun &lt;i_mun@fanshaweonline.ca&gt;"/>
+        <tag line="15" name="package" description="\Data"/>
+        <tag line="15" name="version" description="1.0.0"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="31" namespace="Data" package="Default">
+        <name>$key</name>
+        <default></default>
+        <docblock line="24">
+          <description>key variable</description>
+          <long-description></long-description>
+          <tag line="24" name="access" description="private"/>
+          <tag line="24" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="40" namespace="Data" package="Default">
+        <name>$value</name>
+        <default></default>
+        <docblock line="33">
+          <description>value variable</description>
+          <long-description></long-description>
+          <tag line="33" name="access" description="private"/>
+          <tag line="33" name="var" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="48" namespace="Data" package="Default">
+        <name>$data</name>
+        <default></default>
+        <docblock line="42">
+          <description>Node variable</description>
+          <long-description></long-description>
+          <tag line="42" name="access" description="private"/>
+          <tag line="42" name="var" description="" type="\Data\node">
+            <type by_reference="false">\Data\node</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="56" namespace="Data" package="Default">
+        <name>$next</name>
+        <default></default>
+        <docblock line="50">
+          <description>Next variable</description>
+          <long-description></long-description>
+          <tag line="50" name="access" description="private"/>
+          <tag line="50" name="var" description="" type="\Data\ILinkedNode">
+            <type by_reference="false">\Data\ILinkedNode</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="64" package="\Data">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="58">
+          <description>construct</description>
+          <long-description></long-description>
+          <tag line="58" name="access" description="public"/>
+          <tag line="58" name="param" description="" type="\Data\Node" variable="$data">
+            <type by_reference="false">\Data\Node</type>
+          </tag>
+        </docblock>
+        <argument line="64">
+          <name>$data</name>
+          <default>null</default>
+          <type>\Data\Node</type>
+        </argument>
+        <argument line="64">
+          <name>$next</name>
+          <default>null</default>
+          <type>\Data\ILinkedNode</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="83" package="\Data">
+        <name>getNext</name>
+        <full_name>getNext</full_name>
+        <docblock line="77">
+          <description>Returns the next ILinkedNode.</description>
+          <long-description></long-description>
+          <tag line="77" name="access" description="public"/>
+          <tag line="77" name="return" description="Returns the next ILinkedNode instance if it exists, otherwise returns NULL." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="102" package="\Data">
+        <name>setNext</name>
+        <full_name>setNext</full_name>
+        <docblock line="93">
+          <description>Sets the next ILinkedNode instance.</description>
+          <long-description>&lt;p&gt;The &lt;code&gt;next&lt;/code&gt; ILinkedNode should be the ILinkedNode instance that comes after
+this instance within a List.&lt;/p&gt;</long-description>
+          <tag line="93" name="access" description="public"/>
+          <tag line="93" name="param" description="The ILinkedNode instance that is next." type="\Data\ILinkedNode" variable="$next">
+            <type by_reference="false">\Data\ILinkedNode</type>
+          </tag>
+        </docblock>
+        <argument line="102">
+          <name>$next</name>
+          <default>null</default>
+          <type>\Data\ILinkedNode</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="115" package="\Data">
+        <name>getKey</name>
+        <full_name>getKey</full_name>
+        <docblock line="109">
+          <description>Returns the key value for this node.</description>
+          <long-description></long-description>
+          <tag line="109" name="access" description="public"/>
+          <tag line="109" name="return" description="Returns the key value." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="126" package="\Data">
+        <name>setKey</name>
+        <full_name>setKey</full_name>
+        <docblock line="120">
+          <description>Sets the key value for this node.</description>
+          <long-description></long-description>
+          <tag line="120" name="access" description="public"/>
+          <tag line="120" name="param" description="The key value." type="mixed" variable="$key">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="126">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="142" package="\Data">
+        <name>getValue</name>
+        <full_name>getValue</full_name>
+        <docblock line="136">
+          <description>Returns the value of this node (the real value assigned).</description>
+          <long-description></long-description>
+          <tag line="136" name="access" description="public"/>
+          <tag line="136" name="return" description="The value." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="153" package="\Data">
+        <name>setValue</name>
+        <full_name>setValue</full_name>
+        <docblock line="147">
+          <description>Sets the value for this node.</description>
+          <long-description></long-description>
+          <tag line="147" name="access" description="public"/>
+          <tag line="147" name="param" description="The value." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="153">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="170" package="\Data">
+        <name>__toString</name>
+        <full_name>__toString</full_name>
+        <docblock line="164">
+          <description>tostring method</description>
+          <long-description></long-description>
+          <tag line="164" name="access" description="public"/>
+          <tag line="164" name="return" description="$value" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="58" code="50015">Argument $next is missing from the Docblock of __construct()</error>
+    </parse_markers>
+  </file>
   <file path="IDoublyLinkedNode.php" hash="0facb1736dc771d1216a0f81dc1d92cd" package="Default">
     <docblock line="2">
       <description>This file is part of the Data package.</description>
@@ -198,7 +399,1263 @@ of the next node in the sequence.&lt;/p&gt;</long-description>
       </method>
     </interface>
   </file>
-  <file path="LinkedLists/ILinkedList.php" hash="8f76680493e8184287a857c9c4dc8cba" package="Default"/>
+  <file path="Node.php" hash="be50391c1c4c08ba4ff268a5e2643ddf" package="Default">
+    <docblock line="2">
+      <description>This file is part of the Data package.</description>
+      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
+file that was distributed with this source code.&lt;/p&gt;</long-description>
+    </docblock>
+    <include line="10" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="Data" line="19" package="Data">
+      <extends/>
+      <implements>\Data\INode</implements>
+      <name>Node</name>
+      <full_name>\Data\Node</full_name>
+      <docblock line="12">
+        <description>Node class implemented by INode</description>
+        <long-description></long-description>
+        <tag line="12" name="author" description="Insu Mun&lt;mis8680@gmail.com&gt;"/>
+        <tag line="12" name="package" description="Data"/>
+        <tag line="12" name="version" description="1.0.0"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="28" namespace="Data" package="Default">
+        <name>$key</name>
+        <default></default>
+        <docblock line="21">
+          <description>key variable</description>
+          <long-description></long-description>
+          <tag line="21" name="access" description="private"/>
+          <tag line="21" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="37" namespace="Data" package="Default">
+        <name>$value</name>
+        <default></default>
+        <docblock line="30">
+          <description>value variable</description>
+          <long-description></long-description>
+          <tag line="30" name="access" description="private"/>
+          <tag line="30" name="var" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="48" package="Data">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="40">
+          <description>Constructor</description>
+          <long-description></long-description>
+          <tag line="40" name="access" description="public"/>
+          <tag line="40" name="param" description="" type="int" variable="$key">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="40" name="param" description="" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="48">
+          <name>$value</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="48">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="60" package="Data">
+        <name>getKey</name>
+        <full_name>getKey</full_name>
+        <docblock line="54">
+          <description>Returns the key value for this node.</description>
+          <long-description></long-description>
+          <tag line="54" name="access" description="public"/>
+          <tag line="54" name="return" description="Returns the key value." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="71" package="Data">
+        <name>setKey</name>
+        <full_name>setKey</full_name>
+        <docblock line="65">
+          <description>Sets the key value for this node.</description>
+          <long-description></long-description>
+          <tag line="65" name="access" description="public"/>
+          <tag line="65" name="param" description="The key value." type="mixed" variable="$key">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="71">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="88" package="Data">
+        <name>getValue</name>
+        <full_name>getValue</full_name>
+        <docblock line="82">
+          <description>Returns the value of this node (the real value assigned).</description>
+          <long-description></long-description>
+          <tag line="82" name="access" description="public"/>
+          <tag line="82" name="return" description="The value." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="99" package="Data">
+        <name>setValue</name>
+        <full_name>setValue</full_name>
+        <docblock line="93">
+          <description>Sets the value for this node.</description>
+          <long-description></long-description>
+          <tag line="93" name="access" description="public"/>
+          <tag line="93" name="param" description="The value." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="99">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="40" code="50014">Name of argument $value does not match with the DocBlock's name $key in __construct()</error>
+      <error line="40" code="50014">Name of argument $key does not match with the DocBlock's name $value in __construct()</error>
+    </parse_markers>
+  </file>
+  <file path="LinkedLists/Iterator.php" hash="f0ec2aba6bb5c0cf7a3fa26187161eca" package="Default"/>
+  <file path="LinkedLists/ILinkedList.php" hash="70325a52c432dc321ee4df59109e26b2" package="Default">
+    <docblock line="2">
+      <description>This file is part of the Data package.</description>
+      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
+file that was distributed with this source code.&lt;/p&gt;</long-description>
+    </docblock>
+    <interface namespace="Data\LinkedLists" line="20" package="Data\LinkedLists">
+      <name>ILinkedList</name>
+      <full_name>\Data\LinkedLists\ILinkedList</full_name>
+      <extends>\Countable</extends>
+      <extends>\IteratorAggregate</extends>
+      <docblock line="12">
+        <description>ILinkedList is the interface implemented by the LinkedList class or
+any class that wishes to operate as a Linked List.</description>
+        <long-description></long-description>
+        <tag line="12" name="author" description="Aaron McGowan &lt;a_mcgowan43905@fanshawec.ca&gt;"/>
+        <tag line="12" name="package" description="Data\LinkedLists"/>
+        <tag line="12" name="version" description="1.0.0"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="28" package="Data\LinkedLists">
+        <name>getFirst</name>
+        <full_name>getFirst</full_name>
+        <docblock line="22">
+          <description>Returns the first element in the list.</description>
+          <long-description></long-description>
+          <tag line="22" name="access" description="public"/>
+          <tag line="22" name="return" description="Returns the first ILinkedNode in the list, otherwise returns NULL." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="36" package="Data\LinkedLists">
+        <name>getLast</name>
+        <full_name>getLast</full_name>
+        <docblock line="30">
+          <description>Returns the last element in the list.</description>
+          <long-description></long-description>
+          <tag line="30" name="access" description="public"/>
+          <tag line="30" name="return" description="Returns the last ILinkedNode in the list, otherwise returns NULL." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="49" package="Data\LinkedLists">
+        <name>add</name>
+        <full_name>add</full_name>
+        <docblock line="38">
+          <description>Adds a value onto the end of the list.</description>
+          <long-description>&lt;p&gt;This method will create a new ILinkedNode instance assigning a
+numeric key value to the node and the value is assigned to the
+node's value property.&lt;/p&gt;</long-description>
+          <tag line="38" name="access" description="public"/>
+          <tag line="38" name="param" description="The value to add." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="38" name="return" description="The key value of the node that was created and added." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="49">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="61" package="Data\LinkedLists">
+        <name>addNode</name>
+        <full_name>addNode</full_name>
+        <docblock line="51">
+          <description>Adds an ILinkedNode instance onto the end of the list.</description>
+          <long-description>&lt;p&gt;The node that is to be added to the list should have its key reset so that
+it is the next key in the list's key sequence.&lt;/p&gt;</long-description>
+          <tag line="51" name="access" description="public"/>
+          <tag line="51" name="param" description="The ILinkedNode to add." type="\Data\ILinkedNode" variable="$node">
+            <type by_reference="false">\Data\ILinkedNode</type>
+          </tag>
+          <tag line="51" name="return" description="The key value of the node that was added." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="61">
+          <name>$node</name>
+          <default></default>
+          <type>\Data\ILinkedNode</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="72" package="Data\LinkedLists">
+        <name>asArray</name>
+        <full_name>asArray</full_name>
+        <docblock line="63">
+          <description>Returns the list as an associative array.</description>
+          <long-description>&lt;p&gt;The return array will be formatted so that each node within the list
+will be returned as a key =&gt; value representation.&lt;/p&gt;</long-description>
+          <tag line="63" name="access" description="public"/>
+          <tag line="63" name="return" description="An associative array of key and value pairs for all nodes." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="81" package="Data\LinkedLists">
+        <name>containsKey</name>
+        <full_name>containsKey</full_name>
+        <docblock line="74">
+          <description>Checks if the list contains a node with the specified key value.</description>
+          <long-description></long-description>
+          <tag line="74" name="access" description="public"/>
+          <tag line="74" name="param" description="Contains the key value to search for." type="mixed" variable="$key">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="74" name="return" description="Returns true if the $key was found, otherwise returns false." type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="81">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="90" package="Data\LinkedLists">
+        <name>contains</name>
+        <full_name>contains</full_name>
+        <docblock line="83">
+          <description>Checks if the list contains a node with the specified value.</description>
+          <long-description></long-description>
+          <tag line="83" name="access" description="public"/>
+          <tag line="83" name="param" description="Contains the value to search for." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="83" name="return" description="Returns true if the $value was found, otherwise returns false." type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="90">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="99" package="Data\LinkedLists">
+        <name>find</name>
+        <full_name>find</full_name>
+        <docblock line="92">
+          <description>Returns the ILinkedNode object by the specified value.</description>
+          <long-description></long-description>
+          <tag line="92" name="access" description="public"/>
+          <tag line="92" name="param" description="Contains the value to find." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="92" name="return" description="Returns the first ILinkedNode that contains the value, otherwise null." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="99">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="108" package="Data\LinkedLists">
+        <name>findAll</name>
+        <full_name>findAll</full_name>
+        <docblock line="101">
+          <description>Returns an array of all ILinkedNodes found by the specified value.</description>
+          <long-description></long-description>
+          <tag line="101" name="access" description="public"/>
+          <tag line="101" name="param" description="Contains the value to find." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="101" name="return" description="Returns an array with all the ILinkedNode instances whose value is equal to $value, otherwise returns null." type="array|null">
+            <type by_reference="false">array</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="108">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="116" package="Data\LinkedLists">
+        <name>findFirst</name>
+        <full_name>findFirst</full_name>
+        <docblock line="110">
+          <description>Returns the first ILinkedNode instance found by with the specified value.</description>
+          <long-description></long-description>
+          <tag line="110" name="access" description="public"/>
+          <tag line="110" name="param" description="" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="116">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="128" package="Data\LinkedLists">
+        <name>findLast</name>
+        <full_name>findLast</full_name>
+        <docblock line="118">
+          <description>Returns the last ILinkedNode instance found by the specified value.</description>
+          <long-description>&lt;p&gt;The searching operations for this method are in reverse, therefore starting at the
+bottom of the list. This is done so on purpose to reduce unneeded overhead.&lt;/p&gt;</long-description>
+          <tag line="118" name="access" description="public"/>
+          <tag line="118" name="param" description="Contains the value to find." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="118" name="return" description="Returns the last ILinkedNode that contains the value, otherwise null if none found." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="128">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="137" package="Data\LinkedLists">
+        <name>get</name>
+        <full_name>get</full_name>
+        <docblock line="130">
+          <description>Returns the ILinkedNode at the specified $key.</description>
+          <long-description></long-description>
+          <tag line="130" name="access" description="public"/>
+          <tag line="130" name="param" description="Contains the key of the ILinkedNode to get." type="mixed" variable="$key">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="130" name="return" description="Returns the ILinkedNode at $key if found, otherwise null." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="137">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="152" package="Data\LinkedLists">
+        <name>insertBefore</name>
+        <full_name>insertBefore</full_name>
+        <docblock line="139">
+          <description>Inserts a new ILinkedNode at before the specified key.</description>
+          <long-description>&lt;p&gt;The ILinkedNode instance is created within this method. When inserting, all nodes should
+be shifted and key values shifted as well for all nodes that follow this newly inserted.
+Additionally, when inserting a new ILinkedNode, the key will be automatically generated as the
+next numeric value in the sequence of nodes.&lt;/p&gt;</long-description>
+          <tag line="139" name="access" description="public"/>
+          <tag line="139" name="param" description="Contains the key value to insert a new ILinkedNode before." type="int" variable="$before">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="139" name="param" description="Contains the value used to create a new ILinkedNode with and inserted before $before." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="139" name="return" description="Returns the newly create ILinkedNode's key." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="152">
+          <name>$before</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="152">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="167" package="Data\LinkedLists">
+        <name>insertAfter</name>
+        <full_name>insertAfter</full_name>
+        <docblock line="154">
+          <description>Inserts a new ILinkedNode after the specified key.</description>
+          <long-description>&lt;p&gt;The ILinkedNode instance is created within this method. When inserting, all nodes that are
+to follow (come after) this node should be shifted and key values shifted as well.
+Additionally, when inserting a new ILinkedNode, the key will be automatically generated
+the next numeric value in the sequence of nodes.&lt;/p&gt;</long-description>
+          <tag line="154" name="access" description="public"/>
+          <tag line="154" name="param" description="Contains the key value to insert a new ILinkedNode after." type="int" variable="$after">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="154" name="param" description="Contains the value used to create a new ILinkedNode with and inserted before $after." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="154" name="return" description="Returns the newly create ILinkedNode's key." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="167">
+          <name>$after</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="167">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="175" package="Data\LinkedLists">
+        <name>isEmpty</name>
+        <full_name>isEmpty</full_name>
+        <docblock line="169">
+          <description>Returns a boolean to represent whether or not this list is empty.</description>
+          <long-description></long-description>
+          <tag line="169" name="access" description="public"/>
+          <tag line="169" name="return" description="Returns true if the list is empty, otherwise returns false." type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="183" package="Data\LinkedLists">
+        <name>peek</name>
+        <full_name>peek</full_name>
+        <docblock line="177">
+          <description>Returns, but does not remove, the first node in the list.</description>
+          <long-description></long-description>
+          <tag line="177" name="access" description="public"/>
+          <tag line="177" name="return" description="Returns the first node in the list. Will returns NULL if the list empty." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="191" package="Data\LinkedLists">
+        <name>peekFirst</name>
+        <full_name>peekFirst</full_name>
+        <docblock line="185">
+          <description>Returns, but does not remove, the first node in the list.</description>
+          <long-description></long-description>
+          <tag line="185" name="access" description="public"/>
+          <tag line="185" name="return" description="Returns the first node in the list. Will returns NULL if the list empty." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="199" package="Data\LinkedLists">
+        <name>peekLast</name>
+        <full_name>peekLast</full_name>
+        <docblock line="193">
+          <description>Returns, but does not remove, the last node in the list.</description>
+          <long-description></long-description>
+          <tag line="193" name="access" description="public"/>
+          <tag line="193" name="return" description="Returns the last node in the list. Will returns NULL if the list empty." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="207" package="Data\LinkedLists">
+        <name>poll</name>
+        <full_name>poll</full_name>
+        <docblock line="201">
+          <description>Returns and removes the first node in the list.</description>
+          <long-description></long-description>
+          <tag line="201" name="access" description="public"/>
+          <tag line="201" name="return" description="Returns the first node in the list. Will return NULL if the list is empty." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="215" package="Data\LinkedLists">
+        <name>pollFirst</name>
+        <full_name>pollFirst</full_name>
+        <docblock line="209">
+          <description>Returns and removes the first node in the list.</description>
+          <long-description></long-description>
+          <tag line="209" name="access" description="public"/>
+          <tag line="209" name="return" description="Returns the first node in the list. Will return NULL if the list is empty." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="223" package="Data\LinkedLists">
+        <name>pollLast</name>
+        <full_name>pollLast</full_name>
+        <docblock line="217">
+          <description>Returns and removes the last node in the list.</description>
+          <long-description></long-description>
+          <tag line="217" name="access" description="public"/>
+          <tag line="217" name="return" description="Returns the last node in the list. Will return NULL if the list is empty." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="231" package="Data\LinkedLists">
+        <name>pop</name>
+        <full_name>pop</full_name>
+        <docblock line="225">
+          <description>Returns the last node's value and removes the last node in the list.</description>
+          <long-description></long-description>
+          <tag line="225" name="access" description="public"/>
+          <tag line="225" name="return" description="Returns the last node value in the list. Will return NULL if the list empty." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="242" package="Data\LinkedLists">
+        <name>push</name>
+        <full_name>push</full_name>
+        <docblock line="233">
+          <description>Adds a new value onto the end of the list.</description>
+          <long-description>&lt;p&gt;A new ILinkedNode instance will be created and the value assigned to the specified. A numeric
+key will be created based on the sequence (last numeric key + 1) and assigned to this node.&lt;/p&gt;</long-description>
+          <tag line="233" name="access" description="public"/>
+          <tag line="233" name="param" description="Contains the value to push onto the list." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="242">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="253" package="Data\LinkedLists">
+        <name>remove</name>
+        <full_name>remove</full_name>
+        <docblock line="244">
+          <description>Removes all nodes whose value is equal to that specified.</description>
+          <long-description>&lt;p&gt;Will remove all nodes within the list in addition to shifting and adjusting their
+keys, for those that are within a numeric sequence.&lt;/p&gt;</long-description>
+          <tag line="244" name="access" description="public"/>
+          <tag line="244" name="param" description="Contains the value to remove." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="253">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="264" package="Data\LinkedLists">
+        <name>removeAt</name>
+        <full_name>removeAt</full_name>
+        <docblock line="255">
+          <description>Removes the node that lives at the specified key.</description>
+          <long-description>&lt;p&gt;Will remove the node at $key within the list in addition to shifting and adjusting the keys for
+remaining nodes that follow the removed.&lt;/p&gt;</long-description>
+          <tag line="255" name="access" description="public"/>
+          <tag line="255" name="param" description="Contains the value to remove." type="mixed" variable="$key">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="264">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="271" package="Data\LinkedLists">
+        <name>removeFirst</name>
+        <full_name>removeFirst</full_name>
+        <docblock line="266">
+          <description>Removes the first node from the list.</description>
+          <long-description></long-description>
+          <tag line="266" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="278" package="Data\LinkedLists">
+        <name>removeLast</name>
+        <full_name>removeLast</full_name>
+        <docblock line="273">
+          <description>Removes the last node from the list.</description>
+          <long-description></long-description>
+          <tag line="273" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="289" package="Data\LinkedLists">
+        <name>removeNode</name>
+        <full_name>removeNode</full_name>
+        <docblock line="280">
+          <description>Removes the specified node from the list.</description>
+          <long-description>&lt;p&gt;If the node exists, it will be removed and all nodes that follow will be shifted and their keys
+will be adjusted.&lt;/p&gt;</long-description>
+          <tag line="280" name="access" description="public"/>
+          <tag line="280" name="param" description="The node to remove from the list." type="\Data\ILinkedNode" variable="$node">
+            <type by_reference="false">\Data\ILinkedNode</type>
+          </tag>
+        </docblock>
+        <argument line="289">
+          <name>$node</name>
+          <default></default>
+          <type>\Data\ILinkedNode</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="299" package="Data\LinkedLists">
+        <name>sort</name>
+        <full_name>sort</full_name>
+        <docblock line="291">
+          <description>Sorts the list by the node values.</description>
+          <long-description>&lt;p&gt;The keys of all moved nodes will be adjusted so that the numeric key sequence
+remains (n - 1) + 1 for all nodes.&lt;/p&gt;</long-description>
+          <tag line="291" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="310" package="Data\LinkedLists">
+        <name>sortBy</name>
+        <full_name>sortBy</full_name>
+        <docblock line="301">
+          <description>Sorts the list by using a callback to specify the value to compare on.</description>
+          <long-description>&lt;p&gt;The callback should take one parameter of type ILinkedNode and return a single
+value that will be used for comparison.&lt;/p&gt;</long-description>
+          <tag line="301" name="access" description="public"/>
+          <tag line="301" name="param" description="The specified callback." type="callable" variable="$predicate">
+            <type by_reference="false">callable</type>
+          </tag>
+        </docblock>
+        <argument line="310">
+          <name>$predicate</name>
+          <default></default>
+          <type>callable</type>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="LinkedLists/LinkedList.php" hash="d0245d28c987285d069a86062970151e" package="Default">
+    <docblock line="3">
+      <description>This file is part of the Data package.</description>
+      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
+file that was distributed with this source code.&lt;/p&gt;</long-description>
+    </docblock>
+    <include line="23" type="Require Once" package="Default">
+      <name/>
+      <docblock line="18">
+        <description>required file</description>
+        <long-description>&lt;p&gt;I could not find why the autoload does not work in my system...&lt;/p&gt;</long-description>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="Data\LinkedLists" line="32" package="Data">
+      <extends/>
+      <implements>\Data\LinkedLists\ILinkedList</implements>
+      <name>LinkedList</name>
+      <full_name>\Data\LinkedLists\LinkedList</full_name>
+      <docblock line="25">
+        <description>The Single Linked List.</description>
+        <long-description></long-description>
+        <tag line="25" name="author" description="Insu Mun &lt;i_mun@fanshaweonline.ca&gt;"/>
+        <tag line="25" name="package" description="Data"/>
+        <tag line="25" name="version" description="1.0.0"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="40" namespace="Data\LinkedLists" package="Default">
+        <name>$firstNode</name>
+        <default></default>
+        <docblock line="34">
+          <description>first node</description>
+          <long-description></long-description>
+          <tag line="34" name="access" description="private"/>
+          <tag line="34" name="var" description="" type="\Data\LinkedLists\ILinkedNode">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="48" namespace="Data\LinkedLists" package="Default">
+        <name>$count</name>
+        <default></default>
+        <docblock line="42">
+          <description>To count the node data</description>
+          <long-description></long-description>
+          <tag line="42" name="access" description="private"/>
+          <tag line="42" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="56" package="Data">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="50">
+          <description>__construct method</description>
+          <long-description></long-description>
+          <tag line="50" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="71" package="Data">
+        <name>count</name>
+        <full_name>count</full_name>
+        <docblock line="64">
+          <description>count the size of list</description>
+          <long-description></long-description>
+          <tag line="64" name="access" description="public"/>
+          <tag line="64" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="82" package="Data">
+        <name>getIterator</name>
+        <full_name>getIterator</full_name>
+        <docblock line="76">
+          <description>Get Iterator method</description>
+          <long-description></long-description>
+          <tag line="76" name="access" description="public"/>
+          <tag line="76" name="return" description="" type="\Data\LinkedLists\Iterator">
+            <type by_reference="false">\Data\LinkedLists\Iterator</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="93" package="Data">
+        <name>getFirst</name>
+        <full_name>getFirst</full_name>
+        <docblock line="87">
+          <description>Returns the first element in the list.</description>
+          <long-description></long-description>
+          <tag line="87" name="access" description="public"/>
+          <tag line="87" name="return" description="Returns the first ILinkedNode in the list, otherwise returns null." type="\Data\LinkedLists\ILinkedNode|null">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="104" package="Data">
+        <name>getLast</name>
+        <full_name>getLast</full_name>
+        <docblock line="98">
+          <description>Returns the last element in the list.</description>
+          <long-description></long-description>
+          <tag line="98" name="access" description="public"/>
+          <tag line="98" name="return" description="Returns the last ILinkedNode in the list, otherwise returns null." type="\Data\LinkedLists\ILinkedNode|null">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="131" package="Data">
+        <name>add</name>
+        <full_name>add</full_name>
+        <docblock line="120">
+          <description>Adds a value onto the end of the list.</description>
+          <long-description>&lt;p&gt;This method will create a new ILinkedNode instance assigning a
+numeric key value to the node and the value is assigned to the
+node's value property.&lt;/p&gt;</long-description>
+          <tag line="120" name="access" description="public"/>
+          <tag line="120" name="param" description="The value to add." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="120" name="return" description="The key value of the node that was created and added." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="131">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="166" package="Data">
+        <name>addNode</name>
+        <full_name>addNode</full_name>
+        <docblock line="156">
+          <description>Adds an ILinkedNode instance onto the end of the list.</description>
+          <long-description>&lt;p&gt;The node that is to be added to the list should have its key reset so that
+it is the next key in the list's key sequence.&lt;/p&gt;</long-description>
+          <tag line="156" name="access" description="public"/>
+          <tag line="156" name="param" description="The ILinkedNode to add." type="\Data\LinkedLists\ILinkedNode" variable="$node">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+          </tag>
+          <tag line="156" name="return" description="The key value of the node that was added." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="166">
+          <name>$node</name>
+          <default></default>
+          <type>\Data\ILinkedNode</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="197" package="Data">
+        <name>asArray</name>
+        <full_name>asArray</full_name>
+        <docblock line="188">
+          <description>Returns the list as an associative array.</description>
+          <long-description>&lt;p&gt;The return array will be formatted so that each node within the list
+will be returned as a key =&gt; value representation.&lt;/p&gt;</long-description>
+          <tag line="188" name="access" description="public"/>
+          <tag line="188" name="return" description="An associative array of key and value pairs for all nodes." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="218" package="Data">
+        <name>containsKey</name>
+        <full_name>containsKey</full_name>
+        <docblock line="211">
+          <description>Checks if the list contains a node with the specified key value.</description>
+          <long-description></long-description>
+          <tag line="211" name="access" description="public"/>
+          <tag line="211" name="param" description="Contains the key value to search for." type="mixed" variable="$key">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="211" name="return" description="Returns true if the $key was found, otherwise returns false." type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="218">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="238" package="Data">
+        <name>contains</name>
+        <full_name>contains</full_name>
+        <docblock line="231">
+          <description>Checks if the list contains a node with the specified value.</description>
+          <long-description></long-description>
+          <tag line="231" name="access" description="public"/>
+          <tag line="231" name="param" description="Contains the value to search for." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="231" name="return" description="Returns true if the $value was found, otherwise returns false." type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="238">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="258" package="Data">
+        <name>find</name>
+        <full_name>find</full_name>
+        <docblock line="251">
+          <description>Returns the ILinkedNode object by the specified value.</description>
+          <long-description></long-description>
+          <tag line="251" name="access" description="public"/>
+          <tag line="251" name="param" description="Contains the value to find." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="251" name="return" description="Returns the first ILinkedNode that contains the value, otherwise null." type="\Data\LinkedLists\ILinkedNode|null">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="258">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="278" package="Data">
+        <name>findAll</name>
+        <full_name>findAll</full_name>
+        <docblock line="271">
+          <description>Returns an array of all ILinkedNodes found by the specified value.</description>
+          <long-description></long-description>
+          <tag line="271" name="access" description="public"/>
+          <tag line="271" name="param" description="Contains the value to find." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="271" name="return" description="Returns an array with all the ILinkedNode instances whose value is equal to $value, otherwise returns null." type="array|null">
+            <type by_reference="false">array</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="278">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="299" package="Data">
+        <name>findFirst</name>
+        <full_name>findFirst</full_name>
+        <docblock line="292">
+          <description>Returns the first ILinkedNode instance found by with the specified value.</description>
+          <long-description></long-description>
+          <tag line="292" name="access" description="public"/>
+          <tag line="292" name="param" description="" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="292" name="return" description="Returns the last ILinkedNode that contains the value, otherwise null if none found." type="\Data\LinkedLists\ILinkedNode|null">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="299">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="322" package="Data">
+        <name>findLast</name>
+        <full_name>findLast</full_name>
+        <docblock line="312">
+          <description>Returns the last ILinkedNode instance found by the specified value.</description>
+          <long-description>&lt;p&gt;The searching operations for this method are in reverse, therefore starting at the
+bottom of the list. This is done so on purpose to reduce unneeded overhead.&lt;/p&gt;</long-description>
+          <tag line="312" name="access" description="public"/>
+          <tag line="312" name="param" description="Contains the value to find." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="312" name="return" description="Returns the last ILinkedNode that contains the value, otherwise null if none found." type="\Data\LinkedLists\ILinkedNode|null">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="322">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="343" package="Data">
+        <name>get</name>
+        <full_name>get</full_name>
+        <docblock line="336">
+          <description>Returns the ILinkedNode at the specified $key.</description>
+          <long-description></long-description>
+          <tag line="336" name="access" description="public"/>
+          <tag line="336" name="param" description="Contains the key of the ILinkedNode to get." type="mixed" variable="$key">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="336" name="return" description="Returns the ILinkedNode at $key if found, otherwise null." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="343">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="369" package="Data">
+        <name>insertBefore</name>
+        <full_name>insertBefore</full_name>
+        <docblock line="356">
+          <description>Inserts a new ILinkedNode at before the specified key.</description>
+          <long-description>&lt;p&gt;The ILinkedNode instance is created within this method. When inserting, all nodes should
+be shifted and key values shifted as well for all nodes that follow this newly inserted.
+Additionally, when inserting a new ILinkedNode, the key will be automatically generated as the
+next numeric value in the sequence of nodes.&lt;/p&gt;</long-description>
+          <tag line="356" name="access" description="public"/>
+          <tag line="356" name="param" description="Contains the key value to insert a new ILinkedNode before." type="int" variable="$before">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="356" name="param" description="Contains the value used to create a new ILinkedNode with and inserted before $before." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="356" name="return" description="Returns the newly create ILinkedNode's key." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="369">
+          <name>$before</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="369">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="431" package="Data">
+        <name>insertAfter</name>
+        <full_name>insertAfter</full_name>
+        <docblock line="418">
+          <description>Inserts a new ILinkedNode after the specified key.</description>
+          <long-description>&lt;p&gt;The ILinkedNode instance is created within this method. When inserting, all nodes that are
+to follow (come after) this node should be shifted and key values shifted as well.
+Additionally, when inserting a new ILinkedNode, the key will be automatically generated
+the next numeric value in the sequence of nodes.&lt;/p&gt;</long-description>
+          <tag line="418" name="access" description="public"/>
+          <tag line="418" name="param" description="Contains the key value to insert a new ILinkedNode after." type="int" variable="$after">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="418" name="param" description="Contains the value used to create a new ILinkedNode with and inserted before $after." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="418" name="return" description="Returns the newly create ILinkedNode's key." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="431">
+          <name>$after</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="431">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="473" package="Data">
+        <name>isEmpty</name>
+        <full_name>isEmpty</full_name>
+        <docblock line="467">
+          <description>Returns a boolean to represent whether or not this list is empty.</description>
+          <long-description></long-description>
+          <tag line="467" name="access" description="public"/>
+          <tag line="467" name="return" description="Returns true if the list is empty, otherwise returns false." type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="484" package="Data">
+        <name>peek</name>
+        <full_name>peek</full_name>
+        <docblock line="478">
+          <description>Returns, but does not remove, the first node in the list.</description>
+          <long-description></long-description>
+          <tag line="478" name="access" description="public"/>
+          <tag line="478" name="return" description="Returns the first node in the list. Will returns null if the list empty." type="\Data\LinkedLists\ILinkedNode|null">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="495" package="Data">
+        <name>peekFirst</name>
+        <full_name>peekFirst</full_name>
+        <docblock line="489">
+          <description>Returns, but does not remove, the first node in the list.</description>
+          <long-description></long-description>
+          <tag line="489" name="access" description="public"/>
+          <tag line="489" name="return" description="Returns the first node in the list. Will returns null if the list empty." type="\Data\LinkedLists\ILinkedNode|null">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="506" package="Data">
+        <name>peekLast</name>
+        <full_name>peekLast</full_name>
+        <docblock line="500">
+          <description>Returns, but does not remove, the last node in the list.</description>
+          <long-description></long-description>
+          <tag line="500" name="access" description="public"/>
+          <tag line="500" name="return" description="Returns the last node in the list. Will returns null if the list empty." type="\Data\LinkedLists\ILinkedNode|null">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="526" package="Data">
+        <name>poll</name>
+        <full_name>poll</full_name>
+        <docblock line="520">
+          <description>Returns and removes the first node in the list.</description>
+          <long-description></long-description>
+          <tag line="520" name="access" description="public"/>
+          <tag line="520" name="return" description="Returns the first node in the list. Will return null if the list is empty." type="\Data\LinkedLists\ILinkedNode|null">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="549" package="Data">
+        <name>pollFirst</name>
+        <full_name>pollFirst</full_name>
+        <docblock line="543">
+          <description>Returns and removes the first node in the list.</description>
+          <long-description></long-description>
+          <tag line="543" name="access" description="public"/>
+          <tag line="543" name="return" description="Returns the first node in the list. Will return null if the list is empty." type="\Data\LinkedLists\ILinkedNode|null">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="572" package="Data">
+        <name>pollLast</name>
+        <full_name>pollLast</full_name>
+        <docblock line="566">
+          <description>Returns and removes the last node in the list.</description>
+          <long-description></long-description>
+          <tag line="566" name="access" description="public"/>
+          <tag line="566" name="return" description="Returns the last node in the list. Will return null if the list is empty." type="\Data\LinkedLists\ILinkedNode|null">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="597" package="Data">
+        <name>pop</name>
+        <full_name>pop</full_name>
+        <docblock line="591">
+          <description>Returns the last node's value and removes the last node in the list.</description>
+          <long-description></long-description>
+          <tag line="591" name="access" description="public"/>
+          <tag line="591" name="return" description="Returns the last node value in the list. Will return null if the list empty." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="624" package="Data">
+        <name>push</name>
+        <full_name>push</full_name>
+        <docblock line="615">
+          <description>Adds a new value onto the end of the list.</description>
+          <long-description>&lt;p&gt;A new ILinkedNode instance will be created and the value assigned to the specified. A numeric
+key will be created based on the sequence (last numeric key + 1) and assigned to this node.&lt;/p&gt;</long-description>
+          <tag line="615" name="access" description="public"/>
+          <tag line="615" name="param" description="Contains the value to push onto the list." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="624">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="644" package="Data">
+        <name>remove</name>
+        <full_name>remove</full_name>
+        <docblock line="635">
+          <description>Removes all nodes whose value is equal to that specified.</description>
+          <long-description>&lt;p&gt;Will remove all nodes within the list in addition to shifting and adjusting their
+keys, for those that are within a numeric sequence.&lt;/p&gt;</long-description>
+          <tag line="635" name="access" description="public"/>
+          <tag line="635" name="param" description="Contains the value to remove." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="644">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="699" package="Data">
+        <name>removeAt</name>
+        <full_name>removeAt</full_name>
+        <docblock line="690">
+          <description>Removes the node that lives at the specified key.</description>
+          <long-description>&lt;p&gt;Will remove the node at $key within the list in addition to shifting and adjusting the keys for
+remaining nodes that follow the removed.&lt;/p&gt;</long-description>
+          <tag line="690" name="access" description="public"/>
+          <tag line="690" name="param" description="Contains the value to remove." type="mixed" variable="$key">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="699">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="750" package="Data">
+        <name>removeFirst</name>
+        <full_name>removeFirst</full_name>
+        <docblock line="745">
+          <description>Removes the first node from the list.</description>
+          <long-description></long-description>
+          <tag line="745" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="778" package="Data">
+        <name>removeLast</name>
+        <full_name>removeLast</full_name>
+        <docblock line="773">
+          <description>Removes the last node from the list.</description>
+          <long-description></long-description>
+          <tag line="773" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="806" package="Data">
+        <name>removeNode</name>
+        <full_name>removeNode</full_name>
+        <docblock line="797">
+          <description>Removes the specified node from the list.</description>
+          <long-description>&lt;p&gt;If the node exists, it will be removed and all nodes that follow will be shifted and their keys
+will be adjusted.&lt;/p&gt;</long-description>
+          <tag line="797" name="access" description="public"/>
+          <tag line="797" name="param" description="The node to remove from the list." type="\Data\LinkedLists\ILinkedNode" variable="$node">
+            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
+          </tag>
+        </docblock>
+        <argument line="806">
+          <name>$node</name>
+          <default></default>
+          <type>\Data\ILinkedNode</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="823" package="Data">
+        <name>sort</name>
+        <full_name>sort</full_name>
+        <docblock line="815">
+          <description>Sorts the list by the node values.</description>
+          <long-description>&lt;p&gt;The keys of all moved nodes will be adjusted so that the numeric key sequence
+remains (n - 1) + 1 for all nodes.&lt;/p&gt;</long-description>
+          <tag line="815" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="860" package="Data">
+        <name>sortBy</name>
+        <full_name>sortBy</full_name>
+        <docblock line="850">
+          <description>Sorts the list by using a callback to specify the value to compare on.</description>
+          <long-description>&lt;p&gt;The callback should take one parameter of type ILinkedNode and return a single
+value that will be used for comparison.&lt;/p&gt;</long-description>
+          <tag line="850" name="access" description="public"/>
+          <tag line="850" name="param" description="callable" type="\Data\LinkedLists\" variable="$predicate"/>
+        </docblock>
+        <argument line="860">
+          <name>$predicate</name>
+          <default></default>
+          <type>callable</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="156" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $node in addNode()</error>
+      <error line="797" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $node in removeNode()</error>
+      <error line="850" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $predicate in sortBy()</error>
+    </parse_markers>
+  </file>
   <file path="LinkedLists/IDoublyLinkedList.php" hash="32c8bffa0c2441dd564b52684eed5bb3" package="Default">
     <docblock line="2">
       <description>This file is part of the Data package.</description>
@@ -219,1459 +1676,37 @@ any class that wishes to operate as a Linked List.</description>
       </docblock>
     </interface>
   </file>
-  <file path="LinkedLists/SingleLinkedList.php" hash="472eb8aa0f5f295692ca41a8e9a49ac7" package="Default">
-    <docblock line="2">
-      <description>This file is part of the Data package.</description>
-      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
-file that was distributed with this source code.&lt;/p&gt;</long-description>
-    </docblock>
-    <include line="13" type="Require Once" package="Default">
+  <file path="LinkedLists/DoublyLinkedList.php" hash="3be0291ce1047921ac3524654d9d3385" package="Default"/>
+  <file path="bootstrap.php" hash="b20529bff05623caca784d002f01f272" package="Default">
+    <include line="2" type="Require Once" package="Default">
       <name/>
-      <docblock line="10">
-        <description/>
-        <long-description/>
-        <tag line="10" name="ignore" description=""/>
-      </docblock>
     </include>
-    <class final="false" abstract="false" namespace="Data\LinkedLists" line="22" package="Data">
-      <extends/>
-      <implements>\Data\LinkedLists\ILinkedList</implements>
-      <name>SingleLinkedList</name>
-      <full_name>\Data\LinkedLists\SingleLinkedList</full_name>
-      <docblock line="15">
-        <description>The Single Linked List.</description>
-        <long-description/>
-        <tag line="15" name="author" description="Insu Mun &lt;i_mun@fanshaweonline.ca&gt;"/>
-        <tag line="15" name="package" description="Data"/>
-        <tag line="15" name="version" description="1.0.0"/>
-      </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="33" package="Data">
-        <name>__construct</name>
-        <full_name>__construct</full_name>
-        <docblock line="26">
-          <description>construct method</description>
-          <long-description/>
-          <tag line="26" name="access" description="public"/>
-          <tag line="26" name="param" description="" type="\Data\LinkedLists\SingleLinkedNode" variable="$data">
-            <type by_reference="false">\Data\LinkedLists\SingleLinkedNode</type>
-          </tag>
-        </docblock>
-        <argument line="33">
-          <name>$data</name>
-          <default>null</default>
-          <type>\Data\LinkedLists\SingleLinkedNode</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="44" package="Data">
-        <name>getFirst</name>
-        <full_name>getFirst</full_name>
-        <docblock line="38">
-          <description>Returns the first element in the list.</description>
-          <long-description/>
-          <tag line="38" name="access" description="public"/>
-          <tag line="38" name="return" description="Returns the first ILinkedNode in the list, otherwise returns NULL." type="\Data\LinkedLists\ILinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="55" package="Data">
-        <name>getLast</name>
-        <full_name>getLast</full_name>
-        <docblock line="49">
-          <description>Returns the last element in the list.</description>
-          <long-description/>
-          <tag line="49" name="access" description="public"/>
-          <tag line="49" name="return" description="Returns the last ILinkedNode in the list, otherwise returns NULL." type="\Data\LinkedLists\ILinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="71" package="Data">
-        <name>add</name>
-        <full_name>add</full_name>
-        <docblock line="60">
-          <description>Adds a value onto the end of the list.</description>
-          <long-description>&lt;p&gt;This method will create a new ILinkedNode instance assigning a
-numeric key value to the node and the value is assigned to the
-node's value property.&lt;/p&gt;</long-description>
-          <tag line="60" name="access" description="public"/>
-          <tag line="60" name="param" description="The value to add." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="60" name="return" description="The key value of the node that was created and added." type="int">
-            <type by_reference="false">int</type>
-          </tag>
-        </docblock>
-        <argument line="71">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="86" package="Data">
-        <name>addNode</name>
-        <full_name>addNode</full_name>
-        <docblock line="76">
-          <description>Adds an ILinkedNode instance onto the end of the list.</description>
-          <long-description>&lt;p&gt;The node that is to be added to the list should have its key reset so that
-it is the next key in the list's key sequence.&lt;/p&gt;</long-description>
-          <tag line="76" name="access" description="public"/>
-          <tag line="76" name="param" description="The ILinkedNode to add." type="\Data\LinkedLists\ILinkedNode" variable="$node">
-            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
-          </tag>
-          <tag line="76" name="return" description="The key value of the node that was added." type="mixed">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="86">
-          <name>$node</name>
-          <default/>
-          <type>\Data\LinkedLists\ILinkedNode</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="100" package="Data">
-        <name>asArray</name>
-        <full_name>asArray</full_name>
-        <docblock line="91">
-          <description>Returns the list as an associative array.</description>
-          <long-description>&lt;p&gt;The return array will be formatted so that each node within the list
-will be returned as a key =&gt; value representation.&lt;/p&gt;</long-description>
-          <tag line="91" name="access" description="public"/>
-          <tag line="91" name="return" description="An associative array of key and value pairs for all nodes." type="array">
-            <type by_reference="false">array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="112" package="Data">
-        <name>containsKey</name>
-        <full_name>containsKey</full_name>
-        <docblock line="105">
-          <description>Checks if the list contains a node with the specified key value.</description>
-          <long-description/>
-          <tag line="105" name="access" description="public"/>
-          <tag line="105" name="param" description="Contains the key value to search for." type="mixed" variable="$key">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="105" name="return" description="Returns true if the $key was found, otherwise returns false." type="bool">
-            <type by_reference="false">bool</type>
-          </tag>
-        </docblock>
-        <argument line="112">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="124" package="Data">
-        <name>contains</name>
-        <full_name>contains</full_name>
-        <docblock line="117">
-          <description>Checks if the list contains a node with the specified value.</description>
-          <long-description/>
-          <tag line="117" name="access" description="public"/>
-          <tag line="117" name="param" description="Contains the value to search for." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="117" name="return" description="Returns true if the $value was found, otherwise returns false." type="bool">
-            <type by_reference="false">bool</type>
-          </tag>
-        </docblock>
-        <argument line="124">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="136" package="Data">
-        <name>find</name>
-        <full_name>find</full_name>
-        <docblock line="129">
-          <description>Returns the ILinkedNode object by the specified value.</description>
-          <long-description/>
-          <tag line="129" name="access" description="public"/>
-          <tag line="129" name="param" description="Contains the value to find." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="129" name="return" description="Returns the first ILinkedNode that contains the value, otherwise null." type="\Data\LinkedLists\ILinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-        <argument line="136">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="148" package="Data">
-        <name>findAll</name>
-        <full_name>findAll</full_name>
-        <docblock line="141">
-          <description>Returns an array of all ILinkedNodes found by the specified value.</description>
-          <long-description/>
-          <tag line="141" name="access" description="public"/>
-          <tag line="141" name="param" description="Contains the value to find." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="141" name="return" description="Returns an array with all the ILinkedNode instances whose value is equal to $value, otherwise returns null." type="array|null">
-            <type by_reference="false">array</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-        <argument line="148">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="159" package="Data">
-        <name>findFirst</name>
-        <full_name>findFirst</full_name>
-        <docblock line="153">
-          <description>Returns the first ILinkedNode instance found by with the specified value.</description>
-          <long-description/>
-          <tag line="153" name="access" description="public"/>
-          <tag line="153" name="param" description="" type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="159">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="174" package="Data">
-        <name>findLast</name>
-        <full_name>findLast</full_name>
-        <docblock line="164">
-          <description>Returns the last ILinkedNode instance found by the specified value.</description>
-          <long-description>&lt;p&gt;The searching operations for this method are in reverse, therefore starting at the
-bottom of the list. This is done so on purpose to reduce unneeded overhead.&lt;/p&gt;</long-description>
-          <tag line="164" name="access" description="public"/>
-          <tag line="164" name="param" description="Contains the value to find." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="164" name="return" description="Returns the last ILinkedNode that contains the value, otherwise null if none found." type="\Data\LinkedLists\ILinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-        <argument line="174">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="186" package="Data">
-        <name>get</name>
-        <full_name>get</full_name>
-        <docblock line="179">
-          <description>Returns the ILinkedNode at the specified $key.</description>
-          <long-description/>
-          <tag line="179" name="access" description="public"/>
-          <tag line="179" name="param" description="Contains the key of the ILinkedNode to get." type="mixed" variable="$key">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="179" name="return" description="Returns the ILinkedNode at $key if found, otherwise null." type="mixed">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="186">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="204" package="Data">
-        <name>insertBefore</name>
-        <full_name>insertBefore</full_name>
-        <docblock line="191">
-          <description>Inserts a new ILinkedNode at before the specified key.</description>
-          <long-description>&lt;p&gt;The ILinkedNode instance is created within this method. When inserting, all nodes should
-be shifted and key values shifted as well for all nodes that follow this newly inserted.
-Additionally, when inserting a new ILinkedNode, the key will be automatically generated as the
-next numeric value in the sequence of nodes.&lt;/p&gt;</long-description>
-          <tag line="191" name="access" description="public"/>
-          <tag line="191" name="param" description="Contains the key value to insert a new ILinkedNode before." type="int" variable="$before">
-            <type by_reference="false">int</type>
-          </tag>
-          <tag line="191" name="param" description="Contains the value used to create a new ILinkedNode with and inserted before $before." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="191" name="return" description="Returns the newly create ILinkedNode's key." type="int">
-            <type by_reference="false">int</type>
-          </tag>
-        </docblock>
-        <argument line="204">
-          <name>$before</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="204">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="222" package="Data">
-        <name>insertAfter</name>
-        <full_name>insertAfter</full_name>
-        <docblock line="209">
-          <description>Inserts a new ILinkedNode after the specified key.</description>
-          <long-description>&lt;p&gt;The ILinkedNode instance is created within this method. When inserting, all nodes that are
-to follow (come after) this node should be shifted and key values shifted as well.
-Additionally, when inserting a new ILinkedNode, the key will be automatically generated
-the next numeric value in the sequence of nodes.&lt;/p&gt;</long-description>
-          <tag line="209" name="access" description="public"/>
-          <tag line="209" name="param" description="Contains the key value to insert a new ILinkedNode after." type="int" variable="$after">
-            <type by_reference="false">int</type>
-          </tag>
-          <tag line="209" name="param" description="Contains the value used to create a new ILinkedNode with and inserted before $after." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="209" name="return" description="Returns the newly create ILinkedNode's key." type="int">
-            <type by_reference="false">int</type>
-          </tag>
-        </docblock>
-        <argument line="222">
-          <name>$after</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="222">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="233" package="Data">
-        <name>isEmpty</name>
-        <full_name>isEmpty</full_name>
-        <docblock line="227">
-          <description>Returns a boolean to represent whether or not this list is empty.</description>
-          <long-description/>
-          <tag line="227" name="access" description="public"/>
-          <tag line="227" name="return" description="Returns true if the list is empty, otherwise returns false." type="bool">
-            <type by_reference="false">bool</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="244" package="Data">
-        <name>peek</name>
-        <full_name>peek</full_name>
-        <docblock line="238">
-          <description>Returns, but does not remove, the first node in the list.</description>
-          <long-description/>
-          <tag line="238" name="access" description="public"/>
-          <tag line="238" name="return" description="Returns the first node in the list. Will returns NULL if the list empty." type="\Data\LinkedLists\ILinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="255" package="Data">
-        <name>peekFirst</name>
-        <full_name>peekFirst</full_name>
-        <docblock line="249">
-          <description>Returns, but does not remove, the first node in the list.</description>
-          <long-description/>
-          <tag line="249" name="access" description="public"/>
-          <tag line="249" name="return" description="Returns the first node in the list. Will returns NULL if the list empty." type="\Data\LinkedLists\ILinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="266" package="Data">
-        <name>peekLast</name>
-        <full_name>peekLast</full_name>
-        <docblock line="260">
-          <description>Returns, but does not remove, the last node in the list.</description>
-          <long-description/>
-          <tag line="260" name="access" description="public"/>
-          <tag line="260" name="return" description="Returns the last node in the list. Will returns NULL if the list empty." type="\Data\LinkedLists\ILinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="277" package="Data">
-        <name>poll</name>
-        <full_name>poll</full_name>
-        <docblock line="271">
-          <description>Returns and removes the first node in the list.</description>
-          <long-description/>
-          <tag line="271" name="access" description="public"/>
-          <tag line="271" name="return" description="Returns the first node in the list. Will return NULL if the list is empty." type="\Data\LinkedLists\ILinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="288" package="Data">
-        <name>pollFirst</name>
-        <full_name>pollFirst</full_name>
-        <docblock line="282">
-          <description>Returns and removes the first node in the list.</description>
-          <long-description/>
-          <tag line="282" name="access" description="public"/>
-          <tag line="282" name="return" description="Returns the first node in the list. Will return NULL if the list is empty." type="\Data\LinkedLists\ILinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="299" package="Data">
-        <name>pollLast</name>
-        <full_name>pollLast</full_name>
-        <docblock line="293">
-          <description>Returns and removes the last node in the list.</description>
-          <long-description/>
-          <tag line="293" name="access" description="public"/>
-          <tag line="293" name="return" description="Returns the last node in the list. Will return NULL if the list is empty." type="\Data\LinkedLists\ILinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="310" package="Data">
-        <name>pop</name>
-        <full_name>pop</full_name>
-        <docblock line="304">
-          <description>Returns the last node's value and removes the last node in the list.</description>
-          <long-description/>
-          <tag line="304" name="access" description="public"/>
-          <tag line="304" name="return" description="Returns the last node value in the list. Will return NULL if the list empty." type="mixed">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="324" package="Data">
-        <name>push</name>
-        <full_name>push</full_name>
-        <docblock line="315">
-          <description>Adds a new value onto the end of the list.</description>
-          <long-description>&lt;p&gt;A new ILinkedNode instance will be created and the value assigned to the specified. A numeric
-key will be created based on the sequence (last numeric key + 1) and assigned to this node.&lt;/p&gt;</long-description>
-          <tag line="315" name="access" description="public"/>
-          <tag line="315" name="param" description="Contains the value to push onto the list." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="324">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="338" package="Data">
-        <name>remove</name>
-        <full_name>remove</full_name>
-        <docblock line="329">
-          <description>Removes all nodes whose value is equal to that specified.</description>
-          <long-description>&lt;p&gt;Will remove all nodes within the list in addition to shifting and adjusting their
-keys, for those that are within a numeric sequence.&lt;/p&gt;</long-description>
-          <tag line="329" name="access" description="public"/>
-          <tag line="329" name="param" description="Contains the value to remove." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="338">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="352" package="Data">
-        <name>removeAt</name>
-        <full_name>removeAt</full_name>
-        <docblock line="343">
-          <description>Removes the node that lives at the specified key.</description>
-          <long-description>&lt;p&gt;Will remove the node at $key within the list in addition to shifting and adjusting the keys for
-remaining nodes that follow the removed.&lt;/p&gt;</long-description>
-          <tag line="343" name="access" description="public"/>
-          <tag line="343" name="param" description="Contains the value to remove." type="mixed" variable="$key">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="352">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="362" package="Data">
-        <name>removeFirst</name>
-        <full_name>removeFirst</full_name>
-        <docblock line="357">
-          <description>Removes the first node from the list.</description>
-          <long-description/>
-          <tag line="357" name="access" description="public"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="372" package="Data">
-        <name>removeLast</name>
-        <full_name>removeLast</full_name>
-        <docblock line="367">
-          <description>Removes the last node from the list.</description>
-          <long-description/>
-          <tag line="367" name="access" description="public"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="386" package="Data">
-        <name>removeNode</name>
-        <full_name>removeNode</full_name>
-        <docblock line="377">
-          <description>Removes the specified node from the list.</description>
-          <long-description>&lt;p&gt;If the node exists, it will be removed and all nodes that follow will be shifted and their keys
-will be adjusted.&lt;/p&gt;</long-description>
-          <tag line="377" name="access" description="public"/>
-          <tag line="377" name="param" description="The node to remove from the list." type="\Data\LinkedLists\ILinkedNode" variable="$node">
-            <type by_reference="false">\Data\LinkedLists\ILinkedNode</type>
-          </tag>
-        </docblock>
-        <argument line="386">
-          <name>$node</name>
-          <default/>
-          <type>\Data\LinkedLists\ILinkedNode</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="399" package="Data">
-        <name>sort</name>
-        <full_name>sort</full_name>
-        <docblock line="391">
-          <description>Sorts the list by the node values.</description>
-          <long-description>&lt;p&gt;The keys of all moved nodes will be adjusted so that the numeric key sequence
-remains (n - 1) + 1 for all nodes.&lt;/p&gt;</long-description>
-          <tag line="391" name="access" description="public"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="414" package="Data">
-        <name>sortBy</name>
-        <full_name>sortBy</full_name>
-        <docblock line="404">
-          <description>Sorts the list by using a callback to specify the value to compare on.</description>
-          <long-description>&lt;p&gt;The callback should take one parameter of type ILinkedNode and return a single
-value that will be used for comparison.&lt;/p&gt;</long-description>
-          <tag line="404" name="access" description="public"/>
-          <tag line="404" name="param" description="callable" type="\Data\LinkedLists\" variable="$predicate"/>
-        </docblock>
-        <argument line="414">
-          <name>$predicate</name>
-          <default/>
-          <type>\Data\LinkedLists\callable</type>
-        </argument>
-      </method>
-    </class>
+    <include line="4" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="6" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="8" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="10" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="12" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="14" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <include line="16" type="Require Once" package="Default">
+      <name/>
+    </include>
     <parse_markers>
-      <error line="404" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $predicate in sortBy()</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file bootstrap.php</error>
     </parse_markers>
   </file>
-  <file path="LinkedLists/DoubleLinkedList.php" hash="2f1f1549c51782047804c05237252a2e" package="Default">
-    <docblock line="2">
-      <description>This file is part of the Data package.</description>
-      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
-file that was distributed with this source code.&lt;/p&gt;</long-description>
-    </docblock>
-    <include line="13" type="Require Once" package="Default">
-      <name/>
-      <docblock line="10">
-        <description/>
-        <long-description/>
-        <tag line="10" name="ignore" description=""/>
-      </docblock>
-    </include>
-    <class final="false" abstract="false" namespace="Data\LinkedLists" line="22" package="Data">
-      <extends/>
-      <implements>\Data\LinkedLists\IDoublyLinkedList</implements>
-      <name>DoubleLinkedList</name>
-      <full_name>\Data\LinkedLists\DoubleLinkedList</full_name>
-      <docblock line="15">
-        <description>The Double Linked List.</description>
-        <long-description/>
-        <tag line="15" name="author" description="Insu Mun &lt;i_mun@fanshaweonline.ca&gt;"/>
-        <tag line="15" name="package" description="Data"/>
-        <tag line="15" name="version" description="1.0.0"/>
-      </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="31" package="Data">
-        <name>__construct</name>
-        <full_name>__construct</full_name>
-        <docblock line="25">
-          <description>Construct DoublyLinkedList class</description>
-          <long-description/>
-          <tag line="25" name="access" description="public"/>
-          <tag line="25" name="param" description="" type="\Data\LinkedLists\DoubleLinkedNode" variable="$data">
-            <type by_reference="false">\Data\LinkedLists\DoubleLinkedNode</type>
-          </tag>
-        </docblock>
-        <argument line="31">
-          <name>$data</name>
-          <default>null</default>
-          <type>\Data\LinkedLists\DoubleLinkedNode</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="42" package="Data">
-        <name>getFirst</name>
-        <full_name>getFirst</full_name>
-        <docblock line="36">
-          <description>Returns the first element in the list.</description>
-          <long-description/>
-          <tag line="36" name="access" description="public"/>
-          <tag line="36" name="return" description="Returns the first IDoublyLinkedNode in the list, otherwise returns NULL." type="\Data\LinkedLists\IDoublyLinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\IDoublyLinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="53" package="Data">
-        <name>getLast</name>
-        <full_name>getLast</full_name>
-        <docblock line="47">
-          <description>Returns the last element in the list.</description>
-          <long-description/>
-          <tag line="47" name="access" description="public"/>
-          <tag line="47" name="return" description="Returns the last IDoublyLinkedNode in the list, otherwise returns NULL." type="\Data\LinkedLists\IDoublyLinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\IDoublyLinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="69" package="Data">
-        <name>add</name>
-        <full_name>add</full_name>
-        <docblock line="58">
-          <description>Adds a value onto the end of the list.</description>
-          <long-description>&lt;p&gt;This method will create a new IDoublyLinkedNode instance assigning a
-numeric key value to the node and the value is assigned to the
-node's value property.&lt;/p&gt;</long-description>
-          <tag line="58" name="access" description="public"/>
-          <tag line="58" name="param" description="The value to add." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="58" name="return" description="The key value of the node that was created and added." type="int">
-            <type by_reference="false">int</type>
-          </tag>
-        </docblock>
-        <argument line="69">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="84" package="Data">
-        <name>addNode</name>
-        <full_name>addNode</full_name>
-        <docblock line="74">
-          <description>Adds an IDoublyLinkedNode instance onto the end of the list.</description>
-          <long-description>&lt;p&gt;The node that is to be added to the list should have its key reset so that
-it is the next key in the list's key sequence.&lt;/p&gt;</long-description>
-          <tag line="74" name="access" description="public"/>
-          <tag line="74" name="param" description="The IDoublyLinkedNode to add." type="\Data\LinkedLists\IDoublyLinkedNode" variable="$node">
-            <type by_reference="false">\Data\LinkedLists\IDoublyLinkedNode</type>
-          </tag>
-          <tag line="74" name="return" description="The key value of the node that was added." type="mixed">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="84">
-          <name>$node</name>
-          <default/>
-          <type>\Data\LinkedLists\IDoublyLinkedNode</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="98" package="Data">
-        <name>asArray</name>
-        <full_name>asArray</full_name>
-        <docblock line="89">
-          <description>Returns the list as an associative array.</description>
-          <long-description>&lt;p&gt;The return array will be formatted so that each node within the list
-will be returned as a key =&gt; value representation.&lt;/p&gt;</long-description>
-          <tag line="89" name="access" description="public"/>
-          <tag line="89" name="return" description="An associative array of key and value pairs for all nodes." type="array">
-            <type by_reference="false">array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="110" package="Data">
-        <name>containsKey</name>
-        <full_name>containsKey</full_name>
-        <docblock line="103">
-          <description>Checks if the list contains a node with the specified key value.</description>
-          <long-description/>
-          <tag line="103" name="access" description="public"/>
-          <tag line="103" name="param" description="Contains the key value to search for." type="mixed" variable="$key">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="103" name="return" description="Returns true if the $key was found, otherwise returns false." type="bool">
-            <type by_reference="false">bool</type>
-          </tag>
-        </docblock>
-        <argument line="110">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="122" package="Data">
-        <name>contains</name>
-        <full_name>contains</full_name>
-        <docblock line="115">
-          <description>Checks if the list contains a node with the specified value.</description>
-          <long-description/>
-          <tag line="115" name="access" description="public"/>
-          <tag line="115" name="param" description="Contains the value to search for." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="115" name="return" description="Returns true if the $value was found, otherwise returns false." type="bool">
-            <type by_reference="false">bool</type>
-          </tag>
-        </docblock>
-        <argument line="122">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="134" package="Data">
-        <name>find</name>
-        <full_name>find</full_name>
-        <docblock line="127">
-          <description>Returns the IDoublyLinkedNode object by the specified value.</description>
-          <long-description/>
-          <tag line="127" name="access" description="public"/>
-          <tag line="127" name="param" description="Contains the value to find." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="127" name="return" description="Returns the first IDoublyLinkedNode that contains the value, otherwise null." type="\Data\LinkedLists\IDoublyLinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\IDoublyLinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-        <argument line="134">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="147" package="Data">
-        <name>findAll</name>
-        <full_name>findAll</full_name>
-        <docblock line="139">
-          <description>Returns an array of all IDoublyLinkedNodes found by the specified value.</description>
-          <long-description/>
-          <tag line="139" name="access" description="public"/>
-          <tag line="139" name="param" description="Contains the value to find." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="139" name="return" description="Returns an array with all the&#10;IDoublyLinkedNode instances whose value is equal to $value, otherwise returns null." type="array|null">
-            <type by_reference="false">array</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-        <argument line="147">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="158" package="Data">
-        <name>findFirst</name>
-        <full_name>findFirst</full_name>
-        <docblock line="152">
-          <description>Returns the first IDoublyLinkedNode instance found by with the specified value.</description>
-          <long-description/>
-          <tag line="152" name="access" description="public"/>
-          <tag line="152" name="param" description="" type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="158">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="174" package="Data">
-        <name>findLast</name>
-        <full_name>findLast</full_name>
-        <docblock line="163">
-          <description>Returns the last IDoublyLinkedNode instance found by the specified value.</description>
-          <long-description>&lt;p&gt;The searching operations for this method are in reverse, therefore starting at the
-bottom of the list. This is done so on purpose to reduce unneeded overhead.&lt;/p&gt;</long-description>
-          <tag line="163" name="access" description="public"/>
-          <tag line="163" name="param" description="Contains the value to find." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="163" name="return" description="Returns the last&#10;IDoublyLinkedNode that contains the value, otherwise null if none found." type="\Data\LinkedLists\IDoublyLinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\IDoublyLinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-        <argument line="174">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="186" package="Data">
-        <name>get</name>
-        <full_name>get</full_name>
-        <docblock line="179">
-          <description>Returns the IDoublyLinkedNode at the specified $key.</description>
-          <long-description/>
-          <tag line="179" name="access" description="public"/>
-          <tag line="179" name="param" description="Contains the key of the IDoublyLinkedNode to get." type="mixed" variable="$key">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="179" name="return" description="Returns the IDoublyLinkedNode at $key if found, otherwise null." type="mixed">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="186">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="204" package="Data">
-        <name>insertBefore</name>
-        <full_name>insertBefore</full_name>
-        <docblock line="191">
-          <description>Inserts a new IDoublyLinkedNode at before the specified key.</description>
-          <long-description>&lt;p&gt;The IDoublyLinkedNode instance is created within this method. When inserting, all nodes should
-be shifted and key values shifted as well for all nodes that follow this newly inserted.
-Additionally, when inserting a new IDoublyLinkedNode, the key will be automatically generated as the
-next numeric value in the sequence of nodes.&lt;/p&gt;</long-description>
-          <tag line="191" name="access" description="public"/>
-          <tag line="191" name="param" description="Contains the key value to insert a new IDoublyLinkedNode before." type="int" variable="$before">
-            <type by_reference="false">int</type>
-          </tag>
-          <tag line="191" name="param" description="Contains the value used to create a new IDoublyLinkedNode with and inserted before $before." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="191" name="return" description="Returns the newly create IDoublyLinkedNode's key." type="int">
-            <type by_reference="false">int</type>
-          </tag>
-        </docblock>
-        <argument line="204">
-          <name>$before</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="204">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="222" package="Data">
-        <name>insertAfter</name>
-        <full_name>insertAfter</full_name>
-        <docblock line="209">
-          <description>Inserts a new IDoublyLinkedNode after the specified key.</description>
-          <long-description>&lt;p&gt;The IDoublyLinkedNode instance is created within this method. When inserting, all nodes that are
-to follow (come after) this node should be shifted and key values shifted as well.
-Additionally, when inserting a new IDoublyLinkedNode, the key will be automatically generated
-the next numeric value in the sequence of nodes.&lt;/p&gt;</long-description>
-          <tag line="209" name="access" description="public"/>
-          <tag line="209" name="param" description="Contains the key value to insert a new IDoublyLinkedNode after." type="int" variable="$after">
-            <type by_reference="false">int</type>
-          </tag>
-          <tag line="209" name="param" description="Contains the value used to create a new IDoublyLinkedNode with and inserted before $after." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-          <tag line="209" name="return" description="Returns the newly create IDoublyLinkedNode's key." type="int">
-            <type by_reference="false">int</type>
-          </tag>
-        </docblock>
-        <argument line="222">
-          <name>$after</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="222">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="233" package="Data">
-        <name>isEmpty</name>
-        <full_name>isEmpty</full_name>
-        <docblock line="227">
-          <description>Returns a boolean to represent whether or not this list is empty.</description>
-          <long-description/>
-          <tag line="227" name="access" description="public"/>
-          <tag line="227" name="return" description="Returns true if the list is empty, otherwise returns false." type="bool">
-            <type by_reference="false">bool</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="244" package="Data">
-        <name>peek</name>
-        <full_name>peek</full_name>
-        <docblock line="238">
-          <description>Returns, but does not remove, the first node in the list.</description>
-          <long-description/>
-          <tag line="238" name="access" description="public"/>
-          <tag line="238" name="return" description="Returns the first node in the list. Will returns NULL if the list empty." type="\Data\LinkedLists\IDoublyLinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\IDoublyLinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="255" package="Data">
-        <name>peekFirst</name>
-        <full_name>peekFirst</full_name>
-        <docblock line="249">
-          <description>Returns, but does not remove, the first node in the list.</description>
-          <long-description/>
-          <tag line="249" name="access" description="public"/>
-          <tag line="249" name="return" description="Returns the first node in the list. Will returns NULL if the list empty." type="\Data\LinkedLists\IDoublyLinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\IDoublyLinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="266" package="Data">
-        <name>peekLast</name>
-        <full_name>peekLast</full_name>
-        <docblock line="260">
-          <description>Returns, but does not remove, the last node in the list.</description>
-          <long-description/>
-          <tag line="260" name="access" description="public"/>
-          <tag line="260" name="return" description="Returns the last node in the list. Will returns NULL if the list empty." type="\Data\LinkedLists\IDoublyLinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\IDoublyLinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="277" package="Data">
-        <name>poll</name>
-        <full_name>poll</full_name>
-        <docblock line="271">
-          <description>Returns and removes the first node in the list.</description>
-          <long-description/>
-          <tag line="271" name="access" description="public"/>
-          <tag line="271" name="return" description="Returns the first node in the list. Will return NULL if the list is empty." type="\Data\LinkedLists\IDoublyLinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\IDoublyLinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="288" package="Data">
-        <name>pollFirst</name>
-        <full_name>pollFirst</full_name>
-        <docblock line="282">
-          <description>Returns and removes the first node in the list.</description>
-          <long-description/>
-          <tag line="282" name="access" description="public"/>
-          <tag line="282" name="return" description="Returns the first node in the list. Will return NULL if the list is empty." type="\Data\LinkedLists\IDoublyLinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\IDoublyLinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="299" package="Data">
-        <name>pollLast</name>
-        <full_name>pollLast</full_name>
-        <docblock line="293">
-          <description>Returns and removes the last node in the list.</description>
-          <long-description/>
-          <tag line="293" name="access" description="public"/>
-          <tag line="293" name="return" description="Returns the last node in the list. Will return NULL if the list is empty." type="\Data\LinkedLists\IDoublyLinkedNode|null">
-            <type by_reference="false">\Data\LinkedLists\IDoublyLinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="310" package="Data">
-        <name>pop</name>
-        <full_name>pop</full_name>
-        <docblock line="304">
-          <description>Returns the last node's value and removes the last node in the list.</description>
-          <long-description/>
-          <tag line="304" name="access" description="public"/>
-          <tag line="304" name="return" description="Returns the last node value in the list. Will return NULL if the list empty." type="mixed">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="324" package="Data">
-        <name>push</name>
-        <full_name>push</full_name>
-        <docblock line="315">
-          <description>Adds a new value onto the end of the list.</description>
-          <long-description>&lt;p&gt;A new IDoublyLinkedNode instance will be created and the value assigned to the specified. A numeric
-key will be created based on the sequence (last numeric key + 1) and assigned to this node.&lt;/p&gt;</long-description>
-          <tag line="315" name="access" description="public"/>
-          <tag line="315" name="param" description="Contains the value to push onto the list." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="324">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="338" package="Data">
-        <name>remove</name>
-        <full_name>remove</full_name>
-        <docblock line="329">
-          <description>Removes all nodes whose value is equal to that specified.</description>
-          <long-description>&lt;p&gt;Will remove all nodes within the list in addition to shifting and adjusting their
-keys, for those that are within a numeric sequence.&lt;/p&gt;</long-description>
-          <tag line="329" name="access" description="public"/>
-          <tag line="329" name="param" description="Contains the value to remove." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="338">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="352" package="Data">
-        <name>removeAt</name>
-        <full_name>removeAt</full_name>
-        <docblock line="343">
-          <description>Removes the node that lives at the specified key.</description>
-          <long-description>&lt;p&gt;Will remove the node at $key within the list in addition to shifting and adjusting the keys for
-remaining nodes that follow the removed.&lt;/p&gt;</long-description>
-          <tag line="343" name="access" description="public"/>
-          <tag line="343" name="param" description="Contains the value to remove." type="mixed" variable="$key">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="352">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="362" package="Data">
-        <name>removeFirst</name>
-        <full_name>removeFirst</full_name>
-        <docblock line="357">
-          <description>Removes the first node from the list.</description>
-          <long-description/>
-          <tag line="357" name="access" description="public"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="372" package="Data">
-        <name>removeLast</name>
-        <full_name>removeLast</full_name>
-        <docblock line="367">
-          <description>Removes the last node from the list.</description>
-          <long-description/>
-          <tag line="367" name="access" description="public"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="386" package="Data">
-        <name>removeNode</name>
-        <full_name>removeNode</full_name>
-        <docblock line="377">
-          <description>Removes the specified node from the list.</description>
-          <long-description>&lt;p&gt;If the node exists, it will be removed and all nodes that follow will be shifted and their keys
-will be adjusted.&lt;/p&gt;</long-description>
-          <tag line="377" name="access" description="public"/>
-          <tag line="377" name="param" description="The node to remove from the list." type="\Data\LinkedLists\IDoublyLinkedNode" variable="$node">
-            <type by_reference="false">\Data\LinkedLists\IDoublyLinkedNode</type>
-          </tag>
-        </docblock>
-        <argument line="386">
-          <name>$node</name>
-          <default/>
-          <type>\Data\LinkedLists\IDoublyLinkedNode</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="399" package="Data">
-        <name>sort</name>
-        <full_name>sort</full_name>
-        <docblock line="391">
-          <description>Sorts the list by the node values.</description>
-          <long-description>&lt;p&gt;The keys of all moved nodes will be adjusted so that the numeric key sequence
-remains (n - 1) + 1 for all nodes.&lt;/p&gt;</long-description>
-          <tag line="391" name="access" description="public"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data\LinkedLists" line="413" package="Data">
-        <name>sortBy</name>
-        <full_name>sortBy</full_name>
-        <docblock line="404">
-          <description>Sorts the list by using a callback to specify the value to compare on.</description>
-          <long-description>&lt;p&gt;The callback should take one parameter of type IDoublyLinkedNode and return a single
-value that will be used for comparison.&lt;/p&gt;</long-description>
-          <tag line="404" name="access" description="public"/>
-          <tag line="404" name="param" description="" type="\Data\LinkedLists\" variable="$predicate"/>
-        </docblock>
-        <argument line="413">
-          <name>$predicate</name>
-          <default/>
-          <type>\Data\LinkedLists\callable</type>
-        </argument>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="404" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $predicate in sortBy()</error>
-    </parse_markers>
-  </file>
-  <file path="DoubleLinkedNode.php" hash="b8a464b047175e7270d2b916ae484c81" package="Default">
-    <docblock line="2">
-      <description>This file is part of the Data package.</description>
-      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
-file that was distributed with this source code.&lt;/p&gt;</long-description>
-    </docblock>
-    <class final="false" abstract="false" namespace="Data" line="17" package="\Data">
-      <extends/>
-      <implements>\Data\IDoublyLinkedNode</implements>
-      <name>DoubleLinkedNode</name>
-      <full_name>\Data\DoubleLinkedNode</full_name>
-      <docblock line="10">
-        <description>The DoubleLinkedNode interface is implemented by all nodes that are to be linked.</description>
-        <long-description/>
-        <tag line="10" name="author" description="Insu Mun &lt;i_mun@fanshaweonline.ca&gt;"/>
-        <tag line="10" name="package" description="\Data"/>
-        <tag line="10" name="version" description="1.0.0"/>
-      </docblock>
-      <property final="false" static="false" visibility="private" line="26" namespace="Data" package="Default">
-        <name>$key</name>
-        <default/>
-        <docblock line="19">
-          <description>key variable</description>
-          <long-description/>
-          <tag line="19" name="access" description="private"/>
-          <tag line="19" name="var" description="" type="\Data\"/>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="private" line="35" namespace="Data" package="Default">
-        <name>$value</name>
-        <default/>
-        <docblock line="28">
-          <description>value variable</description>
-          <long-description/>
-          <tag line="28" name="access" description="private"/>
-          <tag line="28" name="var" description="" type="\Data\"/>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="private" line="44" namespace="Data" package="Default">
-        <name>$next</name>
-        <default/>
-        <docblock line="37">
-          <description>next variable</description>
-          <long-description>&lt;p&gt;@access private&lt;/p&gt;</long-description>
-          <tag line="37" name="var" description="" type="\Data\"/>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="private" line="52" namespace="Data" package="Default">
-        <name>$previous</name>
-        <default/>
-        <docblock line="46">
-          <description>previous variable</description>
-          <long-description/>
-          <tag line="46" name="access" description="private"/>
-          <tag line="46" name="var" description="" type="\Data\"/>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="60" package="\Data">
-        <name>__construct</name>
-        <full_name>__construct</full_name>
-        <docblock line="54">
-          <description>construct</description>
-          <long-description/>
-          <tag line="54" name="access" description="public"/>
-          <tag line="54" name="param" description="" type="\Data\IDoublyLinkedNode" variable="$value">
-            <type by_reference="false">\Data\IDoublyLinkedNode</type>
-          </tag>
-        </docblock>
-        <argument line="60">
-          <name>$value</name>
-          <default/>
-          <type>\Data\IDoublyLinkedNode</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="74" package="\Data">
-        <name>getKey</name>
-        <full_name>getKey</full_name>
-        <docblock line="68">
-          <description>Returns the key value for this node.</description>
-          <long-description/>
-          <tag line="68" name="access" description="public"/>
-          <tag line="68" name="return" description="Returns the key value." type="mixed">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="85" package="\Data">
-        <name>setKey</name>
-        <full_name>setKey</full_name>
-        <docblock line="79">
-          <description>Sets the key value for this node.</description>
-          <long-description/>
-          <tag line="79" name="access" description="public"/>
-          <tag line="79" name="param" description="The key value." type="mixed" variable="$key">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="85">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="99" package="\Data">
-        <name>getValue</name>
-        <full_name>getValue</full_name>
-        <docblock line="93">
-          <description>Returns the value of this node (the real value assigned).</description>
-          <long-description/>
-          <tag line="93" name="access" description="public"/>
-          <tag line="93" name="return" description="The value." type="mixed">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="110" package="\Data">
-        <name>setValue</name>
-        <full_name>setValue</full_name>
-        <docblock line="104">
-          <description>Sets the value for this node.</description>
-          <long-description/>
-          <tag line="104" name="access" description="public"/>
-          <tag line="104" name="param" description="The value." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="110">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="124" package="\Data">
-        <name>getNext</name>
-        <full_name>getNext</full_name>
-        <docblock line="118">
-          <description>Returns the next ILinkedNode.</description>
-          <long-description/>
-          <tag line="118" name="access" description="public"/>
-          <tag line="118" name="return" description="Returns the next ILinkedNode instance if it exists, otherwise returns NULL." type="\Data\ILinkedNode|null">
-            <type by_reference="false">\Data\ILinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="141" package="\Data">
-        <name>setNext</name>
-        <full_name>setNext</full_name>
-        <docblock line="132">
-          <description>Sets the next ILinkedNode instance.</description>
-          <long-description>&lt;p&gt;The &lt;code&gt;next&lt;/code&gt; ILinkedNode should be the ILinkedNode instance that comes after
-this instance within a List.&lt;/p&gt;</long-description>
-          <tag line="132" name="access" description="public"/>
-          <tag line="132" name="param" description="The ILinkedNode instance that is next." type="\Data\ILinkedNode" variable="$next">
-            <type by_reference="false">\Data\ILinkedNode</type>
-          </tag>
-        </docblock>
-        <argument line="141">
-          <name>$next</name>
-          <default/>
-          <type>\Data\ILinkedNode</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="153" package="\Data">
-        <name>getPrevious</name>
-        <full_name>getPrevious</full_name>
-        <docblock line="146">
-          <description>Returns the previously linked node.</description>
-          <long-description/>
-          <tag line="146" name="access" description="public"/>
-          <tag line="146" name="return" description="Returns the previously linked node. Will return null&#10;  if no previous node exists." type="\Data\IDoublyLinkedNode|null">
-            <type by_reference="false">\Data\IDoublyLinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="167" package="\Data">
-        <name>setPrevious</name>
-        <full_name>setPrevious</full_name>
-        <docblock line="161">
-          <description>Sets the previous node.</description>
-          <long-description/>
-          <tag line="161" name="access" description="public"/>
-          <tag line="161" name="param" description="The previously linked node." type="\Data\IDoublyLinkedNode" variable="$previous">
-            <type by_reference="false">\Data\IDoublyLinkedNode</type>
-          </tag>
-        </docblock>
-        <argument line="167">
-          <name>$previous</name>
-          <default/>
-          <type>\Data\IDoublyLinkedNode</type>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="SingleLinkedNode.php" hash="6b58307919e885700aa879576e257aa8" package="Default">
-    <docblock line="2">
-      <description>This file is part of the Data package.</description>
-      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
-file that was distributed with this source code.&lt;/p&gt;</long-description>
-    </docblock>
-    <class final="false" abstract="false" namespace="Data" line="17" package="\Data">
-      <extends/>
-      <implements>\Data\ILinkedNode</implements>
-      <name>SingleLinkedNode</name>
-      <full_name>\Data\SingleLinkedNode</full_name>
-      <docblock line="10">
-        <description>The SingleLinkedNode interface is implemented by all nodes that are to be linked.</description>
-        <long-description/>
-        <tag line="10" name="author" description="Insu Mun &lt;i_mun@fanshaweonline.ca&gt;"/>
-        <tag line="10" name="package" description="\Data"/>
-        <tag line="10" name="version" description="1.0.0"/>
-      </docblock>
-      <property final="false" static="false" visibility="private" line="26" namespace="Data" package="Default">
-        <name>$key</name>
-        <default/>
-        <docblock line="19">
-          <description>key variable</description>
-          <long-description/>
-          <tag line="19" name="access" description="private"/>
-          <tag line="19" name="var" description="" type="\Data\"/>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="private" line="35" namespace="Data" package="Default">
-        <name>$value</name>
-        <default/>
-        <docblock line="28">
-          <description>value variable</description>
-          <long-description/>
-          <tag line="28" name="access" description="private"/>
-          <tag line="28" name="var" description="" type="\Data\"/>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="private" line="44" namespace="Data" package="Default">
-        <name>$next</name>
-        <default/>
-        <docblock line="37">
-          <description>next variable</description>
-          <long-description>&lt;p&gt;@access private&lt;/p&gt;</long-description>
-          <tag line="37" name="var" description="" type="\Data\"/>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="52" package="\Data">
-        <name>__construct</name>
-        <full_name>__construct</full_name>
-        <docblock line="46">
-          <description>construct</description>
-          <long-description/>
-          <tag line="46" name="access" description="public"/>
-          <tag line="46" name="param" description="" type="\Data\ILinkedNode" variable="$value">
-            <type by_reference="false">\Data\ILinkedNode</type>
-          </tag>
-        </docblock>
-        <argument line="52">
-          <name>$value</name>
-          <default/>
-          <type>\Data\ILinkedNode</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="66" package="\Data">
-        <name>getKey</name>
-        <full_name>getKey</full_name>
-        <docblock line="60">
-          <description>Returns the key value for this node.</description>
-          <long-description/>
-          <tag line="60" name="access" description="public"/>
-          <tag line="60" name="return" description="Returns the key value." type="mixed">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="77" package="\Data">
-        <name>setKey</name>
-        <full_name>setKey</full_name>
-        <docblock line="71">
-          <description>Sets the key value for this node.</description>
-          <long-description/>
-          <tag line="71" name="access" description="public"/>
-          <tag line="71" name="param" description="The key value." type="mixed" variable="$key">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="77">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="91" package="\Data">
-        <name>getValue</name>
-        <full_name>getValue</full_name>
-        <docblock line="85">
-          <description>Returns the value of this node (the real value assigned).</description>
-          <long-description/>
-          <tag line="85" name="access" description="public"/>
-          <tag line="85" name="return" description="The value." type="mixed">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="102" package="\Data">
-        <name>setValue</name>
-        <full_name>setValue</full_name>
-        <docblock line="96">
-          <description>Sets the value for this node.</description>
-          <long-description/>
-          <tag line="96" name="access" description="public"/>
-          <tag line="96" name="param" description="The value." type="mixed" variable="$value">
-            <type by_reference="false">mixed</type>
-          </tag>
-        </docblock>
-        <argument line="102">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="116" package="\Data">
-        <name>getNext</name>
-        <full_name>getNext</full_name>
-        <docblock line="110">
-          <description>Returns the next ILinkedNode.</description>
-          <long-description/>
-          <tag line="110" name="access" description="public"/>
-          <tag line="110" name="return" description="Returns the next ILinkedNode instance if it exists, otherwise returns NULL." type="\Data\ILinkedNode|null">
-            <type by_reference="false">\Data\ILinkedNode</type>
-            <type by_reference="false">null</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="133" package="\Data">
-        <name>setNext</name>
-        <full_name>setNext</full_name>
-        <docblock line="124">
-          <description>Sets the next ILinkedNode instance.</description>
-          <long-description>&lt;p&gt;The &lt;code&gt;next&lt;/code&gt; ILinkedNode should be the ILinkedNode instance that comes after
-this instance within a List.&lt;/p&gt;</long-description>
-          <tag line="124" name="access" description="public"/>
-          <tag line="124" name="param" description="The ILinkedNode instance that is next." type="\Data\ILinkedNode" variable="$next">
-            <type by_reference="false">\Data\ILinkedNode</type>
-          </tag>
-        </docblock>
-        <argument line="133">
-          <name>$next</name>
-          <default/>
-          <type>\Data\ILinkedNode</type>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="INode.php" hash="123f6468eb1d564684225a214f536bde" package="Default">
+  <file path="INode.php" hash="088dec2bf4f18e3549f4c4ca1fb2f4c5" package="Default">
     <docblock line="2">
       <description>This file is part of the Data package.</description>
       <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
@@ -1682,7 +1717,7 @@ file that was distributed with this source code.&lt;/p&gt;</long-description>
       <full_name>\Data\INode</full_name>
       <docblock line="10">
         <description>The base node interface that defines the basic interface methods.</description>
-        <long-description/>
+        <long-description></long-description>
         <tag line="10" name="author" description="Aaron McGowan &lt;a_mcgowan43905@fanshawec.ca&gt;"/>
         <tag line="10" name="package" description="Data"/>
         <tag line="10" name="version" description="1.0.0"/>
@@ -1692,7 +1727,7 @@ file that was distributed with this source code.&lt;/p&gt;</long-description>
         <full_name>getKey</full_name>
         <docblock line="19">
           <description>Returns the key value for this node.</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="19" name="access" description="public"/>
           <tag line="19" name="return" description="Returns the key value." type="mixed">
             <type by_reference="false">mixed</type>
@@ -1704,7 +1739,7 @@ file that was distributed with this source code.&lt;/p&gt;</long-description>
         <full_name>setKey</full_name>
         <docblock line="27">
           <description>Sets the key value for this node.</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="27" name="access" description="public"/>
           <tag line="27" name="param" description="The key value." type="mixed" variable="$key">
             <type by_reference="false">mixed</type>
@@ -1712,7 +1747,7 @@ file that was distributed with this source code.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="33">
           <name>$key</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
@@ -1721,7 +1756,7 @@ file that was distributed with this source code.&lt;/p&gt;</long-description>
         <full_name>getValue</full_name>
         <docblock line="35">
           <description>Returns the value of this node (the real value assigned).</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="35" name="access" description="public"/>
           <tag line="35" name="return" description="The value." type="mixed">
             <type by_reference="false">mixed</type>
@@ -1733,7 +1768,7 @@ file that was distributed with this source code.&lt;/p&gt;</long-description>
         <full_name>setValue</full_name>
         <docblock line="43">
           <description>Sets the value for this node.</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="43" name="access" description="public"/>
           <tag line="43" name="param" description="The value." type="mixed" variable="$value">
             <type by_reference="false">mixed</type>
@@ -1741,14 +1776,199 @@ file that was distributed with this source code.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="49">
           <name>$value</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
     </interface>
   </file>
+  <file path="DoublyLinkedNode.php" hash="eb66eb166ff8f8abfcbd28a4a8961c4e" package="Default">
+    <docblock line="3">
+      <description>This file is part of the Data package.</description>
+      <long-description>&lt;p&gt;For full copyright and license information, please view the LICENSE
+file that was distributed with this source code.&lt;/p&gt;</long-description>
+    </docblock>
+    <include line="11" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="Data" line="19" package="Data\LinkedList">
+      <extends/>
+      <implements>\Data\IDoublyLinkedNode</implements>
+      <name>DoublyLinkedNode</name>
+      <full_name>\Data\DoublyLinkedNode</full_name>
+      <docblock line="12">
+        <description>DoublyLinkedNode class implements the IDoublyLinkedNode interface</description>
+        <long-description></long-description>
+        <tag line="12" name="author" description="Michael Cameron &lt;m_cameron4132@fanshaweonline.ca&gt;"/>
+        <tag line="12" name="package" description="Data\LinkedList"/>
+        <tag line="12" name="version" description="1.0.0"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="22" namespace="Data" package="Default">
+        <name>$current</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="23" namespace="Data" package="Default">
+        <name>$next</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="24" namespace="Data" package="Default">
+        <name>$previous</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="25" namespace="Data" package="Default">
+        <name>$key</name>
+        <default></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="27" package="Data\LinkedList">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="27">
+          <name>$current</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="27">
+          <name>$next</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="27">
+          <name>$previous</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="49" package="Data\LinkedList">
+        <name>getPrevious</name>
+        <full_name>getPrevious</full_name>
+        <docblock line="42">
+          <description>Returns the previously linked node.</description>
+          <long-description></long-description>
+          <tag line="42" name="access" description="public"/>
+          <tag line="42" name="return" description="Returns the previously linked node. Will return null&#10;  if no previous node exists." type="\Data\IDoublyLinkedNode|null">
+            <type by_reference="false">\Data\IDoublyLinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="61" package="Data\LinkedList">
+        <name>setPrevious</name>
+        <full_name>setPrevious</full_name>
+        <docblock line="55">
+          <description>Sets the previous node.</description>
+          <long-description></long-description>
+          <tag line="55" name="access" description="public"/>
+          <tag line="55" name="param" description="The previously linked node." type="\Data\IDoublyLinkedNode" variable="$previous">
+            <type by_reference="false">\Data\IDoublyLinkedNode</type>
+          </tag>
+        </docblock>
+        <argument line="61">
+          <name>$previous</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="75" package="Data\LinkedList">
+        <name>getNext</name>
+        <full_name>getNext</full_name>
+        <docblock line="69">
+          <description>Returns the next ILinkedNode.</description>
+          <long-description></long-description>
+          <tag line="69" name="access" description="public"/>
+          <tag line="69" name="return" description="Returns the next ILinkedNode instance if it exists, otherwise returns NULL." type="\Data\ILinkedNode|null">
+            <type by_reference="false">\Data\ILinkedNode</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="88" package="Data\LinkedList">
+        <name>setNext</name>
+        <full_name>setNext</full_name>
+        <docblock line="79">
+          <description>Sets the next ILinkedNode instance.</description>
+          <long-description>&lt;p&gt;The &lt;code&gt;next&lt;/code&gt; ILinkedNode should be the ILinkedNode instance that comes after
+this instance within a List.&lt;/p&gt;</long-description>
+          <tag line="79" name="access" description="public"/>
+          <tag line="79" name="param" description="The ILinkedNode instance that is next." type="\Data\ILinkedNode" variable="$next">
+            <type by_reference="false">\Data\ILinkedNode</type>
+          </tag>
+        </docblock>
+        <argument line="88">
+          <name>$next</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="99" package="Data\LinkedList">
+        <name>getKey</name>
+        <full_name>getKey</full_name>
+        <docblock line="93">
+          <description>Returns the key value for this node.</description>
+          <long-description></long-description>
+          <tag line="93" name="access" description="public"/>
+          <tag line="93" name="return" description="Returns the key value." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="109" package="Data\LinkedList">
+        <name>setKey</name>
+        <full_name>setKey</full_name>
+        <docblock line="103">
+          <description>Sets the key value for this node.</description>
+          <long-description></long-description>
+          <tag line="103" name="access" description="public"/>
+          <tag line="103" name="param" description="The key value." type="mixed" variable="$key">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="109">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="119" package="Data\LinkedList">
+        <name>getValue</name>
+        <full_name>getValue</full_name>
+        <docblock line="113">
+          <description>Returns the value of this node (the real value assigned).</description>
+          <long-description></long-description>
+          <tag line="113" name="access" description="public"/>
+          <tag line="113" name="return" description="The value." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Data" line="129" package="Data\LinkedList">
+        <name>setValue</name>
+        <full_name>setValue</full_name>
+        <docblock line="123">
+          <description>Sets the value for this node.</description>
+          <long-description></long-description>
+          <tag line="123" name="access" description="public"/>
+          <tag line="123" name="param" description="The value." type="mixed" variable="$current">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="129">
+          <name>$current</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="22" code="50018">No DocBlock was found for property $current</error>
+      <error line="23" code="50018">No DocBlock was found for property $next</error>
+      <error line="24" code="50018">No DocBlock was found for property $previous</error>
+      <error line="25" code="50018">No DocBlock was found for property $key</error>
+      <error line="27" code="50010">No DocBlock was found for method __construct()</error>
+    </parse_markers>
+  </file>
   <package name="Data" full_name="Data">
     <package name="LinkedList" full_name="Data\LinkedList"/>
+    <package name="LinkedLists" full_name="Data\LinkedLists"/>
   </package>
   <package name="Default" full_name="Default"/>
   <package name="McGowanCorp" full_name="McGowanCorp">
